@@ -111,9 +111,23 @@ class BizTalkApp {
     // Theme Toggle
     document.getElementById('theme-toggle')?.addEventListener('click', () => this.toggleTheme());
 
+    // Reselect Sector Menu / Header Buttons
+    const showSectorPicker = () => {
+      this.switchTab('stages');
+      const wrapper = document.getElementById('sector-selection-wrapper');
+      if (wrapper) {
+        wrapper.style.display = 'block';
+        wrapper.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    document.getElementById('nav-reselect-sector')?.addEventListener('click', showSectorPicker);
+    document.getElementById('change-sector-btn')?.addEventListener('click', showSectorPicker);
+
     // Desktop Nav Tabs
     document.querySelectorAll('.nav-tab').forEach(tab => {
       tab.addEventListener('click', (e) => {
+        if (e.currentTarget.id === 'nav-reselect-sector') return;
         const view = e.currentTarget.dataset.view;
         this.switchTab(view);
       });
@@ -241,7 +255,15 @@ class BizTalkApp {
   /* Progressive Stages Rendering */
   renderStageIndustryChips() {
     const gridContainer = document.getElementById('sector-grid-selector');
+    const wrapper = document.getElementById('sector-selection-wrapper');
     if (!gridContainer || !this.data) return;
+
+    // Check if domain was previously selected
+    const savedDomain = localStorage.getItem('biztalk_selected_domain');
+    if (savedDomain && this.data.industries.some(i => i.id === savedDomain)) {
+      this.currentIndustry = savedDomain;
+      if (wrapper) wrapper.style.display = 'none';
+    }
 
     gridContainer.innerHTML = this.data.industries.map(ind => {
       const termsCount = this.data.terms.filter(t => t.industry === ind.id).length;
@@ -261,6 +283,7 @@ class BizTalkApp {
         gridContainer.querySelectorAll('.sector-card-item').forEach(c => c.classList.remove('active'));
         e.currentTarget.classList.add('active');
         this.currentIndustry = e.currentTarget.dataset.industry;
+        localStorage.setItem('biztalk_selected_domain', this.currentIndustry);
 
         const indObj = this.data.industries.find(i => i.id === this.currentIndustry);
         const titleEl = document.getElementById('active-sector-title');
@@ -273,7 +296,13 @@ class BizTalkApp {
           subTitleEl.textContent = `${indObj.description}`;
         }
 
+        // Dismiss Domain Selection Grid after choosing
+        if (wrapper) {
+          wrapper.style.display = 'none';
+        }
+
         this.renderStagesForIndustry(this.currentIndustry);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   }

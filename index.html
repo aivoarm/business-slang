@@ -92,6 +92,7 @@
 
         <ul class="nav-links">
           <li><button class="nav-tab active" data-view="stages">⚡ Progressive Learn</button></li>
+          <li><button class="nav-tab" id="nav-reselect-sector">🌐 Change Sector</button></li>
           <li><button class="nav-tab" data-view="dictionary">📚 Dictionary</button></li>
           <li><button class="nav-tab" data-view="quiz">🎯 Scenario Quiz</button></li>
           <li><button class="nav-tab" data-view="trainer">💡 Interview Prep</button></li>
@@ -144,19 +145,29 @@
 
       <!-- View 0: Progressive Stage-Based Domain Learning (Default View) -->
       <div id="view-stages" class="tab-view active">
-        <div class="section-header">
-          <h2 class="section-title">👉 Select a Business Sector to Learn</h2>
-          <span style="font-size: 0.85rem; color: var(--text-muted);">12 Domains • 3-Level Mastery</span>
+        
+        <!-- Sector Selection Box (Collapsible after selection) -->
+        <div id="sector-selection-wrapper">
+          <div class="section-header">
+            <h2 class="section-title">👉 Select a Business Sector to Learn</h2>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">12 Domains • 3-Level Mastery</span>
+          </div>
+
+          <!-- Sector Grid Selector -->
+          <div class="sector-grid" id="sector-grid-selector" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+            <!-- Dynamically populated via app.js -->
+          </div>
         </div>
 
-        <!-- Sector Grid Selector -->
-        <div class="sector-grid" id="sector-grid-selector" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
-          <!-- Dynamically populated via app.js -->
-        </div>
-
-        <div class="section-header" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
-          <h2 class="section-title" id="active-sector-title">📦 Procurement & Supply Chain</h2>
-          <span style="font-size: 0.85rem; color: var(--text-accent);" id="active-sector-subtitle">Progressive Level Path</span>
+        <!-- Active Sector Header -->
+        <div class="section-header" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;" id="active-sector-header">
+          <div>
+            <h2 class="section-title" id="active-sector-title">📦 Procurement & Supply Chain</h2>
+            <span style="font-size: 0.85rem; color: var(--text-accent);" id="active-sector-subtitle">Progressive Level Path</span>
+          </div>
+          <button class="btn-secondary" id="change-sector-btn" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;">
+            🔄 Switch Sector
+          </button>
         </div>
 
         <div id="stages-container" style="margin-top: 1rem;">
