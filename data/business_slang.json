@@ -1,6 +1,7 @@
 {
   "app_name": "BizTalk - Business Slang & Industry Literacy",
-  "version": "1.1.0",
+  "version": "2.0.0",
+  "changelog": "v2.0.0 — Expanded to 12 major business sectors with 70+ terms across all 3 mastery levels.",
   "industries": [
     {
       "id": "procurement",
@@ -72,6 +73,78 @@
         { "level": 1, "title": "Level 1: Startup & Financial Fundamentals 🌱", "description": "Burn rate, cash runway, and baseline financial metrics." },
         { "level": 2, "title": "Level 2: Unit Economics & Capital Allocation ⚡", "description": "CAC vs LTV, CapEx vs OpEx shifts, and margin analysis." },
         { "level": 3, "title": "Level 3: Executive Profitability & EBITDA 🎩", "description": "EBITDA expansion, valuation multiples, and private equity strategy." }
+      ]
+    },
+    {
+      "id": "marketing_growth",
+      "name": "Marketing & Growth",
+      "icon": "📣",
+      "description": "Acquisition funnels, brand strategy, performance marketing, and growth experimentation frameworks.",
+      "gradient": "linear-gradient(135deg, #f97316, #ea580c)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Funnels & Performance Marketing Basics 🌱", "description": "CTR, CPC vs CPM, marketing funnels, and organic search basics." },
+        { "level": 2, "title": "Level 2: Growth Hacking & Attribution Modeling ⚡", "description": "ABM strategies, attribution models, MRR/ARR, and churn analysis." },
+        { "level": 3, "title": "Level 3: Product-Led Growth & Lifecycle Strategy 🎩", "description": "Product-Led Growth (PLG), viral loops, and enterprise LTV optimization." }
+      ]
+    },
+    {
+      "id": "hr_people",
+      "name": "HR & People Operations",
+      "icon": "🤝",
+      "description": "Talent acquisition, compensation design, organizational development, and workforce analytics.",
+      "gradient": "linear-gradient(135deg, #a78bfa, #7c3aed)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Talent Acquisition & Compensation Basics 🌱", "description": "OTE splits, total comp packages, and voluntary attrition rates." },
+        { "level": 2, "title": "Level 2: HR Analytics & Performance Management ⚡", "description": "eNPS metrics, PIP processes, DEI frameworks, and headcount planning." },
+        { "level": 3, "title": "Level 3: Executive Org Design & Career Leveling 🎩", "description": "Job leveling bands, pay equity audits, and strategic workforce architecture." }
+      ]
+    },
+    {
+      "id": "legal_compliance",
+      "name": "Legal & Compliance",
+      "icon": "⚖️",
+      "description": "Contract law, regulatory frameworks, corporate governance, and risk management terminology.",
+      "gradient": "linear-gradient(135deg, #64748b, #334155)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Contract Basics & Confidentiality 🌱", "description": "NDAs, SLAs, and baseline contract terminology." },
+        { "level": 2, "title": "Level 2: Corporate Governance & Risk Mitigation ⚡", "description": "Indemnification clauses, GDPR compliance, and M&A due diligence." },
+        { "level": 3, "title": "Level 3: Regulatory Compliance & Contract Risk 🎩", "description": "Force majeure provisions, HIPAA privacy rules, and liability caps." }
+      ]
+    },
+    {
+      "id": "healthcare_medtech",
+      "name": "Healthcare & MedTech",
+      "icon": "🏥",
+      "description": "Clinical operations, regulatory pathways, health IT, and medical device commercialization.",
+      "gradient": "linear-gradient(135deg, #06b6d4, #0e7490)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Clinical Operations & Health IT Basics 🌱", "description": "Electronic Health Records (EHR) and digital health workflows." },
+        { "level": 2, "title": "Level 2: Regulatory Pathways & Value-Based Care ⚡", "description": "FDA 510(k) clearance, substantial equivalence, and value-based reimbursement." },
+        { "level": 3, "title": "Level 3: Real-World Evidence & Medical Commercialization 🎩", "description": "Real-World Evidence (RWE) registries and PMA high-risk device approvals." }
+      ]
+    },
+    {
+      "id": "sales_revops",
+      "name": "Sales & Revenue Operations",
+      "icon": "💰",
+      "description": "Pipeline management, CRM strategy, quota design, forecasting, and GTM execution.",
+      "gradient": "linear-gradient(135deg, #22c55e, #15803d)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Pipeline & CRM Fundamentals 🌱", "description": "CRM platforms, MQL to SQL conversion, and sales funnel stages." },
+        { "level": 2, "title": "Level 2: Qualification Frameworks & Sales Velocity ⚡", "description": "MEDDPICC enterprise qualification and sales velocity formulas." },
+        { "level": 3, "title": "Level 3: Revenue Operations & GTM Architecture 🎩", "description": "RevOps alignment, territory quota planning, and enterprise deal architecture." }
+      ]
+    },
+    {
+      "id": "product_mgmt",
+      "name": "Product Management",
+      "icon": "🧭",
+      "description": "Discovery frameworks, prioritization models, roadmapping, and cross-functional PM influence.",
+      "gradient": "linear-gradient(135deg, #f43f5e, #be123c)",
+      "stages": [
+        { "level": 1, "title": "Level 1: User Stories & MVP Discovery 🌱", "description": "User stories, acceptance criteria, and Minimum Viable Product (MVP)." },
+        { "level": 2, "title": "Level 2: Feature Prioritization & North Star Metrics ⚡", "description": "RICE prioritization model and North Star metric alignment." },
+        { "level": 3, "title": "Level 3: Product Strategy & Product-Market Fit 🎩", "description": "Product-Market Fit (PMF) indicators and strategic roadmapping." }
       ]
     }
   ],
@@ -647,6 +720,518 @@
       ],
       "correct_option": 0,
       "context_question": "Why do private equity firms rely heavily on EBITDA when evaluating acquisition targets?"
+    },
+
+    {
+      "id": "ctr",
+      "term": "CTR",
+      "full_name": "Click-Through Rate",
+      "industry": "marketing_growth",
+      "stage": 1,
+      "type": "metric",
+      "level": "entry",
+      "meaning": "The percentage of people who click on a link or ad after seeing it, calculated as clicks divided by impressions.",
+      "context": "A primary performance indicator for email campaigns, display ads, and search ads. Industry benchmarks vary widely—email CTR averages 2–3%, Google Ads 3–5%.",
+      "interview_tip": "Never cite CTR in isolation—always pair it with conversion rate to show you understand the full funnel, not just top-of-funnel vanity.",
+      "sample_interview_response": "Our email CTR was 4.2%, above the 2.8% industry benchmark, but I pushed deeper and found our landing page conversion was only 1.1%—so I redesigned the CTA alignment to lift end-to-end conversion.",
+      "example": "The new subject line A/B test improved CTR from 1.8% to 3.6%, doubling qualified traffic to the product page.",
+      "options": [
+        "The percentage of users who click a link or ad relative to total impressions",
+        "Customer Transaction Records stored in a CRM",
+        "Cost-to-Revenue tracking model for monthly campaigns",
+        "Conversion Tracking Rate for retail checkout flows"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is a high CTR not always a sign of a successful marketing campaign?"
+    },
+    {
+      "id": "cpc-cpm",
+      "term": "CPC vs CPM",
+      "full_name": "Cost Per Click vs Cost Per Mille (1,000 Impressions)",
+      "industry": "marketing_growth",
+      "stage": 1,
+      "type": "metric",
+      "level": "entry",
+      "meaning": "CPC charges advertisers for each individual click; CPM charges per 1,000 times an ad is shown regardless of clicks.",
+      "context": "CPC suits direct-response goals (leads, purchases). CPM is preferred for brand awareness campaigns where reach and frequency matter more than clicks.",
+      "interview_tip": "Demonstrate media buying sophistication by matching the bidding model to the campaign objective, not just chasing the lowest absolute cost.",
+      "sample_interview_response": "For our new product launch I intentionally shifted from CPC to CPM across awareness channels, building 8M impressions in the target demographic before switching to conversion-optimized campaigns.",
+      "example": "For the brand refresh campaign we used CPM buying to maximize reach; once retargeting pools were built, we switched to CPC for conversion efficiency.",
+      "options": [
+        "Two ad pricing models: pay-per-click vs pay-per-thousand-impressions",
+        "Customer Profiling Criteria vs Customer Payment Method categories",
+        "Campaign Performance Control and Market Penetration Metrics",
+        "Content Publishing Calendar vs Content Performance Monitor"
+      ],
+      "correct_option": 0,
+      "context_question": "When would you choose a CPM bidding strategy over CPC for the same product?"
+    },
+    {
+      "id": "funnel",
+      "term": "Marketing Funnel",
+      "full_name": "Acquisition and Conversion Funnel (TOFU / MOFU / BOFU)",
+      "industry": "marketing_growth",
+      "stage": 1,
+      "type": "framework",
+      "level": "entry",
+      "meaning": "A staged model representing a buyer's journey from initial awareness (Top of Funnel) through consideration (Middle) to purchase decision (Bottom of Funnel).",
+      "context": "TOFU content builds awareness (blog posts, social). MOFU nurtures intent (case studies, webinars). BOFU converts (demos, trials, pricing pages).",
+      "interview_tip": "Align content type to funnel stage explicitly. Showing you create content with purpose—not just volume—signals strategic maturity.",
+      "sample_interview_response": "I audited our content library and found 90% was TOFU—virtually nothing at MOFU to nurture our 8,000-strong email list. Rebuilding the MOFU assets alone drove a 40% lift in demo requests.",
+      "example": "Our BOFU conversion rate dropped 22%, so we A/B tested the pricing page and restructured the free trial onboarding flow.",
+      "options": [
+        "A staged buyer journey model from awareness through consideration to purchase",
+        "A financial model for calculating marketing department overhead",
+        "A CRM pipeline visualization template for sales teams",
+        "A funnel-shaped org chart for marketing reporting structures"
+      ],
+      "correct_option": 0,
+      "context_question": "If conversion at BOFU is low despite high TOFU traffic, where should you focus optimization efforts?"
+    },
+    {
+      "id": "growth-hacking",
+      "term": "Growth Hacking",
+      "full_name": "Growth Engineering / Product-Led Growth Experimentation",
+      "industry": "marketing_growth",
+      "stage": 2,
+      "type": "buzzword",
+      "level": "mid",
+      "meaning": "A rapid, data-driven experimentation approach using low-cost, unconventional tactics to achieve fast, scalable user or revenue growth.",
+      "context": "Associated with viral loops, referral programs, and product-embedded acquisition (e.g., Dropbox's referral storage credits, Hotmail's email footer).",
+      "interview_tip": "Ground this in structured experimentation—hypothesis, metric, experiment, learn. Avoid letting it sound like spray-and-pray tactics.",
+      "sample_interview_response": "I ran 14 growth experiments in Q2 using a prioritized ICE scoring backlog, landing on an in-product referral mechanic that drove 31% of new signups organically.",
+      "example": "The team's growth hacking sprint uncovered that adding a share button on invoice PDFs generated 600 inbound leads in 30 days.",
+      "options": [
+        "Rapid low-cost experimentation to find scalable user acquisition and retention levers",
+        "Unauthorized access to competitor marketing analytics platforms",
+        "Aggressive cold outreach campaigns targeting enterprise executives",
+        "Hacking together landing pages without a developer"
+      ],
+      "correct_option": 0,
+      "context_question": "What separates principled growth experimentation from random growth hacking?"
+    },
+    {
+      "id": "mrr-arr",
+      "term": "MRR & ARR",
+      "full_name": "Monthly Recurring Revenue & Annual Recurring Revenue",
+      "industry": "marketing_growth",
+      "stage": 2,
+      "type": "metric",
+      "level": "mid",
+      "meaning": "MRR is the predictable total revenue generated monthly from active subscriptions; ARR is MRR × 12, representing annualized subscription value.",
+      "context": "The defining health metric for SaaS businesses. Investors parse MRR into new MRR, expansion MRR, churn MRR, and net new MRR.",
+      "interview_tip": "Show nuance by discussing net MRR growth (new + expansion − churn) rather than gross MRR, which masks churn problems.",
+      "sample_interview_response": "While gross MRR grew 18% QoQ, net new MRR only grew 7% because churn was accelerating in the SMB segment—I flagged this to leadership before it became a retention crisis.",
+      "example": "We hit $1M ARR in month 14, but our expansion MRR from existing accounts was actually outpacing new logo MRR.",
+      "options": [
+        "Predictable subscription revenue tracked monthly (MRR) or annualized (ARR)",
+        "Marketing Revenue Report and Annual Revenue Reconciliation documents",
+        "Monthly Retention Rate and Annual Renewal Rate for SaaS contracts",
+        "Marketing Resource Roster and Annual Rate Review for agency budgets"
+      ],
+      "correct_option": 0,
+      "context_question": "Why do investors analyze net new MRR rather than gross MRR when evaluating a SaaS company?"
+    },
+    {
+      "id": "product-led-growth",
+      "term": "PLG",
+      "full_name": "Product-Led Growth",
+      "industry": "marketing_growth",
+      "stage": 3,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "A GTM strategy where the product itself is the primary driver of user acquisition, activation, and expansion, replacing or supplementing traditional sales-led motions.",
+      "context": "Companies like Slack, Figma, and Notion use PLG: free tiers, viral sharing mechanics, and in-product upgrade triggers acquire and convert users at scale.",
+      "interview_tip": "Discuss PLG's impact on CAC and payback period. PLG dramatically reduces acquisition cost because the product does the selling.",
+      "sample_interview_response": "I redesigned our free-to-paid conversion flow to surface upgrade prompts at key activation moments, lifting PLG-driven revenue by 42% without any sales involvement.",
+      "example": "Figma's free tier allows unlimited viewers, making every design a viral acquisition touchpoint for new designer users.",
+      "options": [
+        "Growth strategy where the product drives its own acquisition, retention, and expansion",
+        "A pre-launch growth projection model for investor presentations",
+        "Platform Licensing Guidelines for enterprise software vendors",
+        "Programmatic Lead Generation using automated outreach tools"
+      ],
+      "correct_option": 0,
+      "context_question": "What is the primary financial advantage of PLG over a pure sales-led growth model?"
+    },
+
+    {
+      "id": "ote",
+      "term": "OTE",
+      "full_name": "On-Target Earnings",
+      "industry": "hr_people",
+      "stage": 1,
+      "type": "metric",
+      "level": "entry",
+      "meaning": "The total expected compensation a salesperson earns when hitting exactly 100% of their quota, comprising base salary plus on-target variable/commission.",
+      "context": "Standard OTE split for enterprise sales roles is 50/50 base-to-variable. Top performers exceeding quota earn accelerators beyond OTE.",
+      "interview_tip": "When negotiating, ask about the OTE split, quota attainment rates across the team, and whether quota is achievable (not just theoretical).",
+      "sample_interview_response": "I restructured the sales comp plan to a 60/40 base-to-variable OTE split with 2× accelerators above 120% quota, which reduced rep turnover by 18% and lifted average quota attainment from 71% to 89%.",
+      "example": "The Account Executive role has a $200K OTE: $100K base plus $100K variable at 100% quota attainment.",
+      "options": [
+        "Total expected compensation when a salesperson achieves exactly 100% of their quota target",
+        "Overtime Earnings tracking for hourly production workers",
+        "Operational Training Expenditure budget for new hires",
+        "Office Technology Expense allowance for remote employees"
+      ],
+      "correct_option": 0,
+      "context_question": "Why should sales candidates ask about historical team quota attainment rates when evaluating an OTE offer?"
+    },
+    {
+      "id": "ebitda-comp",
+      "term": "Total Comp",
+      "full_name": "Total Compensation Package",
+      "industry": "hr_people",
+      "stage": 1,
+      "type": "framework",
+      "level": "entry",
+      "meaning": "The full value of an employee's compensation beyond base salary, encompassing equity, bonuses, benefits, retirement contributions, and perks.",
+      "context": "Savvy candidates and HR leaders frame offers in total comp—not just cash—to accurately compare competing offers.",
+      "interview_tip": "In offers, calculate annualized equity vesting value alongside cash to present total comp honestly. Many miss equity value in negotiations.",
+      "sample_interview_response": "When candidates compared our offer to a competitor's higher base, I reframed total comp to include our 4-year equity grant and 401k match, closing all three top candidates at below-market base salaries.",
+      "example": "The offer had a $140K base but $80K in annual RSU vesting and full health benefits—total comp was effectively $240K.",
+      "options": [
+        "The complete value of employment including salary, equity, bonuses, and benefits",
+        "Aggregate corporate tax filings submitted to the IRS annually",
+        "Total contracted payments owed to third-party vendors",
+        "A comprehensive audit of employee expense reimbursements"
+      ],
+      "correct_option": 0,
+      "context_question": "How does equity vesting schedule impact total compensation comparison between two job offers?"
+    },
+    {
+      "id": "eNPS",
+      "term": "eNPS",
+      "full_name": "Employee Net Promoter Score",
+      "industry": "hr_people",
+      "stage": 2,
+      "type": "metric",
+      "level": "mid",
+      "meaning": "An adapted NPS measuring employee loyalty and engagement: 'How likely are you to recommend this company as a place to work?' Scored on a 0–10 scale.",
+      "context": "Benchmarks vary by industry; scores above 30 are generally healthy. Used alongside engagement surveys and exit interview data to track culture health.",
+      "interview_tip": "Link eNPS trends to retention outcomes and recruitment referral rates—employees who score 9–10 are your best recruiting channel.",
+      "sample_interview_response": "After restructuring our performance review process, eNPS improved from 18 to 47 over two quarters, and employee referrals as a hiring source jumped from 12% to 31% of new hires.",
+      "example": "Our eNPS dropped 15 points post-merger, signaling integration friction before it showed up in voluntary turnover data.",
+      "options": [
+        "Metric tracking how likely employees are to recommend their employer to peers",
+        "Electronic Payroll Notification System for HR compliance",
+        "Enterprise Network Performance Score for IT infrastructure",
+        "Employee Norms & Policy Standards annual review index"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is eNPS a leading indicator of voluntary employee turnover?"
+    },
+    {
+      "id": "pip",
+      "term": "PIP",
+      "full_name": "Performance Improvement Plan",
+      "industry": "hr_people",
+      "stage": 2,
+      "type": "process",
+      "level": "mid",
+      "meaning": "A formal documented HR process outlining specific performance deficiencies, measurable improvement targets, timelines, and consequences for an underperforming employee.",
+      "context": "PIPs protect the company legally, provide employees fair notice and support, and create documented grounds for termination if targets are unmet.",
+      "interview_tip": "Frame PIPs as a genuine support mechanism, not a paper trail for firing. Demonstrating you invest in underperformers before termination signals leadership maturity.",
+      "sample_interview_response": "I initiated a structured PIP for a team member missing quota by 40%, setting weekly 1:1 checkpoints and pairing them with a senior rep. Two of the three reps I've put on PIPs successfully recovered.",
+      "example": "After three months of missed quotas, we placed the rep on a 60-day PIP with bi-weekly manager check-ins and clearly defined success metrics.",
+      "options": [
+        "A formal structured plan documenting performance gaps and measurable improvement targets with deadlines",
+        "Product Integration Protocol for software deployment teams",
+        "Priority Investment Proposal submitted to finance committees",
+        "A performance incentive program for top-quartile employees"
+      ],
+      "correct_option": 0,
+      "context_question": "What legal purpose does a documented PIP serve before an employee termination?"
+    },
+    {
+      "id": "leveling",
+      "term": "Job Leveling",
+      "full_name": "Career Leveling and Band Structures",
+      "industry": "hr_people",
+      "stage": 3,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "A systematic framework defining distinct roles, seniority tiers, competency expectations, and corresponding compensation bands within an organization.",
+      "context": "Prevents pay compression, creates clear career paths, and enables structured performance calibration during review cycles.",
+      "interview_tip": "Connecting leveling to compensation band integrity shows strategic HR thinking—misleveled hires create downstream pay equity and promotion problems.",
+      "sample_interview_response": "I redesigned our engineering leveling matrix from 3 tiers to 7, aligned to market comp data, which resolved 14 pay equity gaps surfaced in our audit and created structured promotion criteria for the first time.",
+      "example": "Without a clear leveling framework, two engineers doing equivalent work were compensated $40K apart—our leveling audit corrected this.",
+      "options": [
+        "Structured system defining role seniority, competency expectations, and compensation ranges",
+        "Physical measurement of warehouse racking height requirements",
+        "Grade-level assessments used in corporate training certifications",
+        "System for prioritizing customer support tickets by urgency"
+      ],
+      "correct_option": 0,
+      "context_question": "How does inconsistent job leveling create long-term pay equity problems?"
+    },
+
+    {
+      "id": "ndagreement",
+      "term": "NDA",
+      "full_name": "Non-Disclosure Agreement",
+      "industry": "legal_compliance",
+      "stage": 1,
+      "type": "process",
+      "level": "entry",
+      "meaning": "A legally binding contract establishing confidentiality obligations between parties, prohibiting disclosure of specified proprietary information to third parties.",
+      "context": "Can be mutual (both parties bound) or unilateral (only one party restricted). Commonly used in M&A due diligence, hiring, and vendor partnerships.",
+      "interview_tip": "Highlight that NDAs have limited enforceability windows and must define 'confidential information' specifically to hold up in court.",
+      "sample_interview_response": "Before entering partnership discussions with a strategic vendor, I ensured a mutual NDA covering technical roadmaps was executed and reviewed by legal counsel.",
+      "example": "All employees sign a unilateral NDA on day one covering customer data, product roadmaps, and trade secrets.",
+      "options": [
+        "A contract legally binding parties to keep specified information confidential",
+        "A No Deposit Agreement for short-term office sublease arrangements",
+        "A Network Deployment Authorization for IT infrastructure projects",
+        "A Non-Deductible Allowance for corporate entertainment expenses"
+      ],
+      "correct_option": 0,
+      "context_question": "What is the key difference between a mutual NDA and a unilateral NDA?"
+    },
+    {
+      "id": "gdpr",
+      "term": "GDPR",
+      "full_name": "General Data Protection Regulation",
+      "industry": "legal_compliance",
+      "stage": 2,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "An EU regulation establishing strict rules for how organizations collect, store, process, and transfer personal data of EU residents, with penalties up to 4% of global annual revenue.",
+      "context": "Applies to any company serving EU citizens regardless of where the company is based. Core principles: data minimization, purpose limitation, and consent.",
+      "interview_tip": "Mention the 72-hour breach notification requirement and right-to-erasure ('right to be forgotten') provisions—they signal depth beyond just 'data privacy law'.",
+      "sample_interview_response": "When we expanded into Germany, I led a cross-functional GDPR readiness program: auditing data flows, implementing consent management, and establishing a 72-hour breach response protocol.",
+      "example": "Our marketing team's email list required explicit opt-in under GDPR—we purged 40% of unconfirmed contacts to achieve compliance.",
+      "options": [
+        "EU regulation governing personal data collection, processing, and storage with major penalty powers",
+        "General Database Protection and Recovery protocol for enterprise servers",
+        "Global Document Publishing and Repository Guidelines for corporate intranets",
+        "Gross Domestic Product Reporting for EU economic compliance filings"
+      ],
+      "correct_option": 0,
+      "context_question": "What triggers a company based outside the EU to become subject to GDPR requirements?"
+    },
+    {
+      "id": "force-majeure",
+      "term": "Force Majeure",
+      "full_name": "Force Majeure Clause",
+      "industry": "legal_compliance",
+      "stage": 3,
+      "type": "process",
+      "level": "mid",
+      "meaning": "A contract clause excusing a party from performance obligations when extraordinary, unforeseeable external events (natural disasters, pandemics, wars) make performance impossible.",
+      "context": "Became heavily invoked during COVID-19 for real estate, supply chain, and event contracts. Scope of covered events is heavily negotiated.",
+      "interview_tip": "Know that force majeure typically requires formal notice within a defined period and doesn't excuse economic hardship—only true impossibility.",
+      "sample_interview_response": "When supplier shutdowns disrupted our contract, I reviewed the force majeure clause and confirmed the event qualified, issuing formal notice and preserving our contract rights while we sourced alternatives.",
+      "example": "The venue invoked force majeure when the hurricane prevented the conference from taking place, releasing both parties from their obligations.",
+      "options": [
+        "A contract clause excusing performance obligations when extraordinary unforeseeable events make them impossible",
+        "A corporate policy governing executive travel during natural disasters",
+        "A French term for the greatest annual corporate achievement award",
+        "A legal standard for measuring negligence in workplace accident claims"
+      ],
+      "correct_option": 0,
+      "context_question": "Does economic hardship or market downturn qualify as a force majeure event? Why or why not?"
+    },
+
+    {
+      "id": "ehr",
+      "term": "EHR",
+      "full_name": "Electronic Health Record",
+      "industry": "healthcare_medtech",
+      "stage": 1,
+      "type": "framework",
+      "level": "entry",
+      "meaning": "A digital real-time patient record system containing medical history, diagnoses, medications, treatment plans, and clinical notes—accessible across providers.",
+      "context": "Major EHR platforms include Epic, Cerner (Oracle Health), and Meditech. Interoperability via HL7/FHIR standards enables data exchange across systems.",
+      "interview_tip": "Highlight EHR integration complexity—proprietary vendor lock-in, custom HL7 interfaces, and slow hospital procurement cycles are key pain points for MedTech sales.",
+      "sample_interview_response": "I led an EHR integration project with Epic, navigating a 9-month procurement cycle and custom HL7 interface build, resulting in seamless bidirectional data exchange across 14 hospital departments.",
+      "example": "Our device needs to write results directly into the patient's EHR via a FHIR API to meet the hospital's workflow requirements.",
+      "options": [
+        "Digital system storing real-time patient medical records accessible across healthcare providers",
+        "Electronic Hardware Registry for medical device serial tracking",
+        "Emergency Hospital Response protocol for mass casualty events",
+        "Enterprise HR System for healthcare workforce scheduling"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is EHR interoperability a critical challenge for MedTech companies selling into health systems?"
+    },
+    {
+      "id": "510k",
+      "term": "510(k)",
+      "full_name": "FDA 510(k) Premarket Notification",
+      "industry": "healthcare_medtech",
+      "stage": 2,
+      "type": "process",
+      "level": "mid",
+      "meaning": "A premarket submission demonstrating to the FDA that a new medical device is substantially equivalent to a legally marketed predicate device, enabling market clearance without full PMA.",
+      "context": "Most Class II medical devices use the 510(k) pathway. FDA review typically takes 3–12 months. Clearance ≠ approval—510(k) cleared devices are 'substantially equivalent,' not FDA approved.",
+      "interview_tip": "Know the 510(k) vs PMA distinction cold: 510(k) is clearance via substantial equivalence; PMA is full approval for high-risk Class III devices with clinical trial data.",
+      "sample_interview_response": "I managed our 510(k) submission strategy, selecting a predicate device with overlapping intended use and technological characteristics, achieving FDA clearance in 7 months.",
+      "example": "Our pulse oximeter required 510(k) clearance before commercial launch—we identified a 2019 cleared device as the primary predicate.",
+      "options": [
+        "FDA premarket submission pathway for Class II devices demonstrating substantial equivalence to an existing device",
+        "A hospital billing code for outpatient surgery reimbursement",
+        "A federal drug scheduling classification for prescription medications",
+        "FDA section governing pharmaceutical manufacturing facility inspections"
+      ],
+      "correct_option": 0,
+      "context_question": "What is the critical difference between FDA 510(k) clearance and PMA approval?"
+    },
+    {
+      "id": "rwe",
+      "term": "RWE",
+      "full_name": "Real-World Evidence",
+      "industry": "healthcare_medtech",
+      "stage": 3,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "Clinical evidence derived from analysis of real-world data (EHRs, insurance claims, registries, wearables) outside of controlled randomized clinical trials.",
+      "context": "FDA increasingly accepts RWE for post-market surveillance, label expansions, and in some cases initial regulatory submissions for devices and diagnostics.",
+      "interview_tip": "Distinguish RWE (large naturalistic population data) from RCT evidence (controlled, randomized). Each has different strengths for regulatory vs payer evidence requirements.",
+      "sample_interview_response": "We built an RWE program using 180,000 de-identified EHR records to demonstrate our diagnostic's performance across diverse real-world patient populations, which supported our payer coverage submission.",
+      "example": "The device already had 510(k) clearance, but payers required RWE from 50,000+ patients before approving reimbursement codes.",
+      "options": [
+        "Clinical evidence generated from real-world patient data outside controlled trial conditions",
+        "Revenue Weighted Evaluation model for hospital financial performance",
+        "Regulatory Written Evidence required for FDA inspection documentation",
+        "Remote Workforce Efficiency metrics for telehealth clinical staff"
+      ],
+      "correct_option": 0,
+      "context_question": "Why are health insurance payers demanding RWE data before approving device reimbursement?"
+    },
+
+    {
+      "id": "crm",
+      "term": "CRM",
+      "full_name": "Customer Relationship Management Platform",
+      "industry": "sales_revops",
+      "stage": 1,
+      "type": "acronym",
+      "level": "entry",
+      "meaning": "Software system (e.g. Salesforce, HubSpot) that manages customer data, lead tracking, sales pipelines, and customer interactions throughout the lifecycle.",
+      "context": "The central source of truth for RevOps. If data isn't logged in the CRM, it didn't happen in the eyes of sales management.",
+      "interview_tip": "Emphasize CRM hygiene—clean pipeline data enables accurate revenue forecasting and prevents deal slippage.",
+      "sample_interview_response": "I enforced strict CRM data hygiene across my sales team, which improved our Q3 forecast accuracy to within 3% of actual closed revenue.",
+      "example": "Updating opportunity stage and next steps in the CRM before Friday's pipeline review is mandatory.",
+      "options": [
+        "Centralized software tracking customer data, sales pipelines, and interactions",
+        "Corporate Risk Management framework for financial compliance",
+        "Credit Rating Metric used by financial institutions",
+        "Customer Retention Model for customer success teams"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is CRM data hygiene critical for sales forecasting accuracy?"
+    },
+    {
+      "id": "meddpicc",
+      "term": "MEDDPICC",
+      "full_name": "Metrics, Economic Buyer, Decision Criteria, Decision Process, Paper Process, Implied Need, Champion, Competition",
+      "industry": "sales_revops",
+      "stage": 2,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "An enterprise B2B sales qualification methodology used to evaluate deal health and forecast accuracy across complex deals.",
+      "context": "Identifies missing elements in a deal early—especially key decision-makers (Economic Buyer) and champions inside target accounts.",
+      "interview_tip": "Highlight the 'Paper Process' (legal/procurement approval timeline) and 'Economic Buyer' (person with budget sign-off authority).",
+      "sample_interview_response": "Using MEDDPICC qualification, I uncovered that our deal lacked an Economic Buyer sign-off and paper process plan, allowing us to proactively engage legal and save a $350K deal from slipping.",
+      "example": "We ran a MEDDPICC audit on all Q4 deals over $100K to remove unqualified opportunities from the forecast.",
+      "options": [
+        "Enterprise B2B qualification methodology evaluating metrics, decision process, champions, and paper process",
+        "Medical Emergency Response Protocol for corporate health sites",
+        "Media & Digital Performance Index calculation formula",
+        "Methodology for Enterprise Software Deployment in Cloud environments"
+      ],
+      "correct_option": 0,
+      "context_question": "What happens to a sales forecast when deals lack a validated Economic Buyer?"
+    },
+    {
+      "id": "revops",
+      "term": "RevOps",
+      "full_name": "Revenue Operations",
+      "industry": "sales_revops",
+      "stage": 3,
+      "type": "framework",
+      "level": "executive",
+      "meaning": "The alignment of sales, marketing, and customer success operations to streamline the end-to-end revenue process and data architecture.",
+      "context": "Breaks down silos between marketing automation, CRM, and CS software to ensure seamless data flows and unified revenue accountability.",
+      "interview_tip": "Position RevOps as a revenue multiplier—removing operational friction directly increases sales velocity and customer retention.",
+      "sample_interview_response": "I consolidated our fragmented marketing and sales tech stacks under a unified RevOps model, trimming $80K in SaaS redundancy and boosting sales velocity by 28%.",
+      "example": "Our RevOps team aligned HubSpot lead scoring with Salesforce opportunity creation, doubling MQL-to-SQL conversion rate.",
+      "options": [
+        "Operational function unifying sales, marketing, and customer success data and processes",
+        "Revenue Optimization strategy for ecommerce checkout conversion",
+        "Revised Operating Expense budget for financial quarters",
+        "Regulatory Oversight System for corporate tax audits"
+      ],
+      "correct_option": 0,
+      "context_question": "How does unified RevOps eliminate friction between marketing lead generation and sales execution?"
+    },
+
+    {
+      "id": "user-story",
+      "term": "User Story",
+      "full_name": "Agile User Story & Acceptance Criteria",
+      "industry": "product_mgmt",
+      "stage": 1,
+      "type": "process",
+      "level": "entry",
+      "meaning": "An informal, natural language description of a software feature written from the perspective of an end user ('As a... I want... So that...').",
+      "context": "Accompanied by strict Acceptance Criteria defining 'Definition of Done' before engineering begins sprint work.",
+      "interview_tip": "Emphasize writing user stories focused on user value rather than technical implementation details.",
+      "sample_interview_response": "I wrote user stories focused on the end outcome with explicit acceptance criteria, reducing dev clarification loops by 50% during sprint execution.",
+      "example": "As a store manager, I want to export daily sales summaries as PDFs so that I can email them to corporate regional leads.",
+      "options": [
+        "Short feature description written from the end user's perspective with clear acceptance criteria",
+        "Customer testimonial published on marketing landing pages",
+        "User research interview transcript summary",
+        "Software release notes published to end users"
+      ],
+      "correct_option": 0,
+      "context_question": "Why must user stories focus on the user outcome rather than technical implementation specs?"
+    },
+    {
+      "id": "rice-scoring",
+      "term": "RICE Scoring",
+      "full_name": "Reach, Impact, Confidence, Effort Prioritization Framework",
+      "industry": "product_mgmt",
+      "stage": 2,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "A quantitative product prioritization formula: RICE Score = (Reach × Impact × Confidence) / Effort.",
+      "context": "Eliminates subjective 'loudest voice in the room' decision-making when selecting roadmap features for upcoming sprints.",
+      "interview_tip": "Highlight 'Confidence' as the antidote to guesswork—basing confidence scores on user data vs gut feel keeps roadmaps objective.",
+      "sample_interview_response": "I introduced RICE scoring to our roadmap planning, which deprioritized a vanity feature requested by an executive in favor of an onboarding fix that impacted 80% of users.",
+      "example": "Feature A scored 450 on RICE due to massive Reach, whereas Feature B only scored 90 due to high Effort.",
+      "options": [
+        "Prioritization formula scoring features by Reach, Impact, Confidence, and Effort",
+        "Rapid Integration & Code Execution framework for DevOps",
+        "Risk Assessment & Compliance Evaluation checklist for PMs",
+        "Resource Intensity & Cost Estimation matrix for engineering"
+      ],
+      "correct_option": 0,
+      "context_question": "How does RICE scoring prevent executive bias from derailing product roadmaps?"
+    },
+    {
+      "id": "pmf",
+      "term": "Product-Market Fit",
+      "full_name": "Product-Market Fit (PMF)",
+      "industry": "product_mgmt",
+      "stage": 3,
+      "type": "framework",
+      "level": "executive",
+      "meaning": "The state where a product satisfies a strong market demand, demonstrated by high retention, organic word-of-mouth growth, and strong unit economics.",
+      "context": "Achieving PMF is the precursor to scaling growth spending. Sean Ellis test: >40% of surveyed users would be 'very disappointed' if the product disappeared.",
+      "interview_tip": "Focus on retention curves as the truest measure of PMF—flat retention curves signal fit; declining curves signal leaky bucket growth.",
+      "sample_interview_response": "We validated PMF by analyzing cohort retention flattening at 45% after 90 days and scoring 52% on the Sean Ellis test before scaling paid marketing.",
+      "example": "Scaling sales before achieving true PMF led to high customer churn and wasted marketing capital.",
+      "options": [
+        "Validation that a product satisfies strong customer market demand, evidenced by high retention",
+        "Matching product feature lists against competitor matrix features",
+        "Passing regulatory compliance clearance in a new geographic market",
+        "Achieving 100% test coverage across a software codebase"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is scaling sales spend prior to achieving Product-Market Fit dangerous for a startup?"
     }
   ]
 }
