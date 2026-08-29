@@ -85,7 +85,29 @@ class BizTalkApp {
     if (badge) badge.textContent = this.savedTermIds.size;
   }
 
+  initHeroBanner() {
+    const banner = document.getElementById('hero-banner');
+    const dismissBtn = document.getElementById('dismiss-hero-btn');
+
+    if (localStorage.getItem('biztalk_hero_dismissed') === 'true') {
+      if (banner) banner.style.display = 'none';
+    }
+
+    dismissBtn?.addEventListener('click', () => {
+      if (banner) {
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+          banner.style.display = 'none';
+        }, 300);
+      }
+      localStorage.setItem('biztalk_hero_dismissed', 'true');
+    });
+  }
+
   setupEventListeners() {
+    this.initHeroBanner();
+
     // Theme Toggle
     document.getElementById('theme-toggle')?.addEventListener('click', () => this.toggleTheme());
 
@@ -218,20 +240,39 @@ class BizTalkApp {
 
   /* Progressive Stages Rendering */
   renderStageIndustryChips() {
-    const container = document.getElementById('industry-scroll-stages');
-    if (!container || !this.data) return;
+    const gridContainer = document.getElementById('sector-grid-selector');
+    if (!gridContainer || !this.data) return;
 
-    container.innerHTML = this.data.industries.map(ind => `
-      <button class="industry-chip ${this.currentIndustry === ind.id ? 'active' : ''}" data-industry="${ind.id}">
-        <span>${ind.icon}</span> ${ind.name}
-      </button>
-    `).join('');
+    gridContainer.innerHTML = this.data.industries.map(ind => {
+      const termsCount = this.data.terms.filter(t => t.industry === ind.id).length;
+      const isActive = this.currentIndustry === ind.id;
 
-    container.querySelectorAll('.industry-chip').forEach(chip => {
-      chip.addEventListener('click', (e) => {
-        container.querySelectorAll('.industry-chip').forEach(c => c.classList.remove('active'));
+      return `
+        <div class="sector-card-item ${isActive ? 'active' : ''}" data-industry="${ind.id}">
+          <span class="sector-card-icon">${ind.icon}</span>
+          <span class="sector-card-name">${ind.name}</span>
+          <span class="sector-card-count">${termsCount} Terms</span>
+        </div>
+      `;
+    }).join('');
+
+    gridContainer.querySelectorAll('.sector-card-item').forEach(card => {
+      card.addEventListener('click', (e) => {
+        gridContainer.querySelectorAll('.sector-card-item').forEach(c => c.classList.remove('active'));
         e.currentTarget.classList.add('active');
         this.currentIndustry = e.currentTarget.dataset.industry;
+
+        const indObj = this.data.industries.find(i => i.id === this.currentIndustry);
+        const titleEl = document.getElementById('active-sector-title');
+        const subTitleEl = document.getElementById('active-sector-subtitle');
+
+        if (titleEl && indObj) {
+          titleEl.textContent = `${indObj.icon} ${indObj.name}`;
+        }
+        if (subTitleEl && indObj) {
+          subTitleEl.textContent = `${indObj.description}`;
+        }
+
         this.renderStagesForIndustry(this.currentIndustry);
       });
     });

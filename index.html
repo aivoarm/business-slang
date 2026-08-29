@@ -114,7 +114,8 @@
     <main class="main-content">
       
       <!-- Hero Banner -->
-      <section class="hero-banner">
+      <section class="hero-banner" id="hero-banner">
+        <button class="hero-dismiss-btn" id="dismiss-hero-btn" title="Dismiss Banner">✕</button>
         <div class="hero-pill">
           ⚡ Progressive Domain Learning Path • English Terms
         </div>
@@ -127,11 +128,11 @@
 
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-value gradient-text" id="stat-terms-count">50+</span>
+            <span class="stat-value gradient-text" id="stat-terms-count">70+</span>
             <span class="stat-label">Essential Terms</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value" id="stat-industries-count">6</span>
+            <span class="stat-value" id="stat-industries-count">12</span>
             <span class="stat-label">Major Sectors</span>
           </div>
           <div class="stat-item">
@@ -144,20 +145,24 @@
       <!-- View 0: Progressive Stage-Based Domain Learning (Default View) -->
       <div id="view-stages" class="tab-view active">
         <div class="section-header">
-          <h2 class="section-title">Select a Business Sector</h2>
-          <span style="font-size: 0.85rem; color: var(--text-muted);">Progressive 3-Level Mastery</span>
+          <h2 class="section-title">👉 Select a Business Sector to Learn</h2>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">12 Domains • 3-Level Mastery</span>
         </div>
 
-        <div class="industry-scroll" id="industry-scroll-stages">
-          <!-- Dynamically rendered -->
+        <!-- Sector Grid Selector -->
+        <div class="sector-grid" id="sector-grid-selector" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+          <!-- Dynamically populated via app.js -->
         </div>
 
-        <div id="stages-container" style="margin-top: 1.5rem;">
+        <div class="section-header" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+          <h2 class="section-title" id="active-sector-title">📦 Procurement & Supply Chain</h2>
+          <span style="font-size: 0.85rem; color: var(--text-accent);" id="active-sector-subtitle">Progressive Level Path</span>
+        </div>
+
+        <div id="stages-container" style="margin-top: 1rem;">
           <!-- Dynamically populated stages cards for active industry -->
         </div>
       </div>
-        </div>
-      </section>
 
       <!-- View 1: Dictionary & Industry Hub -->
       <div id="view-dictionary" class="tab-view active">
