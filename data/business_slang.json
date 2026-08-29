@@ -1,98 +1,87 @@
 {
   "app_name": "BizTalk - Business Slang & Industry Literacy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "industries": [
     {
       "id": "procurement",
       "name": "Procurement & Supply Chain",
       "icon": "📦",
       "description": "Essential terminology for sourcing, logistics, vendor management, and global trade.",
-      "gradient": "linear-gradient(135deg, #0ea5e9, #2563eb)"
+      "gradient": "linear-gradient(135deg, #0ea5e9, #2563eb)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Sourcing & Logistics Starter Kit 🌱", "description": "Core acronyms and fundamental shipping terms every newcomer needs." },
+        { "level": 2, "title": "Level 2: Supply Chain Operations & Strategy ⚡", "description": "Mid-level operational metrics, demand distortion, and vendor management." },
+        { "level": 3, "title": "Level 3: Executive Sourcing & Margin Mastery 🎩", "description": "High-stakes negotiation, global trade compliance, and margin optimization." }
+      ]
     },
     {
       "id": "project_mgmt",
       "name": "Project Management & Agile",
       "icon": "⚡",
       "description": "Frameworks, delivery metrics, and team alignment jargon for project leads.",
-      "gradient": "linear-gradient(135deg, #8b5cf6, #6d28d9)"
+      "gradient": "linear-gradient(135deg, #8b5cf6, #6d28d9)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Agile & Delivery Basics 🌱", "description": "Sprint ceremonies, basic backlog terms, and scope management." },
+        { "level": 2, "title": "Level 2: Project Frameworks & Governance ⚡", "description": "RACI charts, critical path estimation, and blocker mitigation." },
+        { "level": 3, "title": "Level 3: Strategic Alignment & C-Suite OKRs 🎩", "description": "Outcome orientation, enterprise portfolio alignment, and executive reporting." }
+      ]
     },
     {
       "id": "software_dev",
       "name": "Software Engineering",
       "icon": "💻",
       "description": "Developer culture, system design, CI/CD, and technical trade-offs.",
-      "gradient": "linear-gradient(135deg, #10b981, #059669)"
+      "gradient": "linear-gradient(135deg, #10b981, #059669)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Developer Essentials & Workflow 🌱", "description": "Tech debt, code reviews, and daily developer terms." },
+        { "level": 2, "title": "Level 2: System Design & Automation ⚡", "description": "CI/CD pipelines, refactoring best practices, and code quality." },
+        { "level": 3, "title": "Level 3: Distributed Systems & Microservices 🎩", "description": "Microservice architecture, high availability, and scalability trade-offs." }
+      ]
     },
     {
       "id": "ai_data",
       "name": "AI & Data Science",
       "icon": "🤖",
       "description": "LLM architectures, machine learning concepts, RAG, and AI implementation terms.",
-      "gradient": "linear-gradient(135deg, #ec4899, #be185d)"
+      "gradient": "linear-gradient(135deg, #ec4899, #be185d)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Generative AI & LLM Basics 🌱", "description": "Prompting concepts, hallucinations, and base AI vocabulary." },
+        { "level": 2, "title": "Level 2: Enterprise AI Architectures ⚡", "description": "RAG systems, vector database indexing, and semantic search." },
+        { "level": 3, "title": "Level 3: Model Specialization & Fine-Tuning 🎩", "description": "Supervised fine-tuning, latency optimization, and AI governance." }
+      ]
     },
     {
       "id": "construction",
       "name": "Construction & Engineering",
       "icon": "🏗️",
       "description": "Site operations, BIM modeling, compliance, contractor management, and project phases.",
-      "gradient": "linear-gradient(135deg, #f59e0b, #d97706)"
+      "gradient": "linear-gradient(135deg, #f59e0b, #d97706)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Site Operations & Deliverables 🌱", "description": "Punch lists, contractor handover, and site basics." },
+        { "level": 2, "title": "Level 2: Contract Amendments & BIM Modeling ⚡", "description": "Change orders, 3D clash detection, and sub-contractor coordination." },
+        { "level": 3, "title": "Level 3: Value Engineering & Cost Control 🎩", "description": "Value engineering, structural optimization, and contingency management." }
+      ]
     },
     {
       "id": "corporate_finance",
       "name": "Corporate Strategy & Finance",
       "icon": "📊",
       "description": "Valuation metrics, unit economics, executive reporting, and financial governance.",
-      "gradient": "linear-gradient(135deg, #14b8a6, #0d9488)"
+      "gradient": "linear-gradient(135deg, #14b8a6, #0d9488)",
+      "stages": [
+        { "level": 1, "title": "Level 1: Startup & Financial Fundamentals 🌱", "description": "Burn rate, cash runway, and baseline financial metrics." },
+        { "level": 2, "title": "Level 2: Unit Economics & Capital Allocation ⚡", "description": "CAC vs LTV, CapEx vs OpEx shifts, and margin analysis." },
+        { "level": 3, "title": "Level 3: Executive Profitability & EBITDA 🎩", "description": "EBITDA expansion, valuation multiples, and private equity strategy." }
+      ]
     }
   ],
   "terms": [
-    {
-      "id": "incoterms",
-      "term": "Incoterms",
-      "full_name": "International Commercial Terms",
-      "industry": "procurement",
-      "type": "framework",
-      "level": "mid",
-      "meaning": "Standardized global trade rules defining freight liability, shipping costs, and risk transfer between seller and buyer.",
-      "context": "Used in global logistics contracts (e.g., FOB, CIF, DDP) to establish who pays shipping, insurance, and customs duties.",
-      "interview_tip": "Highlighting Incoterms knowledge signals senior supply chain maturity. Express how selecting the right term (like DDP vs FOB) optimizes margin control.",
-      "sample_interview_response": "In my previous role, I re-negotiated shipping terms from CIF to FOB for core Asian suppliers, giving us direct control over ocean freight tariffs and saving 12% on logistics costs.",
-      "example": "We need to clarify the Incoterms on this purchase order—if it's DDP, the supplier handles customs duties.",
-      "options": [
-        "Standardized global shipping rules defining cost and risk liability",
-        "Internal company audits for office equipment",
-        "Currency conversion tables for international bank transfers",
-        "Short-term employee tax clearance forms"
-      ],
-      "correct_option": 0,
-      "context_question": "When negotiating a international supplier agreement, why are Incoterms essential?"
-    },
-    {
-      "id": "bullwhip-effect",
-      "term": "Bullwhip Effect",
-      "full_name": "Supply Chain Demand Amplification",
-      "industry": "procurement",
-      "type": "buzzword",
-      "level": "mid",
-      "meaning": "A distortion where minor fluctuations in retail consumer demand trigger increasingly larger swings up the supply chain to wholesalers and manufacturers.",
-      "context": "Occurs due to poor forecast sharing, batch ordering, or panic buying (e.g. over-ordering safety stock at each tier).",
-      "interview_tip": "Interviewer favorite! Explain how real-time inventory visibility and Vendor Managed Inventory (VMI) tame the bullwhip effect.",
-      "sample_interview_response": "To prevent the bullwhip effect during peak promotional periods, I established real-time POS data sharing with top tier-1 suppliers, reducing safety stock buffer costs by 18%.",
-      "example": "Retail demand increased by 5%, but because of the bullwhip effect, our factory received orders for 40% more raw materials.",
-      "options": [
-        "Demand distortion causing amplified inventory swings upstream in the supply chain",
-        "The sudden drop in commodity market stock prices",
-        "Aggressive price negotiations forced by dominant buyers",
-        "Automated warehouse forklift collisions"
-      ],
-      "correct_option": 0,
-      "context_question": "How would you explain to an executive why raw material suppliers are overproducing despite steady consumer demand?"
-    },
     {
       "id": "3pl",
       "term": "3PL",
       "full_name": "Third-Party Logistics",
       "industry": "procurement",
+      "stage": 1,
       "type": "acronym",
       "level": "entry",
       "meaning": "Outsourcing e-commerce, warehousing, fulfillment, or transportation management to an external specialized logistics provider.",
@@ -114,6 +103,7 @@
       "term": "MOQ",
       "full_name": "Minimum Order Quantity",
       "industry": "procurement",
+      "stage": 1,
       "type": "metric",
       "level": "entry",
       "meaning": "The smallest required number of units a supplier is willing to manufacture or sell in a single order.",
@@ -131,10 +121,33 @@
       "context_question": "How do high supplier MOQs impact a startup's working capital?"
     },
     {
+      "id": "bullwhip-effect",
+      "term": "Bullwhip Effect",
+      "full_name": "Supply Chain Demand Amplification",
+      "industry": "procurement",
+      "stage": 2,
+      "type": "buzzword",
+      "level": "mid",
+      "meaning": "A distortion where minor fluctuations in retail consumer demand trigger increasingly larger swings up the supply chain to wholesalers and manufacturers.",
+      "context": "Occurs due to poor forecast sharing, batch ordering, or panic buying (e.g. over-ordering safety stock at each tier).",
+      "interview_tip": "Interviewer favorite! Explain how real-time inventory visibility and Vendor Managed Inventory (VMI) tame the bullwhip effect.",
+      "sample_interview_response": "To prevent the bullwhip effect during peak promotional periods, I established real-time POS data sharing with top tier-1 suppliers, reducing safety stock buffer costs by 18%.",
+      "example": "Retail demand increased by 5%, but because of the bullwhip effect, our factory received orders for 40% more raw materials.",
+      "options": [
+        "Demand distortion causing amplified inventory swings upstream in the supply chain",
+        "The sudden drop in commodity market stock prices",
+        "Aggressive price negotiations forced by dominant buyers",
+        "Automated warehouse forklift collisions"
+      ],
+      "correct_option": 0,
+      "context_question": "How would you explain to an executive why raw material suppliers are overproducing despite steady consumer demand?"
+    },
+    {
       "id": "rfp-rfq",
       "term": "RFP / RFQ",
       "full_name": "Request for Proposal / Request for Quotation",
       "industry": "procurement",
+      "stage": 2,
       "type": "acronym",
       "level": "mid",
       "meaning": "Formal bidding documents sent to prospective vendors to solicit competitive project bids (RFP) or exact price quotes (RFQ).",
@@ -152,10 +165,33 @@
       "context_question": "When would you issue an RFP instead of a simple RFQ?"
     },
     {
+      "id": "incoterms",
+      "term": "Incoterms",
+      "full_name": "International Commercial Terms",
+      "industry": "procurement",
+      "stage": 3,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "Standardized global trade rules defining freight liability, shipping costs, and risk transfer between seller and buyer.",
+      "context": "Used in global logistics contracts (e.g., FOB, CIF, DDP) to establish who pays shipping, insurance, and customs duties.",
+      "interview_tip": "Highlighting Incoterms knowledge signals senior supply chain maturity. Express how selecting the right term (like DDP vs FOB) optimizes margin control.",
+      "sample_interview_response": "In my previous role, I re-negotiated shipping terms from CIF to FOB for core Asian suppliers, giving us direct control over ocean freight tariffs and saving 12% on logistics costs.",
+      "example": "We need to clarify the Incoterms on this purchase order—if it's DDP, the supplier handles customs duties.",
+      "options": [
+        "Standardized global shipping rules defining cost and risk liability",
+        "Internal company audits for office equipment",
+        "Currency conversion tables for international bank transfers",
+        "Short-term employee tax clearance forms"
+      ],
+      "correct_option": 0,
+      "context_question": "When negotiating a international supplier agreement, why are Incoterms essential?"
+    },
+    {
       "id": "scope-creep",
       "term": "Scope Creep",
       "full_name": "Uncontrolled Scope Expansion",
       "industry": "project_mgmt",
+      "stage": 1,
       "type": "buzzword",
       "level": "entry",
       "meaning": "Continuous, uncontrolled growth of a project's requirements without adjusting budget, time, or resources.",
@@ -173,10 +209,33 @@
       "context_question": "How do you protect project deadlines when executive stakeholders request new features mid-sprint?"
     },
     {
+      "id": "sprint-retrospective",
+      "term": "Sprint Retrospective",
+      "full_name": "Agile Retrospective Ceremony",
+      "industry": "project_mgmt",
+      "stage": 1,
+      "type": "process",
+      "level": "entry",
+      "meaning": "A regular Agile team ceremony held at the end of a sprint to reflect on what went well, what failed, and actionable improvements.",
+      "context": "Drives continuous improvement by creating a safe space for psychological safety and honest review.",
+      "interview_tip": "Focus on actionable outcomes rather than complaining sessions. Frame retrospectives as data-driven continuous improvement.",
+      "sample_interview_response": "In our retrospectives, we use a 'Start, Stop, Continue' framework to convert team feedback into concrete Jira action items for the next sprint.",
+      "example": "During yesterday's retro, the engineering team agreed to implement automated testing before merge requests.",
+      "options": [
+        "A post-sprint meeting where the team reflects on process improvements and actionable lessons",
+        "A client-facing demonstration of finished product features",
+        "A quarterly salary review meeting with engineering leads",
+        "A codebase rollback procedure following a production bug"
+      ],
+      "correct_option": 0,
+      "context_question": "What distinguishes a productive retrospective from a generic complaint session?"
+    },
+    {
       "id": "raci-matrix",
       "term": "RACI Matrix",
       "full_name": "Responsible, Accountable, Consulted, Informed",
       "industry": "project_mgmt",
+      "stage": 2,
       "type": "framework",
       "level": "mid",
       "meaning": "A responsibility assignment chart mapping out who is Responsible, Accountable, Consulted, and Informed for each project task.",
@@ -198,6 +257,7 @@
       "term": "Critical Path",
       "full_name": "Critical Path Method (CPM)",
       "industry": "project_mgmt",
+      "stage": 2,
       "type": "framework",
       "level": "mid",
       "meaning": "The longest sequence of dependent activities in a project network that dictates the absolute shortest time to completion.",
@@ -215,31 +275,11 @@
       "context_question": "If a task NOT on the critical path is delayed by 1 day, does it delay the overall project deadline?"
     },
     {
-      "id": "sprint-retrospective",
-      "term": "Sprint Retrospective",
-      "full_name": "Agile Retrospective Ceremony",
-      "industry": "project_mgmt",
-      "type": "process",
-      "level": "entry",
-      "meaning": "A regular Agile team ceremony held at the end of a sprint to reflect on what went well, what failed, and actionable improvements.",
-      "context": "Drives continuous improvement by creating a safe space for psychological safety and honest review.",
-      "interview_tip": "Focus on actionable outcomes rather than complaining sessions. Frame retrospectives as data-driven continuous improvement.",
-      "sample_interview_response": "In our retrospectives, we use a 'Start, Stop, Continue' framework to convert team feedback into concrete Jira action items for the next sprint.",
-      "example": "During yesterday's retro, the engineering team agreed to implement automated testing before merge requests.",
-      "options": [
-        "A post-sprint meeting where the team reflects on process improvements and actionable lessons",
-        "A client-facing demonstration of finished product features",
-        "A quarterly salary review meeting with engineering leads",
-        "A codebase rollback procedure following a production bug"
-      ],
-      "correct_option": 0,
-      "context_question": "What distinguishes a productive retrospective from a generic complaint session?"
-    },
-    {
       "id": "okrs",
       "term": "OKRs",
       "full_name": "Objectives and Key Results",
       "industry": "project_mgmt",
+      "stage": 3,
       "type": "framework",
       "level": "executive",
       "meaning": "A goal-setting framework connecting ambitious qualitative Objectives with measurable, outcome-based Key Results.",
@@ -261,6 +301,7 @@
       "term": "Tech Debt",
       "full_name": "Technical Debt",
       "industry": "software_dev",
+      "stage": 1,
       "type": "buzzword",
       "level": "entry",
       "meaning": "The implied cost of additional rework caused by choosing an easy or fast code solution now instead of a better long-term architectural approach.",
@@ -278,31 +319,11 @@
       "context_question": "How do you explain technical debt to non-technical business stakeholders?"
     },
     {
-      "id": "cicd-pipeline",
-      "term": "CI/CD Pipeline",
-      "full_name": "Continuous Integration / Continuous Deployment",
-      "industry": "software_dev",
-      "type": "process",
-      "level": "mid",
-      "meaning": "An automated workflow that builds, tests, and deploys code changes to production environments automatically upon code commit.",
-      "context": "Replaces manual deployment procedures with automated automated testing pipelines (e.g., GitHub Actions, GitLab CI, Jenkins).",
-      "interview_tip": "Highlight how CI/CD reduces release risk by encouraging small, incremental code releases rather than risky quarterly deployment monorepos.",
-      "sample_interview_response": "I modernized our deployment stack by building a CI/CD pipeline with automated automated regression suites, cutting deployment time from 4 hours to 12 minutes.",
-      "example": "Once your pull request is approved, merging to main automatically triggers the CI/CD pipeline to deploy to staging.",
-      "options": [
-        "Automated continuous building, testing, and deployment software pipeline",
-        "Customer Insights / Customer Data platform integration",
-        "Concurrent Interface Design specification",
-        "Code Inspection and Compliance Documentation model"
-      ],
-      "correct_option": 0,
-      "context_question": "What business value does a robust CI/CD pipeline provide to an engineering organization?"
-    },
-    {
       "id": "refactoring",
       "term": "Refactoring",
       "full_name": "Code Refactoring",
       "industry": "software_dev",
+      "stage": 1,
       "type": "process",
       "level": "entry",
       "meaning": "Restructuring existing computer code without changing its external behavior or user functionality to improve readability and performance.",
@@ -320,10 +341,33 @@
       "context_question": "What is the primary difference between bug fixing and code refactoring?"
     },
     {
+      "id": "cicd-pipeline",
+      "term": "CI/CD Pipeline",
+      "full_name": "Continuous Integration / Continuous Deployment",
+      "industry": "software_dev",
+      "stage": 2,
+      "type": "process",
+      "level": "mid",
+      "meaning": "An automated workflow that builds, tests, and deploys code changes to production environments automatically upon code commit.",
+      "context": "Replaces manual deployment procedures with automated automated testing pipelines (e.g., GitHub Actions, GitLab CI, Jenkins).",
+      "interview_tip": "Highlight how CI/CD reduces release risk by encouraging small, incremental code releases rather than risky quarterly deployment monorepos.",
+      "sample_interview_response": "I modernized our deployment stack by building a CI/CD pipeline with automated automated regression suites, cutting deployment time from 4 hours to 12 minutes.",
+      "example": "Once your pull request is approved, merging to main automatically triggers the CI/CD pipeline to deploy to staging.",
+      "options": [
+        "Automated continuous building, testing, and deployment software pipeline",
+        "Customer Insights / Customer Data platform integration",
+        "Concurrent Interface Design specification",
+        "Code Inspection and Compliance Documentation model"
+      ],
+      "correct_option": 0,
+      "context_question": "What business value does a robust CI/CD pipeline provide to an engineering organization?"
+    },
+    {
       "id": "microservices",
       "term": "Microservices",
       "full_name": "Microservices Architecture",
       "industry": "software_dev",
+      "stage": 3,
       "type": "framework",
       "level": "mid",
       "meaning": "An architectural style structuring an application as a collection of small, independent, loosely coupled services communicating via APIs.",
@@ -341,31 +385,11 @@
       "context_question": "Why would an enterprise choose microservices over a monolithic architecture?"
     },
     {
-      "id": "rag",
-      "term": "RAG",
-      "full_name": "Retrieval-Augmented Generation",
-      "industry": "ai_data",
-      "type": "framework",
-      "level": "mid",
-      "meaning": "An AI technique that fetches relevant custom documents from a vector database to inject into an LLM prompt for precise, up-to-date answers.",
-      "context": "Allows enterprises to query their private databases with AI without expensive full model fine-tuning.",
-      "interview_tip": "Highlight RAG as the industry gold-standard for enterprise AI applications because it drastically reduces hallucinations and respects document security permissions.",
-      "sample_interview_response": "I designed a RAG pipeline utilizing vector embeddings over our internal documentation, enabling our support agents to search 50,000 policy PDFs with factual grounding.",
-      "example": "Instead of re-training the AI model every week, we built a RAG setup so it queries our latest product database in real time.",
-      "options": [
-        "Technique enhancing LLM responses by retrieving relevant external data prior to answer generation",
-        "Randomized Algorithmic Generation of synthetic images",
-        "Rapid Analytical Governance framework for data lakes",
-        "Recurrent Automated Grid computing model"
-      ],
-      "correct_option": 0,
-      "context_question": "Why is RAG preferred over model re-training when dealing with frequently changing corporate documents?"
-    },
-    {
       "id": "hallucination",
       "term": "Hallucination",
       "full_name": "AI Model Hallucination",
       "industry": "ai_data",
+      "stage": 1,
       "type": "buzzword",
       "level": "entry",
       "meaning": "When a generative AI or Large Language Model generates confident, authoritative-sounding responses that are factually inaccurate or fabricated.",
@@ -387,6 +411,7 @@
       "term": "Vector Database",
       "full_name": "Vector Store / Embeddings Database",
       "industry": "ai_data",
+      "stage": 2,
       "type": "framework",
       "level": "mid",
       "meaning": "A specialized database designed to store and index high-dimensional mathematical representations (embeddings) of text, images, or audio.",
@@ -404,10 +429,33 @@
       "context_question": "How does searching a vector database differ from traditional SQL keyword queries?"
     },
     {
+      "id": "rag",
+      "term": "RAG",
+      "full_name": "Retrieval-Augmented Generation",
+      "industry": "ai_data",
+      "stage": 2,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "An AI technique that fetches relevant custom documents from a vector database to inject into an LLM prompt for precise, up-to-date answers.",
+      "context": "Allows enterprises to query their private databases with AI without expensive full model fine-tuning.",
+      "interview_tip": "Highlight RAG as the industry gold-standard for enterprise AI applications because it drastically reduces hallucinations and respects document security permissions.",
+      "sample_interview_response": "I designed a RAG pipeline utilizing vector embeddings over our internal documentation, enabling our support agents to search 50,000 policy PDFs with factual grounding.",
+      "example": "Instead of re-training the AI model every week, we built a RAG setup so it queries our latest product database in real time.",
+      "options": [
+        "Technique enhancing LLM responses by retrieving relevant external data prior to answer generation",
+        "Randomized Algorithmic Generation of synthetic images",
+        "Rapid Analytical Governance framework for data lakes",
+        "Recurrent Automated Grid computing model"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is RAG preferred over model re-training when dealing with frequently changing corporate documents?"
+    },
+    {
       "id": "fine-tuning",
       "term": "Fine-Tuning",
       "full_name": "Supervised Model Fine-Tuning (SFT)",
       "industry": "ai_data",
+      "stage": 3,
       "type": "process",
       "level": "mid",
       "meaning": "Taking a pre-trained foundational AI model (like Llama or GPT) and further training it on a specific domain dataset to adjust tone, format, or task specialization.",
@@ -429,6 +477,7 @@
       "term": "Punch List",
       "full_name": "Construction Punch List / Snagging List",
       "industry": "construction",
+      "stage": 1,
       "type": "process",
       "level": "entry",
       "meaning": "A document compiled near project completion listing minor items, repairs, or unfulfilled specs that the contractor must fix before final payment.",
@@ -446,31 +495,11 @@
       "context_question": "At what stage of a construction project is a punch list compiled?"
     },
     {
-      "id": "bim",
-      "term": "BIM",
-      "full_name": "Building Information Modeling",
-      "industry": "construction",
-      "type": "framework",
-      "level": "mid",
-      "meaning": "A 3D digital representation technology containing physical, functional, and parametric data of a facility for collaborative design and construction.",
-      "context": "Allows architects, structural engineers, and MEP contractors to detect spatial clashes (e.g. pipe hitting a steel beam) before physical construction starts.",
-      "interview_tip": "Mention 'clash detection' in BIM models as a primary driver of cost savings and change order prevention.",
-      "sample_interview_response": "By conducting weekly BIM clash detection sessions during design, we resolved 140 structural conflicts prior to fabrication, preventing costly field rework.",
-      "example": "Using BIM software allowed our plumbing and electrical subcontractors to route conduit without interfering with structural steel.",
-      "options": [
-        "3D intelligent model-based process for digital building design and clash detection",
-        "Basic Industrial Maintenance protocol for heavy machinery",
-        "Building Inspection Methodology required by local zoning",
-        "Bid Inspection & Materials sourcing audit"
-      ],
-      "correct_option": 0,
-      "context_question": "What major financial risk does 3D BIM clash detection prevent during construction?"
-    },
-    {
       "id": "change-order",
       "term": "Change Order",
       "full_name": "Contract Change Order (CO)",
       "industry": "construction",
+      "stage": 2,
       "type": "process",
       "level": "entry",
       "meaning": "A formal amendment modifying the original scope of work, contract value, or completion schedule agreed upon by owner and contractor.",
@@ -488,10 +517,33 @@
       "context_question": "Why is signed documentation mandatory before executing work under a change order?"
     },
     {
+      "id": "bim",
+      "term": "BIM",
+      "full_name": "Building Information Modeling",
+      "industry": "construction",
+      "stage": 2,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "A 3D digital representation technology containing physical, functional, and parametric data of a facility for collaborative design and construction.",
+      "context": "Allows architects, structural engineers, and MEP contractors to detect spatial clashes (e.g. pipe hitting a steel beam) before physical construction starts.",
+      "interview_tip": "Mention 'clash detection' in BIM models as a primary driver of cost savings and change order prevention.",
+      "sample_interview_response": "By conducting weekly BIM clash detection sessions during design, we resolved 140 structural conflicts prior to fabrication, preventing costly field rework.",
+      "example": "Using BIM software allowed our plumbing and electrical subcontractors to route conduit without interfering with structural steel.",
+      "options": [
+        "3D intelligent model-based process for digital building design and clash detection",
+        "Basic Industrial Maintenance protocol for heavy machinery",
+        "Building Inspection Methodology required by local zoning",
+        "Bid Inspection & Materials sourcing audit"
+      ],
+      "correct_option": 0,
+      "context_question": "What major financial risk does 3D BIM clash detection prevent during construction?"
+    },
+    {
       "id": "value-engineering",
       "term": "Value Engineering",
       "full_name": "Value Engineering (VE)",
       "industry": "construction",
+      "stage": 3,
       "type": "framework",
       "level": "mid",
       "meaning": "A systematic method to improve the value of a project by analyzing functions and substituting materials or methods without sacrificing safety or aesthetics.",
@@ -509,52 +561,11 @@
       "context_question": "How does Value Engineering differ from simple cost-cutting?"
     },
     {
-      "id": "ebitda",
-      "term": "EBITDA",
-      "full_name": "Earnings Before Interest, Taxes, Depreciation, and Amortization",
-      "industry": "corporate_finance",
-      "type": "metric",
-      "level": "executive",
-      "meaning": "A core financial metric measuring operational profitability by excluding non-operating decisions, financing structures, and tax environments.",
-      "context": "Used by investors and executives to evaluate baseline cash flow generation and compare performance across industry peers.",
-      "interview_tip": "Explain EBITDA as a pure measure of core operational efficiency independent of capital structure and tax jurisdictions.",
-      "sample_interview_response": "By streamlining operational overhead and renegotiating cloud vendor contracts, our initiatives expanded EBITDA margin by 320 basis points in FY24.",
-      "example": "Private equity buyers evaluated the business at an 8x EBITDA valuation multiple.",
-      "options": [
-        "Financial metric reflecting operational profitability excluding interest, taxes, depreciation, and amortization",
-        "Executive Board International Trade & Development Association",
-        "Estimated Budget Allocation for Tax and Debt Adjustments",
-        "Equity Balance Index Tracking Domestic Assets"
-      ],
-      "correct_option": 0,
-      "context_question": "Why do private equity firms rely heavily on EBITDA when evaluating acquisition targets?"
-    },
-    {
-      "id": "cac-ltv",
-      "term": "CAC vs LTV",
-      "full_name": "Customer Acquisition Cost to Customer Lifetime Value",
-      "industry": "corporate_finance",
-      "type": "metric",
-      "level": "mid",
-      "meaning": "The ratio comparing total sales/marketing spend needed to acquire a customer (CAC) against the net profit generated over that customer's lifespan (LTV).",
-      "context": "A healthy SaaS business benchmark is an LTV:CAC ratio of 3:1 or higher with CAC payback under 12 months.",
-      "interview_tip": "Quote the standard 3:1 ratio benchmark when discussing unit economics in strategy or growth roles.",
-      "sample_interview_response": "I optimized our digital acquisition channels to lower CAC by 22%, driving our LTV:CAC ratio from 2.4x to a highly healthy 4.1x.",
-      "example": "If our CAC is $100 and average customer LTV is $500, our unit economics are strong at 5x return.",
-      "options": [
-        "Unit economics ratio comparing cost to acquire a customer against total lifetime profit generated",
-        "Corporate Debt to Asset Ratio calculation",
-        "Capital Allocation Control vs Long Term Volatility model",
-        "Compliance Audit Cost to Annual Total Revenue ratio"
-      ],
-      "correct_option": 0,
-      "context_question": "What does an LTV:CAC ratio below 1.0 indicate about a business model?"
-    },
-    {
       "id": "runway-burn-rate",
       "term": "Runway & Burn Rate",
       "full_name": "Net Cash Burn Rate and Financial Runway",
       "industry": "corporate_finance",
+      "stage": 1,
       "type": "metric",
       "level": "entry",
       "meaning": "Burn Rate is the net amount of cash spent monthly; Runway is the total months remaining before cash balance reaches zero.",
@@ -572,10 +583,33 @@
       "context_question": "If a startup has $600,000 in cash and burns $50,000 per month, what is its runway?"
     },
     {
+      "id": "cac-ltv",
+      "term": "CAC vs LTV",
+      "full_name": "Customer Acquisition Cost to Customer Lifetime Value",
+      "industry": "corporate_finance",
+      "stage": 2,
+      "type": "metric",
+      "level": "mid",
+      "meaning": "The ratio comparing total sales/marketing spend needed to acquire a customer (CAC) against the net profit generated over that customer's lifespan (LTV).",
+      "context": "A healthy SaaS business benchmark is an LTV:CAC ratio of 3:1 or higher with CAC payback under 12 months.",
+      "interview_tip": "Quote the standard 3:1 ratio benchmark when discussing unit economics in strategy or growth roles.",
+      "sample_interview_response": "I optimized our digital acquisition channels to lower CAC by 22%, driving our LTV:CAC ratio from 2.4x to a highly healthy 4.1x.",
+      "example": "If our CAC is $100 and average customer LTV is $500, our unit economics are strong at 5x return.",
+      "options": [
+        "Unit economics ratio comparing cost to acquire a customer against total lifetime profit generated",
+        "Corporate Debt to Asset Ratio calculation",
+        "Capital Allocation Control vs Long Term Volatility model",
+        "Compliance Audit Cost to Annual Total Revenue ratio"
+      ],
+      "correct_option": 0,
+      "context_question": "What does an LTV:CAC ratio below 1.0 indicate about a business model?"
+    },
+    {
       "id": "capex-opex",
       "term": "CapEx vs OpEx",
       "full_name": "Capital Expenditures vs Operational Expenditures",
       "industry": "corporate_finance",
+      "stage": 2,
       "type": "metric",
       "level": "mid",
       "meaning": "CapEx refers to long-term investments in physical assets (property, machinery, servers) depreciated over time; OpEx refers to day-to-day operating expenses (salaries, SaaS subscriptions, rent) deducted immediately.",
@@ -591,6 +625,28 @@
       ],
       "correct_option": 0,
       "context_question": "Why do many tech companies prefer SaaS OpEx models over traditional CapEx purchases?"
+    },
+    {
+      "id": "ebitda",
+      "term": "EBITDA",
+      "full_name": "Earnings Before Interest, Taxes, Depreciation, and Amortization",
+      "industry": "corporate_finance",
+      "stage": 3,
+      "type": "metric",
+      "level": "executive",
+      "meaning": "A core financial metric measuring operational profitability by excluding non-operating decisions, financing structures, and tax environments.",
+      "context": "Used by investors and executives to evaluate baseline cash flow generation and compare performance across industry peers.",
+      "interview_tip": "Explain EBITDA as a pure measure of core operational efficiency independent of capital structure and tax jurisdictions.",
+      "sample_interview_response": "By streamlining operational overhead and renegotiating cloud vendor contracts, our initiatives expanded EBITDA margin by 320 basis points in FY24.",
+      "example": "Private equity buyers evaluated the business at an 8x EBITDA valuation multiple.",
+      "options": [
+        "Financial metric reflecting operational profitability excluding interest, taxes, depreciation, and amortization",
+        "Executive Board International Trade & Development Association",
+        "Estimated Budget Allocation for Tax and Debt Adjustments",
+        "Equity Balance Index Tracking Domestic Assets"
+      ],
+      "correct_option": 0,
+      "context_question": "Why do private equity firms rely heavily on EBITDA when evaluating acquisition targets?"
     }
   ]
 }

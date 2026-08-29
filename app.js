@@ -1,20 +1,25 @@
 /* ==========================================================================
-   BizTalk - Main Application Controller
+   BizTalk - Progressive Learning & Mobile PWA App Controller
    ========================================================================== */
 
 class BizTalkApp {
   constructor() {
     this.data = null;
-    this.currentIndustry = 'all';
+    this.currentIndustry = 'procurement';
     this.searchQuery = '';
+
+    // Local Storage Progress State
     this.savedTermIds = new Set(JSON.parse(localStorage.getItem('biztalk_saved_terms') || '[]'));
     this.theme = localStorage.getItem('biztalk_theme') || 'dark';
+    this.userProgress = JSON.parse(localStorage.getItem('biztalk_user_progress') || '{}');
+    this.userXP = parseInt(localStorage.getItem('biztalk_xp') || '0', 10);
+    this.userStreak = parseInt(localStorage.getItem('biztalk_streak') || '1', 10);
 
-    // Quiz State
+    // Active Stage / Quiz State
+    this.activeStage = null;
     this.quizQuestions = [];
     this.currentQuizIndex = 0;
     this.quizScore = 0;
-    this.userAnswers = {};
 
     // Interview Trainer State
     this.trainerTerms = [];
@@ -26,12 +31,24 @@ class BizTalkApp {
   async init() {
     this.applyTheme(this.theme);
     await this.loadData();
+    this.registerServiceWorker();
     this.setupEventListeners();
-    this.renderIndustryChips();
+    this.renderStageIndustryChips();
+    this.renderStagesForIndustry(this.currentIndustry);
     this.renderDictionary();
-    this.updateSavedBadge();
+    this.updateUserStatsDisplay();
     this.initQuiz();
     this.initTrainer();
+  }
+
+  registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(reg => console.log('PWA ServiceWorker registered with scope:', reg.scope))
+          .catch(err => console.log('ServiceWorker registration failed:', err));
+      });
+    }
   }
 
   async loadData() {
@@ -61,11 +78,18 @@ class BizTalkApp {
     this.applyTheme(this.theme === 'dark' ? 'light' : 'dark');
   }
 
+  updateUserStatsDisplay() {
+    document.getElementById('stat-xp-count').textContent = `${this.userXP} XP`;
+    document.getElementById('streak-val').textContent = this.userStreak;
+    const badge = document.getElementById('saved-count-badge');
+    if (badge) badge.textContent = this.savedTermIds.size;
+  }
+
   setupEventListeners() {
     // Theme Toggle
     document.getElementById('theme-toggle')?.addEventListener('click', () => this.toggleTheme());
 
-    // Tab Navigation
+    // Desktop Nav Tabs
     document.querySelectorAll('.nav-tab').forEach(tab => {
       tab.addEventListener('click', (e) => {
         const view = e.currentTarget.dataset.view;
@@ -73,10 +97,18 @@ class BizTalkApp {
       });
     });
 
-    // Logo click returns to dictionary
+    // Mobile Bottom Bar Tabs
+    document.querySelectorAll('.mobile-tab-item').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        const view = e.currentTarget.dataset.view;
+        this.switchTab(view);
+      });
+    });
+
+    // Logo Click
     document.getElementById('logo-btn')?.addEventListener('click', (e) => {
       e.preventDefault();
-      this.switchTab('dictionary');
+      this.switchTab('stages');
     });
 
     // Search Trigger Modal
@@ -132,7 +164,7 @@ class BizTalkApp {
 
     // Saved Clear All
     document.getElementById('clear-bookmarks-btn')?.addEventListener('click', () => {
-      if (confirm('Are you sure you want to clear your saved terms deck?')) {
+      if (confirm('Clear your saved study deck?')) {
         this.savedTermIds.clear();
         this.saveBookmarks();
         this.renderSavedDeck();
@@ -140,7 +172,7 @@ class BizTalkApp {
       }
     });
 
-    // Footer Navigation Links
+    // Footer Nav Links
     document.getElementById('footer-dict-link')?.addEventListener('click', (e) => {
       e.preventDefault();
       this.switchTab('dictionary');
@@ -156,10 +188,17 @@ class BizTalkApp {
   }
 
   switchTab(viewId) {
+    // Update Desktop Nav Tabs
     document.querySelectorAll('.nav-tab').forEach(t => {
       t.classList.toggle('active', t.dataset.view === viewId);
     });
 
+    // Update Mobile Nav Tabs
+    document.querySelectorAll('.mobile-tab-item').forEach(t => {
+      t.classList.toggle('active', t.dataset.view === viewId);
+    });
+
+    // Show View
     document.querySelectorAll('.tab-view').forEach(view => {
       view.style.display = view.id === `view-${viewId}` ? 'block' : 'none';
     });
@@ -170,51 +209,93 @@ class BizTalkApp {
       this.renderQuizQuestion();
     } else if (viewId === 'trainer') {
       this.renderTrainerCard();
+    } else if (viewId === 'stages') {
+      this.renderStagesForIndustry(this.currentIndustry);
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  renderIndustryChips() {
-    const container = document.getElementById('industry-scroll');
+  /* Progressive Stages Rendering */
+  renderStageIndustryChips() {
+    const container = document.getElementById('industry-scroll-stages');
     if (!container || !this.data) return;
 
-    let html = `
-      <button class="industry-chip ${this.currentIndustry === 'all' ? 'active' : ''}" data-industry="all">
-        🌐 All Sectors
+    container.innerHTML = this.data.industries.map(ind => `
+      <button class="industry-chip ${this.currentIndustry === ind.id ? 'active' : ''}" data-industry="${ind.id}">
+        <span>${ind.icon}</span> ${ind.name}
       </button>
-    `;
-
-    this.data.industries.forEach(ind => {
-      html += `
-        <button class="industry-chip ${this.currentIndustry === ind.id ? 'active' : ''}" data-industry="${ind.id}">
-          <span>${ind.icon}</span> ${ind.name}
-        </button>
-      `;
-    });
-
-    container.innerHTML = html;
+    `).join('');
 
     container.querySelectorAll('.industry-chip').forEach(chip => {
       chip.addEventListener('click', (e) => {
         container.querySelectorAll('.industry-chip').forEach(c => c.classList.remove('active'));
         e.currentTarget.classList.add('active');
         this.currentIndustry = e.currentTarget.dataset.industry;
-        this.renderDictionary();
+        this.renderStagesForIndustry(this.currentIndustry);
       });
     });
   }
 
-  getFilteredTerms() {
-    if (!this.data) return [];
-    return this.data.terms.filter(term => {
-      const matchesIndustry = this.currentIndustry === 'all' || term.industry === this.currentIndustry;
-      const matchesQuery = !this.searchQuery || 
-        term.term.toLowerCase().includes(this.searchQuery) ||
-        (term.full_name && term.full_name.toLowerCase().includes(this.searchQuery)) ||
-        term.meaning.toLowerCase().includes(this.searchQuery);
-      return matchesIndustry && matchesQuery;
+  renderStagesForIndustry(indId) {
+    const container = document.getElementById('stages-container');
+    if (!container || !this.data) return;
+
+    const indObj = this.data.industries.find(i => i.id === indId);
+    if (!indObj) return;
+
+    const stages = indObj.stages || [];
+    const indProgress = this.userProgress[indId] || { level: 1 };
+
+    container.innerHTML = stages.map(st => {
+      const isUnlocked = st.level <= indProgress.level;
+      const termsInStage = this.data.terms.filter(t => t.industry === indId && (t.stage || t.level) === st.level);
+
+      return `
+        <div class="stage-card ${isUnlocked ? 'unlocked' : 'locked'}" data-level="${st.level}">
+          <div class="stage-header-row">
+            <div>
+              <span class="stage-status-badge ${isUnlocked ? 'unlocked' : 'locked'}">
+                ${isUnlocked ? '🔓 Unlocked' : '🔒 Locked'}
+              </span>
+              <h3 class="stage-title" style="margin-top: 0.4rem;">${st.title}</h3>
+            </div>
+            <span style="font-size: 1.6rem;">${isUnlocked ? '🚀' : '🔒'}</span>
+          </div>
+
+          <p class="stage-desc">${st.description}</p>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">
+            <span>${termsInStage.length} Essential Terms</span>
+            ${isUnlocked 
+              ? `<button class="btn-primary start-stage-btn" data-level="${st.level}" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Start Practice →</button>`
+              : `<span style="font-size: 0.8rem;">Complete Level ${st.level - 1} to Unlock</span>`
+            }
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    container.querySelectorAll('.start-stage-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const level = parseInt(e.currentTarget.dataset.level, 10);
+        this.startStageQuiz(indId, level);
+      });
     });
+  }
+
+  startStageQuiz(indId, level) {
+    const terms = this.data.terms.filter(t => t.industry === indId && (t.stage || t.level) === level);
+    if (!terms.length) {
+      alert('No terms available for this level yet!');
+      return;
+    }
+
+    this.activeStage = { indId, level };
+    this.quizQuestions = [...terms];
+    this.currentQuizIndex = 0;
+    this.quizScore = 0;
+    this.switchTab('quiz');
   }
 
   renderDictionary() {
@@ -228,7 +309,7 @@ class BizTalkApp {
         <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
           <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
           <h3>No business terms found</h3>
-          <p>Try searching for a different keyword or select another industry hub.</p>
+          <p>Try searching for a different keyword.</p>
         </div>
       `;
       return;
@@ -236,6 +317,18 @@ class BizTalkApp {
 
     grid.innerHTML = terms.map(term => this.createTermCardHTML(term)).join('');
     this.attachCardEventListeners(grid);
+  }
+
+  getFilteredTerms() {
+    if (!this.data) return [];
+    return this.data.terms.filter(term => {
+      const matchesIndustry = this.currentIndustry === 'all' || term.industry === this.currentIndustry;
+      const matchesQuery = !this.searchQuery || 
+        term.term.toLowerCase().includes(this.searchQuery) ||
+        (term.full_name && term.full_name.toLowerCase().includes(this.searchQuery)) ||
+        term.meaning.toLowerCase().includes(this.searchQuery);
+      return matchesIndustry && matchesQuery;
+    });
   }
 
   createTermCardHTML(term) {
@@ -251,12 +344,12 @@ class BizTalkApp {
               ${term.full_name ? `<span class="term-fullname">${term.full_name}</span>` : ''}
               <div class="term-badges">
                 <span class="badge badge-${term.type}">${term.type}</span>
-                <span class="badge">${indObj ? indObj.name : term.industry}</span>
+                <span class="badge">Level ${term.stage || 1}</span>
               </div>
             </div>
             <div class="card-actions">
               <button class="btn-tts" data-term="${term.term}" title="Listen Pronunciation">🔊</button>
-              <button class="btn-bookmark ${isBookmarked ? 'bookmarked' : ''}" data-id="${term.id}" title="Bookmark for Interview Prep">
+              <button class="btn-bookmark ${isBookmarked ? 'bookmarked' : ''}" data-id="${term.id}">
                 ${isBookmarked ? '★' : '☆'}
               </button>
             </div>
@@ -271,24 +364,21 @@ class BizTalkApp {
         </div>
 
         <div class="card-footer">
-          <span>Level: <strong style="color:var(--text-accent); text-transform:capitalize;">${term.level}</strong></span>
-          <button class="btn-detail" data-id="${term.id}">View Response Script →</button>
+          <span>Sector: <strong style="color:var(--text-accent);">${indObj ? indObj.name : term.industry}</strong></span>
+          <button class="btn-detail" data-id="${term.id}">View Script →</button>
         </div>
       </div>
     `;
   }
 
   attachCardEventListeners(container) {
-    // TTS Voice
     container.querySelectorAll('.btn-tts').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const text = e.currentTarget.dataset.term;
-        this.speakText(text);
+        this.speakText(e.currentTarget.dataset.term);
       });
     });
 
-    // Bookmark Toggle
     container.querySelectorAll('.btn-bookmark').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -303,11 +393,9 @@ class BizTalkApp {
       });
     });
 
-    // View Detail Modal
     container.querySelectorAll('.btn-detail').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const id = e.currentTarget.dataset.id;
-        this.openDetailModal(id);
+        this.openDetailModal(e.currentTarget.dataset.id);
       });
     });
   }
@@ -359,14 +447,7 @@ class BizTalkApp {
 
   saveBookmarks() {
     localStorage.setItem('biztalk_saved_terms', JSON.stringify([...this.savedTermIds]));
-    this.updateSavedBadge();
-  }
-
-  updateSavedBadge() {
-    const badge = document.getElementById('saved-count-badge');
-    if (badge) {
-      badge.textContent = this.savedTermIds.size;
-    }
+    this.updateUserStatsDisplay();
   }
 
   renderSavedDeck() {
@@ -380,7 +461,7 @@ class BizTalkApp {
         <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
           <div style="font-size: 3.5rem; margin-bottom: 1rem;">⭐</div>
           <h3>Your Study Deck is Empty</h3>
-          <p>Click the star (☆) icon on any business term card to save it here for interview practice.</p>
+          <p>Click the star (☆) icon on any term to save it here for quick prep.</p>
         </div>
       `;
       return;
@@ -449,7 +530,7 @@ class BizTalkApp {
         this.currentQuizIndex++;
         this.renderQuizQuestion();
       } else {
-        alert(`🎉 Quiz Complete! Final Score: ${this.quizScore} pts`);
+        this.completeQuizStage();
       }
     });
   }
@@ -506,14 +587,19 @@ class BizTalkApp {
 
     if (selectedIdx === item.correct_option) {
       this.quizScore += 10;
+      this.userXP += 15;
       document.getElementById('quiz-score').textContent = this.quizScore;
+      this.updateUserStatsDisplay();
+      this.playChimeSound(true);
+
       feedback.style.borderColor = 'var(--success)';
       feedback.innerHTML = `
-        <div style="color:var(--success); font-weight:700; margin-bottom:0.25rem;">✅ Spot on answer!</div>
+        <div style="color:var(--success); font-weight:700; margin-bottom:0.25rem;">✅ Spot on answer! (+15 XP)</div>
         <p style="font-size:0.9rem; color:var(--text-primary);">${item.meaning}</p>
         <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:0.4rem;"><strong>Interview Tip:</strong> ${item.interview_tip}</div>
       `;
     } else {
+      this.playChimeSound(false);
       feedback.style.borderColor = 'var(--danger)';
       feedback.innerHTML = `
         <div style="color:var(--danger); font-weight:700; margin-bottom:0.25rem;">❌ Not quite.</div>
@@ -522,12 +608,56 @@ class BizTalkApp {
       `;
     }
 
+    localStorage.setItem('biztalk_xp', this.userXP);
     feedback.classList.add('visible');
+  }
 
-    // Update Mastery Stat
-    const masteryPercent = Math.round((this.quizScore / (this.quizQuestions.length * 10)) * 100);
-    const masteryEl = document.getElementById('stat-mastery');
-    if (masteryEl) masteryEl.textContent = `${masteryPercent}%`;
+  completeQuizStage() {
+    if (this.activeStage) {
+      const { indId, level } = this.activeStage;
+      const currentLevel = (this.userProgress[indId] && this.userProgress[indId].level) || 1;
+
+      if (level >= currentLevel && level < 3) {
+        this.userProgress[indId] = { level: level + 1 };
+        localStorage.setItem('biztalk_user_progress', JSON.stringify(this.userProgress));
+        alert(`🎉 Level ${level} Complete! You unlocked Level ${level + 1} for this sector!`);
+      } else {
+        alert(`🎉 Stage Complete! Total Score: ${this.quizScore} pts`);
+      }
+    } else {
+      alert(`🎉 Practice Session Complete! Total Score: ${this.quizScore} pts`);
+    }
+
+    this.switchTab('stages');
+  }
+
+  playChimeSound(isCorrect) {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      if (isCorrect) {
+        osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+        osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.1); // E5
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.3);
+      } else {
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, ctx.currentTime); // A3
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.25);
+      }
+    } catch (e) {}
   }
 
   /* Interview Prep Trainer Engine */
@@ -582,7 +712,7 @@ class BizTalkApp {
         </div>
 
         <div style="text-align:center; color:var(--accent-primary); font-weight:600; font-size:0.9rem; margin-top:2rem;">
-          👆 Click card or button below to see Sample Candidate Response
+          👆 Click card to reveal Candidate Response Script
         </div>
       </div>
 
@@ -604,7 +734,7 @@ class BizTalkApp {
   }
 }
 
-// Bootstrap App when DOM ready
+// Bootstrap App
 document.addEventListener('DOMContentLoaded', () => {
   window.bizTalkApp = new BizTalkApp();
 });

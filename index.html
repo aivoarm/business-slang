@@ -27,7 +27,11 @@
 
   <!-- PWA Manifest & Icons -->
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#6366f1">
+  <meta name="theme-color" content="#0b0f19">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="BizTalk">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
 
   <!-- Stylesheet -->
@@ -87,15 +91,19 @@
         </a>
 
         <ul class="nav-links">
-          <li><button class="nav-tab active" data-view="dictionary">📚 Dictionary</button></li>
-          <li><button class="nav-tab" data-view="quiz">⚡ Scenario Quiz</button></li>
-          <li><button class="nav-tab" data-view="trainer">🎯 Interview Prep</button></li>
-          <li><button class="nav-tab" data-view="saved">⭐ Saved Terms <span id="saved-count-badge" class="badge">0</span></button></li>
+          <li><button class="nav-tab active" data-view="stages">⚡ Progressive Learn</button></li>
+          <li><button class="nav-tab" data-view="dictionary">📚 Dictionary</button></li>
+          <li><button class="nav-tab" data-view="quiz">🎯 Scenario Quiz</button></li>
+          <li><button class="nav-tab" data-view="trainer">💡 Interview Prep</button></li>
+          <li><button class="nav-tab" data-view="saved">⭐ Saved <span id="saved-count-badge" class="badge">0</span></button></li>
         </ul>
 
         <div class="nav-actions">
+          <div class="streak-badge" id="user-streak-badge" title="Daily Study Streak">
+            🔥 <span id="streak-val">1</span>
+          </div>
           <button class="search-trigger" id="open-search-btn">
-            🔍 Search Jargon <span class="kbd-badge">⌘K</span>
+            🔍 <span class="kbd-badge">⌘K</span>
           </button>
           <button class="btn-icon" id="theme-toggle" title="Toggle Light/Dark Theme">🌙</button>
         </div>
@@ -108,13 +116,13 @@
       <!-- Hero Banner -->
       <section class="hero-banner">
         <div class="hero-pill">
-          ✨ Job Candidate Career Booster • English Terms
+          ⚡ Progressive Domain Learning Path • English Terms
         </div>
         <h1 class="hero-title">
-          Master Business Slang & <span class="gradient-text">Speak Like an Insider</span>
+          Master Industry Jargon <span class="gradient-text">Step by Step</span>
         </h1>
         <p class="hero-subtitle">
-          Enhance your business literacy before applying to your next role. Learn industry jargon, corporate acronyms, and practical interview responses used by top leaders.
+          Select a business sector below to start your progressive level-by-level terminology training before applying for jobs.
         </p>
 
         <div class="hero-stats">
@@ -124,12 +132,30 @@
           </div>
           <div class="stat-item">
             <span class="stat-value" id="stat-industries-count">6</span>
-            <span class="stat-label">Major Industries</span>
+            <span class="stat-label">Major Sectors</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value text-accent" id="stat-mastery">0%</span>
-            <span class="stat-label">Interview Mastery</span>
+            <span class="stat-value text-accent" id="stat-xp-count">0 XP</span>
+            <span class="stat-label">Career Points</span>
           </div>
+        </div>
+      </section>
+
+      <!-- View 0: Progressive Stage-Based Domain Learning (Default View) -->
+      <div id="view-stages" class="tab-view active">
+        <div class="section-header">
+          <h2 class="section-title">Select a Business Sector</h2>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Progressive 3-Level Mastery</span>
+        </div>
+
+        <div class="industry-scroll" id="industry-scroll-stages">
+          <!-- Dynamically rendered -->
+        </div>
+
+        <div id="stages-container" style="margin-top: 1.5rem;">
+          <!-- Dynamically populated stages cards for active industry -->
+        </div>
+      </div>
         </div>
       </section>
 
@@ -334,6 +360,30 @@
       </div>
     </div>
   </div>
+
+  <!-- Native Mobile App Bottom Navigation Bar -->
+  <nav class="mobile-tab-bar">
+    <button class="mobile-tab-item active" data-view="stages">
+      <span class="mobile-tab-icon">⚡</span>
+      <span>Learn</span>
+    </button>
+    <button class="mobile-tab-item" data-view="dictionary">
+      <span class="mobile-tab-icon">📚</span>
+      <span>Dictionary</span>
+    </button>
+    <button class="mobile-tab-item" data-view="quiz">
+      <span class="mobile-tab-icon">🎯</span>
+      <span>Quiz</span>
+    </button>
+    <button class="mobile-tab-item" data-view="trainer">
+      <span class="mobile-tab-icon">💡</span>
+      <span>Coach</span>
+    </button>
+    <button class="mobile-tab-item" data-view="saved">
+      <span class="mobile-tab-icon">⭐</span>
+      <span>Saved</span>
+    </button>
+  </nav>
 
   <!-- JavaScript Main Entry -->
   <script type="module" src="app.js"></script>
