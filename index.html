@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Tags -->
+  <title>BizTalk | Business Slang & Industry Literacy for Job Seekers</title>
+  <meta name="title" content="BizTalk | Business Slang & Industry Literacy for Job Seekers">
+  <meta name="description" content="Master corporate jargon, business acronyms, and industry terminology across Supply Chain, Tech, AI, Project Management, Construction, and Finance. Ace your job interview with confident corporate speak.">
+  <meta name="keywords" content="business slang, industry jargon dictionary, software engineer interview buzzwords, supply chain terminology job interview, project management RACI matrix, procurement Incoterms, AI RAG hallucination terms, corporate strategy EBITDA, job interview prep terms">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BizTalk Career Hub">
+  <link rel="canonical" href="https://businessslang.com/">
+
+  <!-- Open Graph / Facebook SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://businessslang.com/">
+  <meta property="og:title" content="BizTalk - Sound Confident in Every Job Interview">
+  <meta property="og:description" content="Decode business acronyms and industry jargon across 6 major sectors. Free interactive quizzes, flashcards, and interview response tips for job candidates.">
+  <meta property="og:image" content="https://businessslang.com/og_image.png">
+
+  <!-- Twitter SEO -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="BizTalk - Business Slang & Career Jargon Literacy">
+  <meta property="twitter:description" content="Enhance your corporate literacy before applying to your next dream job. Master Procurement, PM, Dev, AI, Construction, and Finance buzzwords.">
+
+  <!-- PWA Manifest & Icons -->
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#6366f1">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- JSON-LD Structured Data for Job Seekers & Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "name": "BizTalk Business Literacy & Industry Jargon Glossary",
+    "description": "Comprehensive career dictionary of industry jargon, acronyms, and interview terminology for job applicants.",
+    "hasDefinedTerm": [
+      {
+        "@type": "DefinedTerm",
+        "name": "Incoterms",
+        "description": "Standardized global trade rules defining shipping cost and risk liability in logistics."
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "RACI Matrix",
+        "description": "Responsibility assignment matrix defining Responsible, Accountable, Consulted, and Informed team roles."
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "CI/CD Pipeline",
+        "description": "Automated workflow building, testing, and deploying code continuously into production."
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "RAG (Retrieval-Augmented Generation)",
+        "description": "AI framework injecting private document context into LLM prompts to prevent hallucinations."
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "EBITDA",
+        "description": "Earnings Before Interest, Taxes, Depreciation, and Amortization, evaluating core operational profitability."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Ambient Graphic Lighting Background -->
+  <div class="ambient-bg">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+  </div>
+
+  <div id="app">
+    <!-- Navbar Header -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="#" class="brand-logo" id="logo-btn">
+          <div class="brand-icon">💼</div>
+          <span>BizTalk<span class="brand-badge">Pro</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><button class="nav-tab active" data-view="dictionary">📚 Dictionary</button></li>
+          <li><button class="nav-tab" data-view="quiz">⚡ Scenario Quiz</button></li>
+          <li><button class="nav-tab" data-view="trainer">🎯 Interview Prep</button></li>
+          <li><button class="nav-tab" data-view="saved">⭐ Saved Terms <span id="saved-count-badge" class="badge">0</span></button></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="search-trigger" id="open-search-btn">
+            🔍 Search Jargon <span class="kbd-badge">⌘K</span>
+          </button>
+          <button class="btn-icon" id="theme-toggle" title="Toggle Light/Dark Theme">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Hero Banner -->
+      <section class="hero-banner">
+        <div class="hero-pill">
+          ✨ Job Candidate Career Booster • English Terms
+        </div>
+        <h1 class="hero-title">
+          Master Business Slang & <span class="gradient-text">Speak Like an Insider</span>
+        </h1>
+        <p class="hero-subtitle">
+          Enhance your business literacy before applying to your next role. Learn industry jargon, corporate acronyms, and practical interview responses used by top leaders.
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value gradient-text" id="stat-terms-count">50+</span>
+            <span class="stat-label">Essential Terms</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="stat-industries-count">6</span>
+            <span class="stat-label">Major Industries</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value text-accent" id="stat-mastery">0%</span>
+            <span class="stat-label">Interview Mastery</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 1: Dictionary & Industry Hub -->
+      <div id="view-dictionary" class="tab-view active">
+        <!-- Industry Filter Bar -->
+        <div class="section-header">
+          <h2 class="section-title">Explore Industry Hubs</h2>
+          <div class="search-box-inline">
+            <input type="text" id="inline-search" placeholder="Filter terms or acronyms..." class="search-modal-input" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem;">
+          </div>
+        </div>
+
+        <div class="industry-scroll" id="industry-scroll">
+          <!-- Dynamically populated via app.js -->
+        </div>
+
+        <!-- Term Cards Grid -->
+        <div class="term-grid" id="term-grid">
+          <!-- Dynamically populated via app.js -->
+        </div>
+      </div>
+
+      <!-- View 2: Interactive Scenario Quiz -->
+      <div id="view-quiz" class="tab-view" style="display: none;">
+        <div class="quiz-container">
+          <div class="quiz-header">
+            <div>
+              <span class="badge badge-framework" id="quiz-industry-tag">Procurement & Supply Chain</span>
+              <h2 style="font-family: var(--font-heading); margin-top: 0.25rem;">Workplace Scenario Quiz</h2>
+            </div>
+            <div style="text-align: right;">
+              <span class="hero-pill" style="margin:0;">Score: <strong id="quiz-score" style="color: var(--accent-primary);">0</strong> pts</span>
+            </div>
+          </div>
+
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress"></div>
+          </div>
+
+          <div class="question-card" id="quiz-question-box">
+            <!-- Dynamically populated via app.js -->
+          </div>
+
+          <div class="quiz-feedback" id="quiz-feedback">
+            <!-- Feedback content -->
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
+            <button class="btn-secondary" id="quiz-prev-btn">← Previous</button>
+            <button class="btn-primary" id="quiz-next-btn">Next Question →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- View 3: Interview Prep Trainer -->
+      <div id="view-trainer" class="tab-view" style="display: none;">
+        <div class="section-header" style="justify-content: center; text-align: center; margin-bottom: 2rem;">
+          <div>
+            <span class="hero-pill">🎯 Candidate Interview Simulator</span>
+            <h2 class="section-title">How to Drop Jargon in Interviews</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0.5rem auto 0;">
+              Click the card to flip between the corporate term and a high-impact candidate answer you can say during an interview!
+            </p>
+          </div>
+        </div>
+
+        <div class="flashcard-container">
+          <div class="flashcard" id="interview-flashcard">
+            <!-- Dynamically populated via app.js -->
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 1rem;">
+          <button class="btn-secondary" id="trainer-prev">← Previous Term</button>
+          <button class="btn-primary" id="trainer-flip">🔄 Flip Card</button>
+          <button class="btn-secondary" id="trainer-next">Next Term →</button>
+        </div>
+      </div>
+
+      <!-- View 4: Saved / Bookmarked Terms Deck -->
+      <div id="view-saved" class="tab-view" style="display: none;">
+        <div class="section-header">
+          <h2 class="section-title">⭐ Your Interview Study Deck</h2>
+          <button class="btn-secondary" id="clear-bookmarks-btn">Clear All Saved</button>
+        </div>
+
+        <div class="term-grid" id="saved-grid">
+          <!-- Dynamically populated via app.js -->
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <ul class="footer-links">
+        <li><a href="#" id="footer-dict-link">Dictionary Hub</a></li>
+        <li><a href="#" id="footer-quiz-link">Practice Quiz</a></li>
+        <li><a href="#" id="footer-interview-link">Interview Trainer</a></li>
+      </ul>
+      <p>© 2026 BizTalk. Built to help job seekers sound confident and literacy-proven.</p>
+    </footer>
+  </div>
+
+  <!-- Search Modal Overlay -->
+  <div class="modal-overlay" id="search-modal">
+    <div class="search-modal">
+      <div class="search-modal-header">
+        <span>🔍</span>
+        <input type="text" id="modal-search-input" class="search-modal-input" placeholder="Type a term, acronym, or industry (e.g. Incoterms, RAG, EBITDA)..." autofocus>
+        <button class="btn-icon" id="close-search-btn" style="width:32px; height:32px; font-size:0.9rem;">✕</button>
+      </div>
+      <div class="search-results-list" id="modal-search-results">
+        <!-- Dynamically rendered -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Modal Overlay -->
+  <div class="modal-overlay" id="detail-modal">
+    <div class="search-modal" style="max-width: 600px; padding: 2rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+        <div>
+          <span class="badge badge-acronym" id="modal-term-industry">Industry</span>
+          <h2 id="modal-term-title" style="font-family: var(--font-heading); font-size: 1.8rem; margin-top: 0.3rem;">Term Title</h2>
+          <div id="modal-term-fullname" style="color: var(--text-muted); font-size: 0.9rem;">Full Name</div>
+        </div>
+        <button class="btn-icon" id="close-detail-btn">✕</button>
+      </div>
+
+      <div style="margin-bottom: 1.25rem;">
+        <h4 style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.25rem;">Plain-English Meaning</h4>
+        <p id="modal-term-meaning" style="font-size: 1rem; color: var(--text-primary);"></p>
+      </div>
+
+      <div class="interview-tip-box" style="margin-bottom: 1.25rem;">
+        <div class="tip-header">💡 How to use in a job interview</div>
+        <div class="tip-content" id="modal-term-tip"></div>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Sample Response Quote</h4>
+        <div class="interview-quote" id="modal-term-quote"></div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+        <button class="btn-secondary" id="modal-tts-btn">🔊 Listen Pronunciation</button>
+        <button class="btn-primary" id="modal-bookmark-btn">⭐ Bookmark for Prep</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Main Entry -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

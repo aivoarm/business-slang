@@ -1,0 +1,25 @@
+{
+  "name": "biztalk-business-slang",
+  "version": "1.0.0",
+  "description": "Business Slang & Industry Literacy for Job Seekers",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "validate:db": "node ./scripts/validate-db.js"
+  },
+  "keywords": [
+    "business-slang",
+    "industry-jargon",
+    "job-interview-prep",
+    "career-literacy",
+    "supply-chain",
+    "tech-debt",
+    "project-management"
+  ],
+  "author": "Arman Ayva",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
