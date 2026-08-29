@@ -223,6 +223,13 @@ class BizTalkApp {
     });
   }
 
+  getFilteredTermsForActiveDomain() {
+    if (!this.data) return [];
+    if (!this.currentIndustry || this.currentIndustry === 'all') return [...this.data.terms];
+    const filtered = this.data.terms.filter(t => t.industry === this.currentIndustry);
+    return filtered.length > 0 ? filtered : [...this.data.terms];
+  }
+
   switchTab(viewId) {
     // Update Desktop Nav Tabs
     document.querySelectorAll('.nav-tab').forEach(t => {
@@ -242,8 +249,14 @@ class BizTalkApp {
     if (viewId === 'saved') {
       this.renderSavedDeck();
     } else if (viewId === 'quiz') {
+      if (!this.activeStage) {
+        this.quizQuestions = this.getFilteredTermsForActiveDomain();
+        this.currentQuizIndex = 0;
+      }
       this.renderQuizQuestion();
     } else if (viewId === 'trainer') {
+      this.trainerTerms = this.getFilteredTermsForActiveDomain();
+      this.trainerIndex = 0;
       this.renderTrainerCard();
     } else if (viewId === 'stages') {
       this.renderStagesForIndustry(this.currentIndustry);
@@ -733,7 +746,7 @@ class BizTalkApp {
   /* Interview Prep Trainer Engine */
   initTrainer() {
     if (!this.data) return;
-    this.trainerTerms = [...this.data.terms];
+    this.trainerTerms = this.getFilteredTermsForActiveDomain();
     this.trainerIndex = 0;
 
     const flashcard = document.getElementById('interview-flashcard');
@@ -764,7 +777,23 @@ class BizTalkApp {
 
   renderTrainerCard() {
     const card = document.getElementById('interview-flashcard');
-    if (!card || !this.trainerTerms.length) return;
+    if (!card) return;
+
+    if (!this.trainerTerms || !this.trainerTerms.length) {
+      card.innerHTML = `
+        <div style="text-align: center; padding: 3rem 1rem; color: var(--text-muted);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+          <h3>No terms found for this sector</h3>
+          <p>Please select another domain from Progressive Learn or Dictionary.</p>
+        </div>
+      `;
+      return;
+    }
+
+    // Wrap-around bounds safety check
+    if (this.trainerIndex >= this.trainerTerms.length) {
+      this.trainerIndex = 0;
+    }
 
     const term = this.trainerTerms[this.trainerIndex];
     const indObj = this.data.industries.find(i => i.id === term.industry);
