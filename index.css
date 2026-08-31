@@ -413,7 +413,8 @@ body {
   background: var(--bg-tertiary);
   border: 1px solid var(--border-glow);
   box-shadow: var(--shadow-lg);
-  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .quiz-card-front {
@@ -548,9 +549,10 @@ body {
 /* Mobile Native App Layout & Touch Polish */
 @media (max-width: 768px) {
   html, body {
-    height: 100%;
+    min-height: 100%;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
   }
@@ -577,8 +579,7 @@ body {
   .main-content {
     padding: 0 !important;
     max-width: 100% !important;
-    height: calc(100dvh - 54px);
-    height: calc(100vh - 54px);
+    min-height: calc(100dvh - 54px);
     display: flex;
     flex-direction: column;
   }
@@ -590,7 +591,6 @@ body {
     background: transparent;
     padding: 0;
     min-height: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -598,9 +598,13 @@ body {
   .ai-chat-header {
     padding: 0.75rem 1rem;
     margin-bottom: 0;
-    background: rgba(17, 24, 39, 0.6);
+    background: rgba(17, 24, 39, 0.85);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 40;
   }
 
   .ai-avatar {
@@ -614,11 +618,13 @@ body {
     padding: 1rem 0.85rem;
     margin-bottom: 0;
     max-height: none;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
   }
 
   .chat-bubble {
-    max-width: 92%;
+    max-width: 95%;
     padding: 0.85rem 1rem;
     font-size: 0.92rem;
   }
@@ -647,10 +653,12 @@ body {
   }
 
   .quiz-3d-wrapper, .quiz-3d-card {
-    min-height: 440px;
+    min-height: 460px;
   }
 
   .quiz-card-face {
     padding: 1.1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }

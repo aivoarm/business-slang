@@ -160,25 +160,28 @@ class BuzSlangApp {
         <div class="chat-bubble bot">
           👋 Hi! I'm your <strong>AI Quiz Coach</strong>.<br>
           Which domain or industry topic would you like to master today?
-        </div>
-      `;
-      controlsEl.innerHTML = `
-        <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Select a domain or type a custom topic:</div>
-        <div class="chat-chips-container">
-          <button class="chat-chip-btn" data-domain="🤖 AI & Data Literacy">🤖 AI & Data</button>
-          <button class="chat-chip-btn" data-domain="📦 Procurement & Supply Chain">📦 Supply Chain</button>
-          <button class="chat-chip-btn" data-domain="💻 Software Engineering">💻 Software Dev</button>
-          <button class="chat-chip-btn" data-domain="💰 Corporate Finance">💰 Corporate Finance</button>
-          <button class="chat-chip-btn" data-domain="⚖️ Legal & Compliance">⚖️ Legal & Risk</button>
-          <button class="chat-chip-btn" data-domain="🏥 Healthcare Ops">🏥 Healthcare Ops</button>
-        </div>
-        <div class="chat-custom-input-group" style="margin-top:0.6rem;">
-          <input type="text" id="chat-custom-domain-input" class="chat-custom-input" placeholder="Or type any custom topic (e.g. BioTech Regulations)...">
-          <button class="btn-primary" id="chat-custom-domain-btn" style="padding:0.75rem 1.4rem; font-size:0.9rem;">Next →</button>
+
+          <div style="margin-top: 0.85rem;">
+            <div style="font-size:0.82rem; color:var(--text-accent); font-weight:600; margin-bottom:0.5rem;">Select a domain or type a custom topic:</div>
+            <div class="chat-chips-container" style="margin-bottom:0.75rem;">
+              <button class="chat-chip-btn" data-domain="🤖 AI & Data Literacy">🤖 AI & Data</button>
+              <button class="chat-chip-btn" data-domain="📦 Procurement & Supply Chain">📦 Supply Chain</button>
+              <button class="chat-chip-btn" data-domain="💻 Software Engineering">💻 Software Dev</button>
+              <button class="chat-chip-btn" data-domain="💰 Corporate Finance">💰 Corporate Finance</button>
+              <button class="chat-chip-btn" data-domain="⚖️ Legal & Compliance">⚖️ Legal & Risk</button>
+              <button class="chat-chip-btn" data-domain="🏥 Healthcare Ops">🏥 Healthcare Ops</button>
+            </div>
+            <div class="chat-custom-input-group">
+              <input type="text" id="chat-custom-domain-input" class="chat-custom-input" placeholder="Or type custom topic (e.g. BioTech Regulations)...">
+              <button class="btn-primary" id="chat-custom-domain-btn" style="padding:0.7rem 1.3rem; font-size:0.88rem;">Next →</button>
+            </div>
+          </div>
         </div>
       `;
 
-      controlsEl.querySelectorAll('.chat-chip-btn').forEach(btn => {
+      controlsEl.innerHTML = `<div style="text-align:center; font-size:0.82rem; color:var(--text-muted);">Choose a domain above or type a topic to start</div>`;
+
+      messagesEl.querySelectorAll('.chat-chip-btn').forEach(btn => {
         btn.onclick = (e) => {
           this.chatState.domain = e.currentTarget.dataset.domain;
           this.chatState.step = 2;
@@ -204,20 +207,18 @@ class BuzSlangApp {
         <div class="chat-bubble user">🎯 ${this.chatState.domain}</div>
         <div class="chat-bubble bot">
           Awesome! What is your target <strong>proficiency level</strong> for ${this.chatState.domain}?
+          <div class="chat-chips-container" style="margin-top:0.85rem;">
+            <button class="chat-chip-btn" data-level="Beginner 🌱">🌱 Level 1: Beginner / Core Terms</button>
+            <button class="chat-chip-btn" data-level="Intermediate ⚡">⚡ Level 2: Intermediate / Scenario Mastery</button>
+            <button class="chat-chip-btn" data-level="Executive 🎩">🎩 Level 3: Executive / Advanced Strategy</button>
+          </div>
         </div>
       `;
       messagesEl.scrollTop = messagesEl.scrollHeight;
 
-      controlsEl.innerHTML = `
-        <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Select proficiency level:</div>
-        <div class="chat-chips-container">
-          <button class="chat-chip-btn" data-level="Beginner 🌱">🌱 Level 1: Beginner / Core Terms</button>
-          <button class="chat-chip-btn" data-level="Intermediate ⚡">⚡ Level 2: Intermediate / Scenario Mastery</button>
-          <button class="chat-chip-btn" data-level="Executive 🎩">🎩 Level 3: Executive / Advanced Strategy</button>
-        </div>
-      `;
+      controlsEl.innerHTML = `<div style="text-align:center; font-size:0.82rem; color:var(--text-muted);">Select proficiency level above</div>`;
 
-      controlsEl.querySelectorAll('.chat-chip-btn').forEach(btn => {
+      messagesEl.querySelectorAll('.chat-chip-btn').forEach(btn => {
         btn.onclick = (e) => {
           this.chatState.level = e.currentTarget.dataset.level;
           this.chatState.step = 3;
@@ -230,20 +231,18 @@ class BuzSlangApp {
         <div class="chat-bubble user">${this.chatState.level}</div>
         <div class="chat-bubble bot">
           Got it! How deep do you want your practice quiz to be?
+          <div class="chat-chips-container" style="margin-top:0.85rem;">
+            <button class="chat-chip-btn" data-depth="3">⚡ Quick Refresh (3 Questions)</button>
+            <button class="chat-chip-btn" data-depth="5">🎯 Core Mastery (5 Questions)</button>
+            <button class="chat-chip-btn" data-depth="10">🔥 Deep Dive Simulation (10 Questions)</button>
+          </div>
         </div>
       `;
       messagesEl.scrollTop = messagesEl.scrollHeight;
 
-      controlsEl.innerHTML = `
-        <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Select quiz length:</div>
-        <div class="chat-chips-container">
-          <button class="chat-chip-btn" data-depth="3">⚡ Quick Refresh (3 Questions)</button>
-          <button class="chat-chip-btn" data-depth="5">🎯 Core Mastery (5 Questions)</button>
-          <button class="chat-chip-btn" data-depth="10">🔥 Deep Dive Simulation (10 Questions)</button>
-        </div>
-      `;
+      controlsEl.innerHTML = `<div style="text-align:center; font-size:0.82rem; color:var(--text-muted);">Select quiz length above</div>`;
 
-      controlsEl.querySelectorAll('.chat-chip-btn').forEach(btn => {
+      messagesEl.querySelectorAll('.chat-chip-btn').forEach(btn => {
         btn.onclick = (e) => {
           this.chatState.depth = parseInt(e.currentTarget.dataset.depth, 10);
           this.chatState.step = 4;
