@@ -5,7 +5,7 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "dev": "npx serve -l 3000 .",
+    "dev": "node server.js",
     "validate:db": "node ./scripts/validate-db.js"
   },
   "keywords": [

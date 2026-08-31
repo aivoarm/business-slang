@@ -1,4 +1,4 @@
-const CACHE_NAME = 'biztalk-v2.2';
+const CACHE_NAME = 'biztalk-v2.3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -33,6 +33,9 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  if (event.request.url.includes('/api/')) {
+    return; // Pass through directly to network
+  }
   event.respondWith(
     fetch(event.request).catch(() => caches.match(event.request))
   );

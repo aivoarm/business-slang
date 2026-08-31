@@ -10,9 +10,21 @@
       "description": "Essential terminology for sourcing, logistics, vendor management, and global trade.",
       "gradient": "linear-gradient(135deg, #0ea5e9, #2563eb)",
       "stages": [
-        { "level": 1, "title": "Level 1: Sourcing & Logistics Starter Kit 🌱", "description": "Core acronyms and fundamental shipping terms every newcomer needs." },
-        { "level": 2, "title": "Level 2: Supply Chain Operations & Strategy ⚡", "description": "Mid-level operational metrics, demand distortion, and vendor management." },
-        { "level": 3, "title": "Level 3: Executive Sourcing & Margin Mastery 🎩", "description": "High-stakes negotiation, global trade compliance, and margin optimization." }
+        {
+          "level": 1,
+          "title": "Level 1: Sourcing & Logistics Starter Kit 🌱",
+          "description": "Core acronyms and fundamental shipping terms every newcomer needs."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: Supply Chain Operations & Strategy ⚡",
+          "description": "Mid-level operational metrics, demand distortion, and vendor management."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Executive Sourcing & Margin Mastery 🎩",
+          "description": "High-stakes negotiation, global trade compliance, and margin optimization."
+        }
       ]
     },
     {
@@ -22,9 +34,21 @@
       "description": "Frameworks, delivery metrics, and team alignment jargon for project leads.",
       "gradient": "linear-gradient(135deg, #8b5cf6, #6d28d9)",
       "stages": [
-        { "level": 1, "title": "Level 1: Agile & Delivery Basics 🌱", "description": "Sprint ceremonies, basic backlog terms, and scope management." },
-        { "level": 2, "title": "Level 2: Project Frameworks & Governance ⚡", "description": "RACI charts, critical path estimation, and blocker mitigation." },
-        { "level": 3, "title": "Level 3: Strategic Alignment & C-Suite OKRs 🎩", "description": "Outcome orientation, enterprise portfolio alignment, and executive reporting." }
+        {
+          "level": 1,
+          "title": "Level 1: Agile & Delivery Basics 🌱",
+          "description": "Sprint ceremonies, basic backlog terms, and scope management."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: Project Frameworks & Governance ⚡",
+          "description": "RACI charts, critical path estimation, and blocker mitigation."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Strategic Alignment & C-Suite OKRs 🎩",
+          "description": "Outcome orientation, enterprise portfolio alignment, and executive reporting."
+        }
       ]
     },
     {
@@ -34,9 +58,21 @@
       "description": "Developer culture, system design, CI/CD, and technical trade-offs.",
       "gradient": "linear-gradient(135deg, #10b981, #059669)",
       "stages": [
-        { "level": 1, "title": "Level 1: Developer Essentials & Workflow 🌱", "description": "Tech debt, code reviews, and daily developer terms." },
-        { "level": 2, "title": "Level 2: System Design & Automation ⚡", "description": "CI/CD pipelines, refactoring best practices, and code quality." },
-        { "level": 3, "title": "Level 3: Distributed Systems & Microservices 🎩", "description": "Microservice architecture, high availability, and scalability trade-offs." }
+        {
+          "level": 1,
+          "title": "Level 1: Developer Essentials & Workflow 🌱",
+          "description": "Tech debt, code reviews, and daily developer terms."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: System Design & Automation ⚡",
+          "description": "CI/CD pipelines, refactoring best practices, and code quality."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Distributed Systems & Microservices 🎩",
+          "description": "Microservice architecture, high availability, and scalability trade-offs."
+        }
       ]
     },
     {
@@ -46,9 +82,21 @@
       "description": "LLM architectures, machine learning concepts, RAG, and AI implementation terms.",
       "gradient": "linear-gradient(135deg, #ec4899, #be185d)",
       "stages": [
-        { "level": 1, "title": "Level 1: Generative AI & LLM Basics 🌱", "description": "Prompting concepts, hallucinations, and base AI vocabulary." },
-        { "level": 2, "title": "Level 2: Enterprise AI Architectures ⚡", "description": "RAG systems, vector database indexing, and semantic search." },
-        { "level": 3, "title": "Level 3: Model Specialization & Fine-Tuning 🎩", "description": "Supervised fine-tuning, latency optimization, and AI governance." }
+        {
+          "level": 1,
+          "title": "Level 1: Generative AI & LLM Basics 🌱",
+          "description": "Prompting concepts, hallucinations, and base AI vocabulary."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: Enterprise AI Architectures ⚡",
+          "description": "RAG systems, vector database indexing, and semantic search."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Model Specialization & Fine-Tuning 🎩",
+          "description": "Supervised fine-tuning, latency optimization, and AI governance."
+        }
       ]
     },
     {
@@ -58,9 +106,21 @@
       "description": "Site operations, BIM modeling, compliance, contractor management, and project phases.",
       "gradient": "linear-gradient(135deg, #f59e0b, #d97706)",
       "stages": [
-        { "level": 1, "title": "Level 1: Site Operations & Deliverables 🌱", "description": "Punch lists, contractor handover, and site basics." },
-        { "level": 2, "title": "Level 2: Contract Amendments & BIM Modeling ⚡", "description": "Change orders, 3D clash detection, and sub-contractor coordination." },
-        { "level": 3, "title": "Level 3: Value Engineering & Cost Control 🎩", "description": "Value engineering, structural optimization, and contingency management." }
+        {
+          "level": 1,
+          "title": "Level 1: Site Operations & Deliverables 🌱",
+          "description": "Punch lists, contractor handover, and site basics."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: Contract Amendments & BIM Modeling ⚡",
+          "description": "Change orders, 3D clash detection, and sub-contractor coordination."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Value Engineering & Cost Control 🎩",
+          "description": "Value engineering, structural optimization, and contingency management."
+        }
       ]
     },
     {
@@ -70,9 +130,21 @@
       "description": "Valuation metrics, unit economics, executive reporting, and financial governance.",
       "gradient": "linear-gradient(135deg, #14b8a6, #0d9488)",
       "stages": [
-        { "level": 1, "title": "Level 1: Startup & Financial Fundamentals 🌱", "description": "Burn rate, cash runway, and baseline financial metrics." },
-        { "level": 2, "title": "Level 2: Unit Economics & Capital Allocation ⚡", "description": "CAC vs LTV, CapEx vs OpEx shifts, and margin analysis." },
-        { "level": 3, "title": "Level 3: Executive Profitability & EBITDA 🎩", "description": "EBITDA expansion, valuation multiples, and private equity strategy." }
+        {
+          "level": 1,
+          "title": "Level 1: Startup & Financial Fundamentals 🌱",
+          "description": "Burn rate, cash runway, and baseline financial metrics."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: Unit Economics & Capital Allocation ⚡",
+          "description": "CAC vs LTV, CapEx vs OpEx shifts, and margin analysis."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Executive Profitability & EBITDA 🎩",
+          "description": "EBITDA expansion, valuation multiples, and private equity strategy."
+        }
       ]
     },
     {
@@ -82,9 +154,21 @@
       "description": "Acquisition funnels, brand strategy, performance marketing, and growth experimentation frameworks.",
       "gradient": "linear-gradient(135deg, #f97316, #ea580c)",
       "stages": [
-        { "level": 1, "title": "Level 1: Funnels & Performance Marketing Basics 🌱", "description": "CTR, CPC vs CPM, marketing funnels, and organic search basics." },
-        { "level": 2, "title": "Level 2: Growth Hacking & Attribution Modeling ⚡", "description": "ABM strategies, attribution models, MRR/ARR, and churn analysis." },
-        { "level": 3, "title": "Level 3: Product-Led Growth & Lifecycle Strategy 🎩", "description": "Product-Led Growth (PLG), viral loops, and enterprise LTV optimization." }
+        {
+          "level": 1,
+          "title": "Level 1: Funnels & Performance Marketing Basics 🌱",
+          "description": "CTR, CPC vs CPM, marketing funnels, and organic search basics."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: Growth Hacking & Attribution Modeling ⚡",
+          "description": "ABM strategies, attribution models, MRR/ARR, and churn analysis."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Product-Led Growth & Lifecycle Strategy 🎩",
+          "description": "Product-Led Growth (PLG), viral loops, and enterprise LTV optimization."
+        }
       ]
     },
     {
@@ -94,9 +178,21 @@
       "description": "Talent acquisition, compensation design, organizational development, and workforce analytics.",
       "gradient": "linear-gradient(135deg, #a78bfa, #7c3aed)",
       "stages": [
-        { "level": 1, "title": "Level 1: Talent Acquisition & Compensation Basics 🌱", "description": "OTE splits, total comp packages, and voluntary attrition rates." },
-        { "level": 2, "title": "Level 2: HR Analytics & Performance Management ⚡", "description": "eNPS metrics, PIP processes, DEI frameworks, and headcount planning." },
-        { "level": 3, "title": "Level 3: Executive Org Design & Career Leveling 🎩", "description": "Job leveling bands, pay equity audits, and strategic workforce architecture." }
+        {
+          "level": 1,
+          "title": "Level 1: Talent Acquisition & Compensation Basics 🌱",
+          "description": "OTE splits, total comp packages, and voluntary attrition rates."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: HR Analytics & Performance Management ⚡",
+          "description": "eNPS metrics, PIP processes, DEI frameworks, and headcount planning."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Executive Org Design & Career Leveling 🎩",
+          "description": "Job leveling bands, pay equity audits, and strategic workforce architecture."
+        }
       ]
     },
     {
@@ -106,9 +202,21 @@
       "description": "Contract law, regulatory frameworks, corporate governance, and risk management terminology.",
       "gradient": "linear-gradient(135deg, #64748b, #334155)",
       "stages": [
-        { "level": 1, "title": "Level 1: Contract Basics & Confidentiality 🌱", "description": "NDAs, SLAs, and baseline contract terminology." },
-        { "level": 2, "title": "Level 2: Corporate Governance & Risk Mitigation ⚡", "description": "Indemnification clauses, GDPR compliance, and M&A due diligence." },
-        { "level": 3, "title": "Level 3: Regulatory Compliance & Contract Risk 🎩", "description": "Force majeure provisions, HIPAA privacy rules, and liability caps." }
+        {
+          "level": 1,
+          "title": "Level 1: Contract Basics & Confidentiality 🌱",
+          "description": "NDAs, SLAs, and baseline contract terminology."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: Corporate Governance & Risk Mitigation ⚡",
+          "description": "Indemnification clauses, GDPR compliance, and M&A due diligence."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Regulatory Compliance & Contract Risk 🎩",
+          "description": "Force majeure provisions, HIPAA privacy rules, and liability caps."
+        }
       ]
     },
     {
@@ -118,9 +226,21 @@
       "description": "Clinical operations, regulatory pathways, health IT, and medical device commercialization.",
       "gradient": "linear-gradient(135deg, #06b6d4, #0e7490)",
       "stages": [
-        { "level": 1, "title": "Level 1: Clinical Operations & Health IT Basics 🌱", "description": "Electronic Health Records (EHR) and digital health workflows." },
-        { "level": 2, "title": "Level 2: Regulatory Pathways & Value-Based Care ⚡", "description": "FDA 510(k) clearance, substantial equivalence, and value-based reimbursement." },
-        { "level": 3, "title": "Level 3: Real-World Evidence & Medical Commercialization 🎩", "description": "Real-World Evidence (RWE) registries and PMA high-risk device approvals." }
+        {
+          "level": 1,
+          "title": "Level 1: Clinical Operations & Health IT Basics 🌱",
+          "description": "Electronic Health Records (EHR) and digital health workflows."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: Regulatory Pathways & Value-Based Care ⚡",
+          "description": "FDA 510(k) clearance, substantial equivalence, and value-based reimbursement."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Real-World Evidence & Medical Commercialization 🎩",
+          "description": "Real-World Evidence (RWE) registries and PMA high-risk device approvals."
+        }
       ]
     },
     {
@@ -130,9 +250,21 @@
       "description": "Pipeline management, CRM strategy, quota design, forecasting, and GTM execution.",
       "gradient": "linear-gradient(135deg, #22c55e, #15803d)",
       "stages": [
-        { "level": 1, "title": "Level 1: Pipeline & CRM Fundamentals 🌱", "description": "CRM platforms, MQL to SQL conversion, and sales funnel stages." },
-        { "level": 2, "title": "Level 2: Qualification Frameworks & Sales Velocity ⚡", "description": "MEDDPICC enterprise qualification and sales velocity formulas." },
-        { "level": 3, "title": "Level 3: Revenue Operations & GTM Architecture 🎩", "description": "RevOps alignment, territory quota planning, and enterprise deal architecture." }
+        {
+          "level": 1,
+          "title": "Level 1: Pipeline & CRM Fundamentals 🌱",
+          "description": "CRM platforms, MQL to SQL conversion, and sales funnel stages."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: Qualification Frameworks & Sales Velocity ⚡",
+          "description": "MEDDPICC enterprise qualification and sales velocity formulas."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Revenue Operations & GTM Architecture 🎩",
+          "description": "RevOps alignment, territory quota planning, and enterprise deal architecture."
+        }
       ]
     },
     {
@@ -142,9 +274,21 @@
       "description": "Discovery frameworks, prioritization models, roadmapping, and cross-functional PM influence.",
       "gradient": "linear-gradient(135deg, #f43f5e, #be123c)",
       "stages": [
-        { "level": 1, "title": "Level 1: User Stories & MVP Discovery 🌱", "description": "User stories, acceptance criteria, and Minimum Viable Product (MVP)." },
-        { "level": 2, "title": "Level 2: Feature Prioritization & North Star Metrics ⚡", "description": "RICE prioritization model and North Star metric alignment." },
-        { "level": 3, "title": "Level 3: Product Strategy & Product-Market Fit 🎩", "description": "Product-Market Fit (PMF) indicators and strategic roadmapping." }
+        {
+          "level": 1,
+          "title": "Level 1: User Stories & MVP Discovery 🌱",
+          "description": "User stories, acceptance criteria, and Minimum Viable Product (MVP)."
+        },
+        {
+          "level": 2,
+          "title": "Level 2: Feature Prioritization & North Star Metrics ⚡",
+          "description": "RICE prioritization model and North Star metric alignment."
+        },
+        {
+          "level": 3,
+          "title": "Level 3: Product Strategy & Product-Market Fit 🎩",
+          "description": "Product-Market Fit (PMF) indicators and strategic roadmapping."
+        }
       ]
     }
   ],
@@ -721,7 +865,6 @@
       "correct_option": 0,
       "context_question": "Why do private equity firms rely heavily on EBITDA when evaluating acquisition targets?"
     },
-
     {
       "id": "ctr",
       "term": "CTR",
@@ -854,7 +997,6 @@
       "correct_option": 0,
       "context_question": "What is the primary financial advantage of PLG over a pure sales-led growth model?"
     },
-
     {
       "id": "ote",
       "term": "OTE",
@@ -965,7 +1107,6 @@
       "correct_option": 0,
       "context_question": "How does inconsistent job leveling create long-term pay equity problems?"
     },
-
     {
       "id": "ndagreement",
       "term": "NDA",
@@ -1032,7 +1173,6 @@
       "correct_option": 0,
       "context_question": "Does economic hardship or market downturn qualify as a force majeure event? Why or why not?"
     },
-
     {
       "id": "ehr",
       "term": "EHR",
@@ -1099,7 +1239,6 @@
       "correct_option": 0,
       "context_question": "Why are health insurance payers demanding RWE data before approving device reimbursement?"
     },
-
     {
       "id": "crm",
       "term": "CRM",
@@ -1166,7 +1305,6 @@
       "correct_option": 0,
       "context_question": "How does unified RevOps eliminate friction between marketing lead generation and sales execution?"
     },
-
     {
       "id": "user-story",
       "term": "User Story",
@@ -1232,6 +1370,578 @@
       ],
       "correct_option": 0,
       "context_question": "Why is scaling sales spend prior to achieving Product-Market Fit dangerous for a startup?"
+    },
+    {
+      "id": "llm",
+      "term": "LLM",
+      "full_name": "Large Language Model",
+      "industry": "ai_data",
+      "stage": 1,
+      "type": "acronym",
+      "level": "entry",
+      "meaning": "Deep learning models trained on vast textual datasets capable of understanding, summarizing, generating, and reasoning with human language.",
+      "context": "Underpins modern AI platforms like ChatGPT, Claude, and Gemini for enterprise automation.",
+      "interview_tip": "Discuss foundational models vs domain-tuned models to demonstrate AI architectural awareness.",
+      "sample_interview_response": "We evaluated several open-weight LLMs against proprietary models to balance inference latency, data privacy, and hosting cost.",
+      "example": "Deploying a 70B parameter LLM gave our search feature human-like context understanding.",
+      "options": [
+        "Deep learning models trained on vast text data for language comprehension and generation",
+        "Low-Latency Memory architecture used in GPU clusters",
+        "Linear Logic Mapping algorithm for database indexing",
+        "Logistics Lifecycle Management framework for supply chains"
+      ],
+      "correct_option": 0,
+      "context_question": "What primary capability distinguishes an LLM from traditional rule-based NLP algorithms?"
+    },
+    {
+      "id": "prompt-engineering",
+      "term": "Prompt Engineering",
+      "full_name": "Context & System Prompt Optimization",
+      "industry": "ai_data",
+      "stage": 1,
+      "type": "process",
+      "level": "entry",
+      "meaning": "The practice of structuring, refining, and designing text inputs to guide generative AI models toward producing accurate, structured, and consistent outputs.",
+      "context": "Includes techniques like system instructions, role assignment, output formatting constraints, and few-shot examples.",
+      "interview_tip": "Highlight systematic evaluation (evals) of prompts rather than trial-and-error tweaking.",
+      "sample_interview_response": "I standardized system prompt templates across our product team, reducing output schema formatting errors by 90%.",
+      "example": "Through prompt engineering, we forced the AI to return strict JSON arrays instead of unstructured prose.",
+      "options": [
+        "Structuring text inputs to guide LLMs toward accurate and consistent outputs",
+        "Hardware circuit design for AI accelerator chips",
+        "Automated server reboot scripts for cloud databases",
+        "Writing user interface tooltips for frontend apps"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is system prompt structuring critical for enterprise AI integration?"
+    },
+    {
+      "id": "context-window",
+      "term": "Context Window",
+      "full_name": "Model Input & Memory Capacity Limit",
+      "industry": "ai_data",
+      "stage": 1,
+      "type": "metric",
+      "level": "entry",
+      "meaning": "The maximum amount of information (measured in tokens) an AI model can process and remember in a single interaction request.",
+      "context": "Ranges from 4k tokens in older models up to 1M+ tokens in modern architectures like Gemini 1.5 Pro.",
+      "interview_tip": "Explain context window limits when justifying chunking strategies or vector search retrieval.",
+      "sample_interview_response": "Although the model supports a 128k context window, we used vector retrieval to keep prompts under 8k tokens for faster response times.",
+      "example": "Passing an entire 300-page PDF required a model with a large 1M context window.",
+      "options": [
+        "Maximum token count an AI model can process in a single request",
+        "The time duration a user stays active in an AI chat session",
+        "Database connection pool idle window setting",
+        "Display window resolution for machine learning dashboards"
+      ],
+      "correct_option": 0,
+      "context_question": "How does context window size impact prompt processing latency and cost?"
+    },
+    {
+      "id": "token-tokenization",
+      "term": "Tokens & Tokenization",
+      "full_name": "Text Sub-Word Segmentation Unit",
+      "industry": "ai_data",
+      "stage": 1,
+      "type": "framework",
+      "level": "entry",
+      "meaning": "Tokens are the basic atomic units (words or sub-words) into which raw text is segmented before being converted to numbers for AI model processing.",
+      "context": "Roughly 1 token ≈ 4 characters or 0.75 words in English. LLM API billing and context limits are calculated in tokens.",
+      "interview_tip": "Mention token economics when discussing API pricing optimization and payload compression.",
+      "sample_interview_response": "By stripping redundant whitespace and system boilerplate, we saved 35% on token costs across 2M daily API calls.",
+      "example": "The word 'unbelievable' is split into 3 tokens: 'un', 'believ', and 'able'.",
+      "options": [
+        "Basic sub-word text units used by AI models for billing and text processing",
+        "Security access keys used for OAuth authentication",
+        "Blockchain cryptocurrency coins used for AI microtransactions",
+        "Hardware cache blocks in GPU processors"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is understanding tokenization important for estimating enterprise LLM operational costs?"
+    },
+    {
+      "id": "generative-ai",
+      "term": "Generative AI",
+      "full_name": "GenAI Content Generation Systems",
+      "industry": "ai_data",
+      "stage": 1,
+      "type": "buzzword",
+      "level": "entry",
+      "meaning": "A branch of artificial intelligence focused on creating new synthetic content (text, code, images, audio, video) based on learned patterns.",
+      "context": "Differentiates from predictive AI (which classifies or forecasts existing data) by creating original output.",
+      "interview_tip": "Differentiate generative AI applications from traditional predictive analytics when discussing product strategy.",
+      "sample_interview_response": "We integrated Generative AI into our CRM to draft personalized outbound sales emails automatically for account managers.",
+      "example": "Generative AI allowed our design team to create 50 ad banner variations in minutes.",
+      "options": [
+        "AI systems capable of creating new text, code, images, or media content",
+        "Automated power generator control software in data centers",
+        "Genetic algorithm optimization for manufacturing",
+        "Legacy decision-tree reporting software"
+      ],
+      "correct_option": 0,
+      "context_question": "How does Generative AI differ from predictive machine learning?"
+    },
+    {
+      "id": "few-shot-prompting",
+      "term": "Few-Shot Prompting",
+      "full_name": "In-Context Example Learning",
+      "industry": "ai_data",
+      "stage": 1,
+      "type": "process",
+      "level": "entry",
+      "meaning": "Providing an AI model with a few high-quality input-output examples directly inside the prompt to demonstrate expected output formatting and reasoning.",
+      "context": "Bridges the gap between zero-shot (no examples) and full fine-tuning without changing model weights.",
+      "interview_tip": "Position few-shot prompting as a quick, cost-effective way to enforce schema formatting without training models.",
+      "sample_interview_response": "I added 3 curated few-shot examples to the prompt, which increased the model's JSON parsing success rate from 65% to 99%.",
+      "example": "Including two sample customer support ticket classifications helped the LLM categorize ambiguous requests correctly.",
+      "options": [
+        "Providing example input-output pairs inside the prompt to guide AI behavior",
+        "Fine-tuning a model using only a small dataset of 10 images",
+        "Short-burst GPU training iterations",
+        "Prompting an AI model multiple times per second"
+      ],
+      "correct_option": 0,
+      "context_question": "What benefit does few-shot prompting provide over zero-shot prompting?"
+    },
+    {
+      "id": "model-temperature",
+      "term": "Model Temperature",
+      "full_name": "Sampling Randomness Parameter",
+      "industry": "ai_data",
+      "stage": 1,
+      "type": "metric",
+      "level": "entry",
+      "meaning": "A hyperparameter controlling the randomness and creativity of an AI model's output selections.",
+      "context": "Temperature = 0.0 makes outputs deterministic and factual; Temperature = 0.8+ increases creativity and variability.",
+      "interview_tip": "Specify temperature settings: low (0.0–0.2) for code/data extraction, higher (0.7+) for creative writing.",
+      "sample_interview_response": "For legal contract extraction we set temperature to 0.0 for strict accuracy, while setting it to 0.7 for creative marketing copy.",
+      "example": "Lowering the temperature to 0 fixed the model's math calculation discrepancies.",
+      "options": [
+        "Hyperparameter controlling the randomness and creativity of AI text generation",
+        "Physical heat temperature monitoring of GPU server racks",
+        "The warming-up duration required before an AI server accepts requests",
+        "CPU clock speed throttling under heavy load"
+      ],
+      "correct_option": 0,
+      "context_question": "Which temperature setting is appropriate for extracting structured financial data from invoices?"
+    },
+    {
+      "id": "data-pipeline-etl",
+      "term": "Data Pipeline (ETL)",
+      "full_name": "Extract, Transform, Load Data Pipeline",
+      "industry": "ai_data",
+      "stage": 1,
+      "type": "process",
+      "level": "entry",
+      "meaning": "An automated data processing system that Extracts raw data from source systems, Transforms it (cleans/aggregates), and Loads it into target storage.",
+      "context": "The foundational backbone for data warehouses, analytics dashboards, and AI training datasets.",
+      "interview_tip": "Emphasize data hygiene, failure alerts, and idempotency when describing data pipeline experience.",
+      "sample_interview_response": "I built an automated ETL pipeline using Apache Airflow, ingesting 50GB of daily customer events into Snowflake for real-time BI reporting.",
+      "example": "Our ETL pipeline extracts daily sales records, cleans missing values, and loads them into BigQuery.",
+      "options": [
+        "Automated system that Extracts, Transforms, and Loads raw data into target data stores",
+        "Network cable routing pipeline in server hardware infrastructure",
+        "Energy Efficiency Transformation protocol for server hardware",
+        "Emergency Testing Lifecycle for software releases"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is the Transformation step critical in an ETL data pipeline?"
+    },
+    {
+      "id": "ground-truth-data",
+      "term": "Ground Truth Data",
+      "full_name": "Verified Benchmark Reference Data",
+      "industry": "ai_data",
+      "stage": 1,
+      "type": "framework",
+      "level": "entry",
+      "meaning": "Real-world verified factual data used as the absolute benchmark to train, evaluate, and test AI model accuracy.",
+      "context": "Without high-quality human-verified ground truth data, AI evaluation metrics (like precision and recall) are unreliable.",
+      "interview_tip": "Discuss ground truth creation pipelines and human-in-the-loop validation.",
+      "sample_interview_response": "We created a golden ground truth dataset of 1,000 human-annotated invoices to evaluate LLM extraction accuracy across model releases.",
+      "example": "Comparing AI outputs against human ground truth revealed a 94% accuracy rate.",
+      "options": [
+        "Verified factual baseline data used to evaluate AI model accuracy",
+        "Geographical location data stored in GIS mapping systems",
+        "Ground floor network wiring schematics for data centers",
+        "Unprocessed raw logs collected from web servers"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is a golden ground truth dataset necessary when building enterprise AI evals?"
+    },
+    {
+      "id": "rlhf",
+      "term": "RLHF",
+      "full_name": "Reinforcement Learning from Human Feedback",
+      "industry": "ai_data",
+      "stage": 2,
+      "type": "process",
+      "level": "mid",
+      "meaning": "A training technique that uses human preference rankings to align AI model responses with human intent, safety guidelines, and helpfulness.",
+      "context": "Key breakthrough that transformed raw base language models into helpful conversational assistants like ChatGPT.",
+      "interview_tip": "Mention reward model training and safety alignment when discussing RLHF.",
+      "sample_interview_response": "RLHF was essential in aligning our customer service bot to decline out-of-scope requests politely while maintaining helpful tone.",
+      "example": "Human evaluators ranked candidate AI responses, providing the feedback data used in RLHF.",
+      "options": [
+        "Training technique using human preference rankings to align AI responses with human safety and intent",
+        "Real-time Logic Handling Framework for server routing",
+        "Recursive Learning for High-Frequency trading models",
+        "Remote Logging & Health Monitoring for distributed clusters"
+      ],
+      "correct_option": 0,
+      "context_question": "What primary role does RLHF play in preparing base LLMs for consumer-facing deployment?"
+    },
+    {
+      "id": "mlops",
+      "term": "MLOps",
+      "full_name": "Machine Learning Operations",
+      "industry": "ai_data",
+      "stage": 2,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "A set of engineering practices automating the deployment, monitoring, data versioning, and lifecycle management of machine learning models in production.",
+      "context": "Bridges the gap between data science experimentation and scalable production software engineering.",
+      "interview_tip": "Highlight automated retraining pipelines, model drift monitoring, and CI/CD for ML models.",
+      "sample_interview_response": "Implementing MLOps with MLflow and Kubernetes enabled our team to deploy model updates seamlessly with zero downtime.",
+      "example": "Our MLOps dashboard alerted us when incoming data drifted from the training distribution.",
+      "options": [
+        "Engineering practices automating ML model deployment, monitoring, and lifecycle management",
+        "Multi-Language Optimization System for cloud servers",
+        "Marketing Logistics Operations workflow management",
+        "Mainframe Memory Optimization Protocol"
+      ],
+      "correct_option": 0,
+      "context_question": "What operational challenge does MLOps solve for data science teams?"
+    },
+    {
+      "id": "ai-agents",
+      "term": "AI Agents",
+      "full_name": "Autonomous Agentic Workflows",
+      "industry": "ai_data",
+      "stage": 2,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "Autonomous AI systems that can reason, plan multi-step execution paths, use external tools/APIs, and execute tasks independently to achieve a goal.",
+      "context": "Moves beyond passive Q&A to proactive execution (e.g. searching flight APIs, comparing prices, and booking a ticket).",
+      "interview_tip": "Discuss tool usage loops, planning frameworks (ReAct pattern), and error recovery loops.",
+      "sample_interview_response": "We deployed an autonomous AI agent to handle tier-1 IT tickets, allowing the agent to query log files and execute password resets via API.",
+      "example": "The market research AI agent searched 5 websites, synthesized findings, and generated a PDF report without human intervention.",
+      "options": [
+        "Autonomous AI systems capable of reasoning, planning, and executing multi-step tasks using tools",
+        "Third-party sales representatives who resell AI software",
+        "Automated web scraping bots used for keyword indexing",
+        "Virtual customer support avatars used in video calls"
+      ],
+      "correct_option": 0,
+      "context_question": "What core capability distinguishes an AI Agent from a simple prompt-response chatbot?"
+    },
+    {
+      "id": "quantization",
+      "term": "Quantization",
+      "full_name": "Model Weight Precision Reduction",
+      "industry": "ai_data",
+      "stage": 2,
+      "type": "process",
+      "level": "mid",
+      "meaning": "A compression technique that reduces the precision of an AI model's numerical weights (e.g., 16-bit float to 4-bit integer) to shrink memory size and speed up inference.",
+      "context": "Allows giant 70B models to run on consumer hardware or edge devices with minimal accuracy loss.",
+      "interview_tip": "Explain quantization trade-offs: massive VRAM savings and speedup for slight precision reduction.",
+      "sample_interview_response": "We applied 4-bit AWQ quantization to our 70B model, reducing GPU VRAM requirements from 140GB to 40GB with under 1% loss in accuracy.",
+      "example": "Quantization enabled us to run an open LLM locally on a single laptop.",
+      "options": [
+        "Compressing AI models by reducing numerical precision of weights to save memory and boost speed",
+        "Calculating financial risk quotas in algorithmic trading",
+        "Splitting database tables across multiple quantum servers",
+        "Measuring the exact volume of data entering a data warehouse"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is model quantization vital for deploying LLMs on edge devices or budget cloud instances?"
+    },
+    {
+      "id": "tool-use-function-calling",
+      "term": "Tool Use / Function Calling",
+      "full_name": "LLM Structured API Execution",
+      "industry": "ai_data",
+      "stage": 2,
+      "type": "process",
+      "level": "mid",
+      "meaning": "The capability of an LLM to detect when an external API or code function is needed, outputting structured parameters to call that function.",
+      "context": "Enables LLMs to fetch live weather, run SQL queries, query internal databases, or trigger external webhooks.",
+      "interview_tip": "Highlight how function calling turns static LLMs into dynamic engines connected to corporate databases.",
+      "sample_interview_response": "We configured LLM function calling so when a user asks about order status, the model outputs clean JSON arguments to query our Postgres DB.",
+      "example": "The model called the `get_weather(city='NYC')` function to answer the user's question.",
+      "options": [
+        "Capability of an LLM to output structured parameters to execute external APIs or database functions",
+        "Manual developer tools used to write machine learning code",
+        "Software utilities for formatting CSS web stylesheets",
+        "Automated phone system voice menu functions"
+      ],
+      "correct_option": 0,
+      "context_question": "How does function calling bridge the gap between static LLMs and real-time enterprise databases?"
+    },
+    {
+      "id": "embedding-space",
+      "term": "Embedding Space",
+      "full_name": "Vector Similarity Space",
+      "industry": "ai_data",
+      "stage": 2,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "A high-dimensional mathematical space where words, concepts, or images are mapped as vectors such that semantically similar items sit close together.",
+      "context": "Forms the mathematical foundation for vector search, clustering, and semantic recommendation engines.",
+      "interview_tip": "Use distance metrics (cosine similarity, Euclidean distance) to explain vector proximity in embedding space.",
+      "sample_interview_response": "In our vector embedding space, documents discussing 'revenue growth' and 'sales increase' cluster tightly together despite using different words.",
+      "example": "Cosine similarity in the embedding space showed a 0.92 score between the two customer inquiries.",
+      "options": [
+        "High-dimensional mathematical space where semantically similar concepts map close together as vectors",
+        "Physical server space reserved for mounting GPU servers",
+        "The storage partition allocated for database backups",
+        "CSS layout spacing around embedded video players"
+      ],
+      "correct_option": 0,
+      "context_question": "What does it indicate when two document vectors have a high cosine similarity score in embedding space?"
+    },
+    {
+      "id": "inference-latency-throughput",
+      "term": "Inference Latency & Throughput",
+      "full_name": "Model Generation Speed Metrics (TTFT & TPS)",
+      "industry": "ai_data",
+      "stage": 2,
+      "type": "metric",
+      "level": "mid",
+      "meaning": "Latency measures time to first token (TTFT); Throughput measures tokens generated per second (TPS) across concurrent user requests.",
+      "context": "Critical SLAs for real-time AI applications (e.g. keeping TTFT under 500ms for conversational UI).",
+      "interview_tip": "Distinguish TTFT (responsiveness) from TPS (streaming throughput) when optimizing AI UX.",
+      "sample_interview_response": "We optimized our vLLM serving infrastructure to maintain sub-300ms Time To First Token (TTFT) at 100 concurrent requests.",
+      "example": "Switching to streaming responses improved perceived inference latency for end users.",
+      "options": [
+        "Performance metrics tracking initial response delay (TTFT) and token generation speed (TPS)",
+        "Network bandwidth consumption of database backup streams",
+        "The rate of data storage degradation on solid-state drives",
+        "Developer compilation time for C++ machine learning modules"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is Time to First Token (TTFT) a critical metric for conversational AI user experience?"
+    },
+    {
+      "id": "synthetic-data",
+      "term": "Synthetic Data",
+      "full_name": "Artificially Generated Datasets",
+      "industry": "ai_data",
+      "stage": 2,
+      "type": "framework",
+      "level": "mid",
+      "meaning": "Data generated algorithmically or by AI models rather than collected from real-world human events, used to train models when real data is scarce or sensitive.",
+      "context": "Commonly used in healthcare and finance to bypass privacy restrictions (PII) or boost rare edge-case training scenarios.",
+      "interview_tip": "Discuss privacy preservation (GDPR/HIPAA compliance) and domain validation when proposing synthetic data.",
+      "sample_interview_response": "To train our fraud detection model without violating HIPAA privacy, we generated 50,000 synthetic patient transaction logs.",
+      "example": "Synthetic data allowed us to test autonomous vehicle driving models in rare blizzard conditions.",
+      "options": [
+        "Artificially generated datasets created by algorithms/AI for training without privacy risks",
+        "Corrupted or fake data inserted by malicious hackers",
+        "Temporary cached data stored in web browser memory",
+        "Compressed zip archive files used in data backups"
+      ],
+      "correct_option": 0,
+      "context_question": "What major compliance advantage does synthetic data offer in regulated industries?"
+    },
+    {
+      "id": "ai-guardrails-alignment",
+      "term": "AI Guardrails & Safety Alignment",
+      "full_name": "Enterprise Input/Output Moderation Systems",
+      "industry": "ai_data",
+      "stage": 3,
+      "type": "framework",
+      "level": "executive",
+      "meaning": "Software safety layers wrapping AI models to filter harmful prompts, block PII leaks, prevent jailbreaks, and enforce corporate compliance.",
+      "context": "Implemented using dedicated moderation models (e.g. Llama Guard, NeMo Guardrails) before user input reaches the core LLM.",
+      "interview_tip": "Demonstrate enterprise governance maturity by explaining input filtering vs output moderation layers.",
+      "sample_interview_response": "We implemented NeMo Guardrails to intercept prompt injection attempts and automatically redacting PII before API requests were processed.",
+      "example": "The AI guardrail blocked the request when a user attempted a jailbreak prompt.",
+      "options": [
+        "Safety moderation systems that filter harmful inputs, prevent PII leaks, and enforce corporate AI policies",
+        "Physical barriers installed around data center server racks",
+        "Rate-limiting network firewalls for DDoS prevention",
+        "Automated code linters for Python scripts"
+      ],
+      "correct_option": 0,
+      "context_question": "Why are external AI guardrail layers necessary even if an LLM has undergone safety fine-tuning?"
+    },
+    {
+      "id": "chain-of-thought",
+      "term": "Chain-of-Thought (CoT)",
+      "full_name": "Explicit Step-by-Step Reasoning",
+      "industry": "ai_data",
+      "stage": 3,
+      "type": "process",
+      "level": "executive",
+      "meaning": "A prompting and architectural technique prompting an AI model to break down complex reasoning tasks into explicit step-by-step intermediate thoughts before giving a final answer.",
+      "context": "Significantly improves accuracy on complex math, logic, legal analysis, and multi-step reasoning problems.",
+      "interview_tip": "Mention how CoT reasoning models (like OpenAI o1 or DeepSeek R1) allocate extra compute at test time for complex problem solving.",
+      "sample_interview_response": "Enforcing Chain-of-Thought reasoning in our financial analysis prompts improved multi-step calculation accuracy from 72% to 96%.",
+      "example": "Adding 'Think step-by-step before answering' triggered a Chain-of-Thought reasoning path in the model.",
+      "options": [
+        "Technique encouraging AI models to output step-by-step reasoning steps to solve complex tasks",
+        "Blockchain ledger validation process for AI data transactions",
+        "Sequential data processing pipeline in Apache Spark",
+        "Hierarchical management decision chain in engineering orgs"
+      ],
+      "correct_option": 0,
+      "context_question": "How does Chain-of-Thought prompting improve LLM performance on multi-step math or logic problems?"
+    },
+    {
+      "id": "model-concept-drift",
+      "term": "Model & Concept Drift",
+      "full_name": "Statistical Production Model Degradation",
+      "industry": "ai_data",
+      "stage": 3,
+      "type": "metric",
+      "level": "executive",
+      "meaning": "The decay of a machine learning model's predictive performance over time as real-world consumer behavior or data distributions change.",
+      "context": "Concept drift = statistical relationship between variables changes; Data drift = input feature distribution shifts (e.g. consumer spending shifts post-pandemic).",
+      "interview_tip": "Explain automated drift detection triggers that automatically trigger dataset re-annotation and model retraining.",
+      "sample_interview_response": "We monitored Kolmogorov-Smirnov statistical metrics to catch data drift in our credit risk model before prediction accuracy degraded.",
+      "example": "Sudden changes in online shopping habits during the holidays caused model drift in our fraud detection system.",
+      "options": [
+        "Performance degradation of ML models over time as real-world data distributions change",
+        "Physical drift of satellite data antennas",
+        "The slow movement of developer resources across project teams",
+        "Gradual loss of server clock synchronization"
+      ],
+      "correct_option": 0,
+      "context_question": "What is the difference between data drift and concept drift in production ML models?"
+    },
+    {
+      "id": "multimodal-ai",
+      "term": "Multimodal AI",
+      "full_name": "Cross-Modal Processing Architecture",
+      "industry": "ai_data",
+      "stage": 3,
+      "type": "framework",
+      "level": "executive",
+      "meaning": "AI models capable of processing, understanding, and generating content across multiple modalities simultaneously (text, images, audio, video, sensor data).",
+      "context": "Enables applications like analyzing medical X-rays alongside patient history text in a single inference call.",
+      "interview_tip": "Highlight native multimodal processing vs separate single-modality model chaining.",
+      "sample_interview_response": "Using a multimodal vision-language model enabled our inspection app to analyze photo uploads of damaged car parts and produce automated cost estimates.",
+      "example": "The multimodal model read the charts in the image and summarized the trends in text.",
+      "options": [
+        "AI models capable of processing and generating insights across text, images, audio, and video simultaneously",
+        "Software that runs on multiple operating systems at the same time",
+        "Running multiple distinct machine learning models on a single server",
+        "A database that supports both SQL and NoSQL data tables"
+      ],
+      "correct_option": 0,
+      "context_question": "What strategic advantage does a unified multimodal AI model offer over chaining separate vision and text models?"
+    },
+    {
+      "id": "gpu-vram-compute",
+      "term": "GPU VRAM & Compute Constraints",
+      "full_name": "Hardware Acceleration Resource Management",
+      "industry": "ai_data",
+      "stage": 3,
+      "type": "metric",
+      "level": "executive",
+      "meaning": "The hardware memory (VRAM) and floating-point calculation bottlenecks (FLOPs) that dictate model size capacity, batching limits, and training/inference costs.",
+      "context": "NVIDIA H100/A100 GPU availability and memory bandwidth are the primary operational bottlenecks in modern AI infrastructure.",
+      "interview_tip": "Demonstrate infrastructure cost awareness by discussing tensor parallelism, kv-cache optimization, and VRAM budgeting.",
+      "sample_interview_response": "By implementing flash attention and vLLM page attention, we doubled batch size density per GPU, halving our cloud compute bill.",
+      "example": "Loading an unquantized 70B parameter model required 140GB of GPU VRAM across two H100s.",
+      "options": [
+        "Hardware memory (VRAM) and processing power limits dictating AI model size and serving costs",
+        "Virtual RAM configuration settings in Windows desktop operating systems",
+        "Graphic display card resolutions for desktop monitors",
+        "General Power Usage metrics in traditional server rooms"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is GPU VRAM bandwidth often a tighter bottleneck than raw compute speed for LLM inference?"
+    },
+    {
+      "id": "explainable-ai-xai",
+      "term": "Explainable AI (XAI)",
+      "full_name": "Model Interpretability & Auditability",
+      "industry": "ai_data",
+      "stage": 3,
+      "type": "framework",
+      "level": "executive",
+      "meaning": "Methods and techniques that allow human experts to understand, audit, and trace how complex 'black box' machine learning models arrive at specific decisions.",
+      "context": "Mandatory in heavily regulated industries (banking, credit scoring, healthcare) where adverse decisions require legal justification.",
+      "interview_tip": "Mention SHAP (SHapley Additive exPlanations) and LIME values when discussing model interpretability.",
+      "sample_interview_response": "To comply with fair lending regulations, we integrated SHAP feature importance plots into our credit decisioning pipeline to explain every loan rejection.",
+      "example": "Explainable AI techniques revealed that the loan scoring model was weighting zip code too heavily.",
+      "options": [
+        "Techniques making complex ML model predictions transparent, understandable, and auditable by humans",
+        "Writing clear documentation for beginner AI developers",
+        "Translating AI technical terms into simple business plain English",
+        "An AI chatbot that explains company HR policy to new employees"
+      ],
+      "correct_option": 0,
+      "context_question": "Why is Explainable AI (XAI) legally required in automated credit scoring and hiring systems?"
+    },
+    {
+      "id": "ai-data-lineage-governance",
+      "term": "Data Lineage & Governance",
+      "full_name": "Data Origin & Audit Tracking Systems",
+      "industry": "ai_data",
+      "stage": 3,
+      "type": "framework",
+      "level": "executive",
+      "meaning": "The end-to-end tracking of data's origin, transformations, pipeline dependencies, and access controls across its entire enterprise lifecycle.",
+      "context": "Essential for AI copyright compliance, data privacy audits (GDPR right to be forgotten), and data quality troubleshooting.",
+      "interview_tip": "Connect data lineage to compliance readiness and data quality root-cause analysis.",
+      "sample_interview_response": "Our automated data lineage catalog allowed us to trace bad feature data back to a broken upstream API within 5 minutes.",
+      "example": "Data governance rules ensured that copyrighted web scraped text was removed from our AI training bucket.",
+      "options": [
+        "End-to-end tracking of data origins, transformations, and access controls for compliance and auditing",
+        "Organizing data files into family tree folder structures",
+        "Legal contracts governing data center lease agreements",
+        "Archiving historical company emails after 7 years"
+      ],
+      "correct_option": 0,
+      "context_question": "How does data lineage assist engineering teams when investigating anomalous data in an AI pipeline?"
+    },
+    {
+      "id": "model-pruning-distillation",
+      "term": "Model Pruning & Distillation",
+      "full_name": "Knowledge Distillation & Structural Compression",
+      "industry": "ai_data",
+      "stage": 3,
+      "type": "process",
+      "level": "executive",
+      "meaning": "Distillation transfers knowledge from a large 'teacher' model into a smaller, faster 'student' model; Pruning removes redundant neural network connections.",
+      "context": "Reduces model footprint by up to 80% while retaining ~95% of teacher model accuracy for low-latency production serving.",
+      "interview_tip": "Compare teacher-student distillation with quantization to show deep optimization knowledge.",
+      "sample_interview_response": "We distilled a 70B teacher model into a 8B student model, achieving 5x faster inference speeds for our real-time auto-complete feature.",
+      "example": "Model distillation allowed us to deploy a highly capable model directly on mobile devices.",
+      "options": [
+        "Techniques compressing AI models by removing redundant weights (pruning) or transferring knowledge to smaller models (distillation)",
+        "Deleting old unused machine learning datasets from cloud storage",
+        "Cleaning duplicate records out of SQL database tables",
+        "Trimming long user chat histories to fit context limits"
+      ],
+      "correct_option": 0,
+      "context_question": "How does knowledge distillation allow a small 8B model to rival the performance of a much larger 70B teacher model?"
+    },
+    {
+      "id": "semantic-chunking-overlap",
+      "term": "Semantic Chunking & Overlap",
+      "full_name": "Text Segmentation & Context Retention Strategy",
+      "industry": "ai_data",
+      "stage": 3,
+      "type": "process",
+      "level": "executive",
+      "meaning": "The technique of splitting large documents into semantically coherent sections (chunks) with overlapping borders before generating vector embeddings for RAG.",
+      "context": "Chunk size (e.g. 512 tokens) and overlap (e.g. 50 tokens) prevent critical context from being cut off at arbitrary character boundaries.",
+      "interview_tip": "Explain the trade-offs: chunks too large dilute vector specificity; chunks too small lose contextual meaning.",
+      "sample_interview_response": "We optimized our RAG pipeline with 500-token semantic chunking and 50-token sliding overlap, increasing document retrieval accuracy by 28%.",
+      "example": "Using 10% chunk overlap ensured sentence fragments at boundary edges remained searchable in the vector store.",
+      "options": [
+        "Splitting text into meaningful sections with sliding boundary overlap to optimize vector search retrieval",
+        "Compressing database files into zip archives before uploading",
+        "Dividing large software engineering teams into smaller agile squads",
+        "Splitting web network traffic across multiple load balancers"
+      ],
+      "correct_option": 0,
+      "context_question": "What problem does adding a 10-20% sliding overlap solve during text chunking for RAG?"
     }
   ]
 }

@@ -1,0 +1,282 @@
+{
+  "testing db cache__beginner 🌱__3": {
+    "domain": "Testing DB Cache",
+    "level": "Beginner 🌱",
+    "depth": 3,
+    "updatedAt": "2026-08-31T16:15:47.200Z",
+    "quiz": [
+      {
+        "id": "custom_1",
+        "term": "Cache Invalidation",
+        "industry": "Testing DB Cache",
+        "context_question": "You're testing an application that displays user profiles. After a user updates their profile, the old data still appears. What concept is most directly related to this issue?",
+        "options": [
+          "Cache Miss",
+          "Cache Invalidation",
+          "Cache Eviction",
+          "Cache Warming"
+        ],
+        "correct_option": 1,
+        "explanation": "Cache invalidation is the process of removing or updating cached data when the underlying data changes, ensuring stale data is not served.",
+        "real_world_example": "When a user updates their email, the cache entry for that profile must be invalidated so the next request fetches fresh data from the database.",
+        "interview_tip": "Mention that you understand the importance of cache invalidation and have experience with strategies like TTL, write-through, or explicit invalidation."
+      },
+      {
+        "id": "custom_2",
+        "term": "Cache Hit Ratio",
+        "industry": "Testing DB Cache",
+        "context_question": "Your team wants to measure the effectiveness of the database cache. Which metric would you look at to determine how often requested data is found in the cache?",
+        "options": [
+          "Cache Hit Ratio",
+          "Cache Miss Ratio",
+          "Database Throughput",
+          "Query Execution Time"
+        ],
+        "correct_option": 0,
+        "explanation": "Cache hit ratio is the percentage of requests that are served from the cache, indicating how well the cache is performing.",
+        "real_world_example": "If the cache hit ratio is 95%, it means 95 out of 100 requests are served from cache, reducing database load.",
+        "interview_tip": "Say that you monitor cache hit ratio to identify potential performance issues and you know how to calculate it: hits / (hits + misses)."
+      },
+      {
+        "id": "custom_3",
+        "term": "Cache Stampede",
+        "industry": "Testing DB Cache",
+        "context_question": "During a traffic spike, your database cache expires for a popular item, and suddenly hundreds of requests simultaneously hit the database to regenerate the cache. What is this phenomenon called?",
+        "options": [
+          "Cache Avalanche",
+          "Cache Stampede",
+          "Cache Penetration",
+          "Cache Breakdown"
+        ],
+        "correct_option": 1,
+        "explanation": "A cache stampede occurs when a cache entry expires and many concurrent requests try to rebuild it, overwhelming the database.",
+        "real_world_example": "When a product goes on sale, if its cache expires, a flood of requests can cause a database overload; using mutex locks or early expiration can prevent this.",
+        "interview_tip": "Mention that you know how to handle cache stampedes with techniques like request coalescing, locking, or using a background job to refresh the cache."
+      }
+    ]
+  },
+  "💻 software engineering__beginner 🌱__3": {
+    "domain": "💻 Software Engineering",
+    "level": "Beginner 🌱",
+    "depth": 3,
+    "updatedAt": "2026-08-31T16:26:13.634Z",
+    "quiz": [
+      {
+        "id": "custom_1",
+        "term": "Version Control",
+        "industry": "💻 Software Engineering",
+        "context_question": "You're a new developer on a team that uses Git. You've made changes to a feature branch and want to incorporate the latest changes from the main branch into your branch. What is the best practice to do this?",
+        "options": [
+          "Merge the main branch into your feature branch",
+          "Rebase your feature branch onto the main branch",
+          "Create a new branch from your feature branch",
+          "Delete your branch and recreate it from main"
+        ],
+        "correct_option": 0,
+        "explanation": "Merging the main branch into your feature branch brings the latest changes into your branch while preserving the commit history. Rebase is also an option but can rewrite history and is more advanced.",
+        "real_world_example": "Before submitting a pull request, I always merge the latest main branch into my feature branch to ensure there are no conflicts.",
+        "interview_tip": "Mention that you understand both merge and rebase, and know when to use each. For a beginner, merging is safer to avoid rewriting history."
+      },
+      {
+        "id": "custom_2",
+        "term": "API",
+        "industry": "💻 Software Engineering",
+        "context_question": "You're building a weather app that needs to display current temperature. You plan to use a service that provides weather data. What is the most common way to request this data from the service?",
+        "options": [
+          "Directly access the service's database",
+          "Use a REST API to send HTTP requests",
+          "Copy the data from the service's website",
+          "Use a file transfer protocol (FTP) to download data"
+        ],
+        "correct_option": 1,
+        "explanation": "APIs (Application Programming Interfaces) are the standard way to interact with external services. REST APIs use HTTP requests to fetch or send data, which is the typical approach for web and mobile apps.",
+        "real_world_example": "I integrated a payment API into our checkout flow to process transactions securely without handling sensitive data ourselves.",
+        "interview_tip": "Show familiarity with RESTful principles like GET and POST requests, and mention that you've consumed APIs by reading documentation and handling JSON responses."
+      },
+      {
+        "id": "custom_3",
+        "term": "Debugging",
+        "industry": "💻 Software Engineering",
+        "context_question": "Your code is not producing the expected output. You've added console.log statements to trace the flow, but you can't see the issue. What is a systematic approach to identify the problem?",
+        "options": [
+          "Randomly change code until it works",
+          "Use a debugger to set breakpoints and step through the code",
+          "Ask a colleague to rewrite the code",
+          "Ignore the issue and hope it resolves"
+        ],
+        "correct_option": 1,
+        "explanation": "Using a debugger allows you to pause execution, inspect variables, and step through code line by line, which is more systematic than guesswork. It helps pinpoint exactly where the logic fails.",
+        "real_world_example": "I used the debugger in my IDE to inspect the value of a variable at each iteration of the loop and found an off-by-one error.",
+        "interview_tip": "Talk about your debugging process: start by reproducing the issue, then use logs or a debugger to narrow down the problem. Emphasize that you approach bugs methodically."
+      }
+    ]
+  },
+  "🤖 ai & data literacy__beginner 🌱__3": {
+    "domain": "🤖 AI & Data Literacy",
+    "level": "Beginner 🌱",
+    "depth": 3,
+    "updatedAt": "2026-08-31T16:23:11.277Z",
+    "quiz": [
+      {
+        "id": "custom_1",
+        "term": "Data Literacy",
+        "industry": "🤖 AI & Data Literacy",
+        "context_question": "During a team meeting, your manager asks for help interpreting a sales report that shows a sudden spike in revenue. You notice the spike is due to a one-time bulk order from a key client. What does this demonstrate about your ability?",
+        "options": [
+          "You are able to read and interpret data to provide meaningful insights.",
+          "You can manipulate data to show better results.",
+          "You can create data visualizations.",
+          "You can write SQL queries."
+        ],
+        "correct_option": 0,
+        "explanation": "Data literacy is the ability to read, understand, analyze, and communicate data. Recognizing that the spike is due to a one-time event shows you can interpret data in context.",
+        "real_world_example": "In a business review, a data-literate employee might say, 'The revenue spike is from a one-time bulk order, so we should not expect this trend to continue.'",
+        "interview_tip": "When asked about data skills, emphasize your ability to interpret data and draw conclusions, not just technical skills."
+      },
+      {
+        "id": "custom_2",
+        "term": "Bias in AI",
+        "industry": "🤖 AI & Data Literacy",
+        "context_question": "Your company is developing an AI system to screen job applicants. You discover that the system consistently recommends male candidates over equally qualified female candidates. What is this an example of?",
+        "options": [
+          "Algorithmic bias",
+          "Overfitting",
+          "Data augmentation",
+          "Supervised learning"
+        ],
+        "correct_option": 0,
+        "explanation": "Algorithmic bias occurs when an AI system produces systematically unfair outcomes due to biased data or design. This is a critical concern in AI ethics.",
+        "real_world_example": "In HR, an AI recruitment tool might inadvertently discriminate against certain groups if trained on historical hiring data that reflects past biases.",
+        "interview_tip": "Show awareness of AI ethics by mentioning that you consider fairness and bias when working with AI systems."
+      },
+      {
+        "id": "custom_3",
+        "term": "Data Privacy",
+        "industry": "🤖 AI & Data Literacy",
+        "context_question": "You are working on a project that requires customer data. A colleague suggests using a dataset that includes personal information without obtaining proper consent. What should you do?",
+        "options": [
+          "Use the data since it's for a project that could benefit the company.",
+          "Ignore the colleague and proceed with the data.",
+          "Refuse to use the data and report the issue to your supervisor.",
+          "Anonymize the data yourself before using it."
+        ],
+        "correct_option": 2,
+        "explanation": "Data privacy is about handling personal data responsibly and ethically. Using data without consent violates privacy regulations and company policies, so you must refuse and report it.",
+        "real_world_example": "In a marketing team, an employee might notice a colleague using customer emails without permission and would escalate the issue to ensure compliance with GDPR or CCPA.",
+        "interview_tip": "Demonstrate your commitment to data privacy by mentioning relevant regulations (like GDPR) and your practice of obtaining proper consent."
+      }
+    ]
+  },
+  "📦 procurement & supply chain__beginner 🌱__3": {
+    "domain": "📦 Procurement & Supply Chain",
+    "level": "Beginner 🌱",
+    "depth": 3,
+    "updatedAt": "2026-08-31T16:23:11.290Z",
+    "quiz": [
+      {
+        "id": "static_moq_0",
+        "term": "MOQ",
+        "industry": "Procurement & Supply Chain",
+        "context_question": "How do high supplier MOQs impact a startup's working capital?",
+        "options": [
+          "A specialized database designed to store and index high-dimensional mathematical representations (embeddings) of text, images, or audio.",
+          "The smallest required number of units a supplier is willing to manufacture or sell in a single order.",
+          "Burn Rate is the net amount of cash spent monthly; Runway is the total months remaining before cash balance reaches zero.",
+          "The full value of an employee's compensation beyond base salary, encompassing equity, bonuses, benefits, retirement contributions, and perks."
+        ],
+        "correct_option": 1,
+        "explanation": "MOQ (Minimum Order Quantity) means: The smallest required number of units a supplier is willing to manufacture or sell in a single order.",
+        "real_world_example": "Example: \"I negotiated a 30% reduction in MOQ with a primary packaging supplier, freeing up $45,000 in working capital for inventory turnover.\"",
+        "interview_tip": "Demonstrate business acumen by discussing how you balance MOQ discounts against holding cost and working capital."
+      },
+      {
+        "id": "static_incoterms_1",
+        "term": "Incoterms",
+        "industry": "Procurement & Supply Chain",
+        "context_question": "When negotiating a international supplier agreement, why are Incoterms essential?",
+        "options": [
+          "The longest sequence of dependent activities in a project network that dictates the absolute shortest time to completion.",
+          "The implied cost of additional rework caused by choosing an easy or fast code solution now instead of a better long-term architectural approach.",
+          "Standardized global trade rules defining freight liability, shipping costs, and risk transfer between seller and buyer.",
+          "An adapted NPS measuring employee loyalty and engagement: 'How likely are you to recommend this company as a place to work?' Scored on a 0–10 scale."
+        ],
+        "correct_option": 2,
+        "explanation": "Incoterms (International Commercial Terms) means: Standardized global trade rules defining freight liability, shipping costs, and risk transfer between seller and buyer.",
+        "real_world_example": "Example: \"In my previous role, I re-negotiated shipping terms from CIF to FOB for core Asian suppliers, giving us direct control over ocean freight tariffs and saving 12% on logistics costs.\"",
+        "interview_tip": "Highlighting Incoterms knowledge signals senior supply chain maturity. Express how selecting the right term (like DDP vs FOB) optimizes margin control."
+      },
+      {
+        "id": "static_3pl_2",
+        "term": "3PL",
+        "industry": "Procurement & Supply Chain",
+        "context_question": "What is the primary operational advantage of partnering with a 3PL?",
+        "options": [
+          "When a generative AI or Large Language Model generates confident, authoritative-sounding responses that are factually inaccurate or fabricated.",
+          "Formal bidding documents sent to prospective vendors to solicit competitive project bids (RFP) or exact price quotes (RFQ).",
+          "Real-world verified factual data used as the absolute benchmark to train, evaluate, and test AI model accuracy.",
+          "Outsourcing e-commerce, warehousing, fulfillment, or transportation management to an external specialized logistics provider."
+        ],
+        "correct_option": 3,
+        "explanation": "3PL (Third-Party Logistics) means: Outsourcing e-commerce, warehousing, fulfillment, or transportation management to an external specialized logistics provider.",
+        "real_world_example": "Example: \"I managed relationships with three regional 3PL partners, maintaining a 99.4% on-time delivery rate while conducting monthly SLA audits.\"",
+        "interview_tip": "Mention SLA monitoring and KPI tracking when discussing 3PL partner management."
+      }
+    ]
+  },
+  "📦 procurement & supply chain__executive 🎩__3": {
+    "domain": "📦 Procurement & Supply Chain",
+    "level": "Executive 🎩",
+    "depth": 3,
+    "updatedAt": "2026-08-31T16:27:58.412Z",
+    "quiz": [
+      {
+        "id": "custom_1",
+        "term": "Total Cost of Ownership (TCO)",
+        "industry": "📦 Procurement & Supply Chain",
+        "context_question": "As an executive, you are evaluating two suppliers for a critical component. Supplier A offers a lower unit price, but has longer lead times and requires more frequent maintenance. Supplier B has a higher upfront cost but offers better reliability and lower operational expenses. Which approach should you take to make a strategic decision?",
+        "options": [
+          "Focus solely on the unit price to minimize immediate costs",
+          "Calculate the total cost of ownership including acquisition, maintenance, and operational costs",
+          "Choose the supplier with the shortest lead time regardless of cost",
+          "Select the supplier with the best brand reputation"
+        ],
+        "correct_option": 1,
+        "explanation": "TCO considers all costs associated with a product or service over its entire lifecycle, not just the purchase price. This provides a more accurate basis for comparing suppliers and making strategic decisions.",
+        "real_world_example": "When evaluating a new packaging line, our team used TCO to compare a cheaper but less efficient model with a more expensive, energy-efficient one, and found the latter saved us 20% in operational costs over five years.",
+        "interview_tip": "When discussing supplier selection, emphasize that you look beyond the sticker price and consider long-term costs such as maintenance, energy consumption, and downtime to drive value."
+      },
+      {
+        "id": "custom_2",
+        "term": "Supplier Relationship Management (SRM)",
+        "industry": "📦 Procurement & Supply Chain",
+        "context_question": "You are leading a strategic initiative to improve collaboration with key suppliers to reduce costs and drive innovation. Which practice is most aligned with this goal?",
+        "options": [
+          "Implementing a competitive bidding process for every purchase",
+          "Developing a Supplier Relationship Management program with regular strategic reviews and joint planning",
+          "Switching suppliers frequently to keep them on their toes",
+          "Focusing only on cost reduction without considering supplier input"
+        ],
+        "correct_option": 1,
+        "explanation": "SRM focuses on building long-term partnerships with key suppliers to create mutual value, improve performance, and foster innovation. This is more effective than adversarial tactics.",
+        "real_world_example": "Our company launched an SRM program with our top 10 suppliers, holding quarterly business reviews to align on innovation roadmaps, which resulted in a 15% cost reduction and several new product ideas.",
+        "interview_tip": "Highlight your ability to build strong supplier partnerships that go beyond transactions, such as setting up joint improvement teams or sharing forecasts to enhance collaboration."
+      },
+      {
+        "id": "custom_3",
+        "term": "Supply Chain Risk Management (SCRM)",
+        "industry": "📦 Procurement & Supply Chain",
+        "context_question": "Your company's supply chain is heavily dependent on a single source for a critical raw material located in a geopolitically unstable region. As an executive, what is the most prudent action to mitigate this risk?",
+        "options": [
+          "Accept the risk as it is and hope for the best",
+          "Immediately switch to a more expensive supplier in a stable region without further analysis",
+          "Develop a comprehensive risk management plan that includes diversifying suppliers, building safety stock, and monitoring geopolitical developments",
+          "Increase the order quantity to secure more inventory before any disruption"
+        ],
+        "correct_option": 2,
+        "explanation": "Proactive risk management involves identifying potential disruptions and implementing strategies to mitigate them, such as dual sourcing, inventory buffers, and continuous monitoring. This balances cost and resilience.",
+        "real_world_example": "After a port strike disrupted our imports, we implemented a SCRM plan that included a backup supplier in a different region and increased our safety stock levels, which prevented future disruptions from halting production.",
+        "interview_tip": "Discuss your experience with identifying supply chain vulnerabilities and implementing mitigation strategies like supplier diversification, safety stock, and contingency planning to demonstrate your strategic thinking."
+      }
+    ]
+  }
+}
