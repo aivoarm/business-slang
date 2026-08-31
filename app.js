@@ -21,6 +21,54 @@ class BuzSlangApp {
     this.init();
   }
 
+  /* Domain Usage Tracker & Dynamic Sorting */
+  getDomainUsageCounts() {
+    try {
+      const raw = localStorage.getItem('buzslang_domain_counts');
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  incrementDomainUsage(domain) {
+    if (!domain) return;
+    const counts = this.getDomainUsageCounts();
+    counts[domain] = (counts[domain] || 0) + 1;
+    try {
+      localStorage.setItem('buzslang_domain_counts', JSON.stringify(counts));
+    } catch (e) {}
+  }
+
+  getSortedDomains() {
+    const defaultDomains = [
+      { name: '🤖 AI & Data Literacy', label: '🤖 AI & Data' },
+      { name: '💻 Software Engineering', label: '💻 Software Dev' },
+      { name: '📦 Procurement & Supply Chain', label: '📦 Supply Chain' },
+      { name: '💰 Corporate Finance', label: '💰 Corporate Finance' },
+      { name: '⚖️ Legal & Compliance', label: '⚖️ Legal & Risk' },
+      { name: '🏥 Healthcare Ops', label: '🏥 Healthcare Ops' },
+      { name: '🏗️ Construction & Engineering', label: '🏗️ Construction' },
+      { name: '📊 Product & Project Ops', label: '📊 Project Management' }
+    ];
+
+    const counts = this.getDomainUsageCounts();
+    const customDomainNames = Object.keys(counts).filter(
+      d => !defaultDomains.some(def => def.name === d)
+    );
+
+    const allDomains = [
+      ...defaultDomains,
+      ...customDomainNames.map(name => ({ name, label: name }))
+    ];
+
+    return allDomains.sort((a, b) => {
+      const countA = counts[a.name] || 0;
+      const countB = counts[b.name] || 0;
+      return countB - countA;
+    });
+  }
+
   init() {
     this.applyTheme(this.theme);
     this.setupEventListeners();
@@ -156,20 +204,19 @@ class BuzSlangApp {
     if (!messagesEl || !controlsEl) return;
 
     if (this.chatState.step === 1) {
+      const sortedDomains = this.getSortedDomains();
+
       messagesEl.innerHTML = `
         <div class="chat-bubble bot">
           👋 Hi! I'm your <strong>AI Quiz Coach</strong>.<br>
           Which domain or industry topic would you like to master today?
 
           <div style="margin-top: 0.85rem;">
-            <div style="font-size:0.82rem; color:var(--text-accent); font-weight:600; margin-bottom:0.5rem;">Select a domain or type a custom topic:</div>
+            <div style="font-size:0.82rem; color:var(--text-accent); font-weight:600; margin-bottom:0.5rem;">Most Used & Popular Topics:</div>
             <div class="chat-chips-container" style="margin-bottom:0.75rem;">
-              <button class="chat-chip-btn" data-domain="🤖 AI & Data Literacy">🤖 AI & Data</button>
-              <button class="chat-chip-btn" data-domain="📦 Procurement & Supply Chain">📦 Supply Chain</button>
-              <button class="chat-chip-btn" data-domain="💻 Software Engineering">💻 Software Dev</button>
-              <button class="chat-chip-btn" data-domain="💰 Corporate Finance">💰 Corporate Finance</button>
-              <button class="chat-chip-btn" data-domain="⚖️ Legal & Compliance">⚖️ Legal & Risk</button>
-              <button class="chat-chip-btn" data-domain="🏥 Healthcare Ops">🏥 Healthcare Ops</button>
+              ${sortedDomains.map(d => `
+                <button class="chat-chip-btn" data-domain="${d.name}">${d.label}</button>
+              `).join('')}
             </div>
             <div class="chat-custom-input-group">
               <input type="text" id="chat-custom-domain-input" class="chat-custom-input" placeholder="Or type custom topic (e.g. BioTech Regulations)...">
@@ -183,7 +230,9 @@ class BuzSlangApp {
 
       messagesEl.querySelectorAll('.chat-chip-btn').forEach(btn => {
         btn.onclick = (e) => {
-          this.chatState.domain = e.currentTarget.dataset.domain;
+          const selectedDomain = e.currentTarget.dataset.domain;
+          this.chatState.domain = selectedDomain;
+          this.incrementDomainUsage(selectedDomain);
           this.chatState.step = 2;
           this.renderChatStep();
         };
@@ -195,6 +244,7 @@ class BuzSlangApp {
         const val = inputEl.value.trim();
         if (val) {
           this.chatState.domain = val;
+          this.incrementDomainUsage(val);
           this.chatState.step = 2;
           this.renderChatStep();
         }
