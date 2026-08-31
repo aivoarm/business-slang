@@ -448,7 +448,13 @@ class BuzSlangApp {
       </div>
     `;
 
-    messagesEl.scrollTop = messagesEl.scrollHeight;
+    setTimeout(() => {
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      if (quizCardContainer) {
+        quizCardContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+
     controlsEl.innerHTML = `
       <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; color:var(--text-muted);">
         <span>Score: <strong style="color:var(--accent-primary);">${this.chatState.score}</strong> pts</span>
@@ -561,7 +567,12 @@ class BuzSlangApp {
       };
     }
 
-    if (card3D) card3D.classList.add('flipped');
+    if (card3D) {
+      card3D.classList.add('flipped');
+      setTimeout(() => {
+        card3D.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
   }
 
   renderQuizSummary() {
