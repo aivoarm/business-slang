@@ -545,6 +545,71 @@ body {
   color: var(--text-muted);
 }
 
+/* PWA Install Banner & Share Toast */
+.pwa-install-banner {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(99, 102, 241, 0.2));
+  border-bottom: 1px solid var(--border-glow);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 100;
+}
+
+.pwa-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.pwa-banner-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  line-height: 1;
+}
+
+.pwa-banner-close:hover {
+  color: var(--text-primary);
+}
+
+.share-icon-inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.share-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  color: #fff;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.share-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 
 /* Mobile Native App Layout & Touch Polish */
 @media (max-width: 768px) {
@@ -595,8 +660,20 @@ body {
     flex-direction: column;
   }
 
+  /* Navbar Header */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(11, 15, 25, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    padding-top: env(safe-area-inset-top);
+  }
+
   .ai-chat-header {
-    padding: 0.75rem 1rem;
+    padding: max(0.75rem, env(safe-area-inset-top)) 1rem 0.75rem;
     margin-bottom: 0;
     background: rgba(17, 24, 39, 0.92);
     backdrop-filter: blur(16px);

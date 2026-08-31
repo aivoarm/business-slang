@@ -13,11 +13,21 @@
   <meta name="author" content="buz-slang Career Hub">
   <link rel="canonical" href="https://businessslang.com/">
 
-  <!-- Open Graph / Facebook SEO -->
+  <!-- Open Graph / Facebook / LinkedIn Social Share Preview -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://businessslang.com/">
   <meta property="og:title" content="buz-slang - Sound Confident in Every Job Interview">
-  <meta property="og:description" content="Master business acronyms and industry jargon with your personal AI Quiz Coach. Interactive scenario quizzes, 3D flip cards, and interview response tips.">
+  <meta property="og:description" content="Master business acronyms and industry jargon with your personal AI Quiz Coach. Interactive scenario quizzes, 3D flip cards, and candidate response scripts.">
+  <meta property="og:image" content="https://businessslang.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter / X Card SEO -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://businessslang.com/">
+  <meta name="twitter:title" content="buz-slang - AI Quiz Coach & Industry Jargon Dictionary">
+  <meta name="twitter:description" content="Master business acronyms and industry jargon with interactive 3D scenario flip cards and candidate response tips.">
+  <meta name="twitter:image" content="https://businessslang.com/og-image.png">
 
   <!-- PWA Manifest & Icons -->
   <link rel="manifest" href="site.webmanifest">
@@ -38,6 +48,19 @@
   </div>
 
   <div id="app">
+    <!-- Top PWA Install Helper Banner (Dismissible) -->
+    <div class="pwa-install-banner" id="pwa-install-banner">
+      <div class="pwa-banner-content">
+        <span class="pwa-icon">📲</span>
+        <span>
+          <strong>Install buz-slang on your phone:</strong>
+          <span class="pwa-ios-instructions">Tap Share <span class="share-icon-inline">📤</span> & select <strong>"Add to Home Screen ➕"</strong></span>
+          <span class="pwa-android-instructions">Tap Menu <span class="share-icon-inline">⋮</span> & select <strong>"Install app 📲"</strong></span>
+        </span>
+      </div>
+      <button class="pwa-banner-close" id="close-pwa-banner" title="Dismiss banner">✕</button>
+    </div>
+
     <!-- Navbar Header -->
     <header class="navbar">
       <div class="nav-container">
@@ -47,6 +70,9 @@
         </a>
 
         <div class="nav-actions">
+          <button class="btn-icon" id="share-app-btn" title="Share buz-slang AI Quiz Coach" style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(99, 102, 241, 0.2)); border-color: var(--accent-secondary);">
+            🔗
+          </button>
           <div class="streak-badge" id="user-streak-badge" title="Daily Study Streak">
             🔥 <span id="streak-val">1</span>
           </div>
@@ -86,6 +112,11 @@
         </div>
       </section>
     </main>
+
+    <!-- Share Feedback Toast Notification -->
+    <div class="share-toast" id="share-toast">
+      ✨ Link copied to clipboard!
+    </div>
   </div>
 
   <!-- JavaScript Main Entry -->

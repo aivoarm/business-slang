@@ -73,6 +73,7 @@ class BuzSlangApp {
     this.applyTheme(this.theme);
     this.setupEventListeners();
     this.updateUserStatsDisplay();
+    this.initPwaBanner();
 
     // Check if active session exists to resume where dropped off
     const activeSession = this.loadActiveQuizSession();
@@ -173,8 +174,69 @@ class BuzSlangApp {
     if (streakEl) streakEl.textContent = this.userStreak;
   }
 
+  initPwaBanner() {
+    const bannerEl = document.getElementById('pwa-install-banner');
+    const closeBtn = document.getElementById('close-pwa-banner');
+    if (!bannerEl) return;
+
+    if (localStorage.getItem('buzslang_pwa_banner_hidden') === 'true') {
+      bannerEl.style.display = 'none';
+      return;
+    }
+
+    const isAndroid = /android/i.test(navigator.userAgent || '');
+    const iosEl = bannerEl.querySelector('.pwa-ios-instructions');
+    const androidEl = bannerEl.querySelector('.pwa-android-instructions');
+    if (isAndroid && androidEl && iosEl) {
+      iosEl.style.display = 'none';
+      androidEl.style.display = 'inline';
+    }
+
+    if (closeBtn) {
+      closeBtn.onclick = () => {
+        bannerEl.style.display = 'none';
+        localStorage.setItem('buzslang_pwa_banner_hidden', 'true');
+      };
+    }
+  }
+
+  async shareApp() {
+    const shareData = {
+      title: 'buz-slang | AI Quiz Coach',
+      text: 'Master corporate slang, business acronyms & industry jargon with interactive AI scenario quizzes!',
+      url: window.location.href
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (e) {
+        if (e.name !== 'AbortError') console.warn('Share error:', e);
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      this.showShareToast('✨ Link copied to clipboard!');
+    } catch (err) {
+      this.showShareToast('🔗 ' + window.location.href);
+    }
+  }
+
+  showShareToast(message) {
+    const toast = document.getElementById('share-toast');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2800);
+  }
+
   setupEventListeners() {
     document.getElementById('theme-toggle')?.addEventListener('click', () => this.toggleTheme());
+    document.getElementById('share-app-btn')?.addEventListener('click', () => this.shareApp());
     document.getElementById('reset-chat-top-btn')?.addEventListener('click', () => this.resetChat());
     document.getElementById('logo-btn')?.addEventListener('click', (e) => {
       e.preventDefault();
