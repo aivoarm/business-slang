@@ -253,6 +253,62 @@ class BuzSlangApp {
     }
   }
 
+  async generateQuizFromClientFallback(domain, level, depth) {
+    try {
+      const res = await fetch('data/business_slang.json');
+      if (!res.ok) return null;
+      const staticDb = await res.json();
+      if (!staticDb.terms || !staticDb.terms.length) return null;
+
+      const normDomain = String(domain || '').toLowerCase().trim();
+      const indObj = staticDb.industries?.find(i =>
+        i.id.toLowerCase() === normDomain ||
+        i.name.toLowerCase().includes(normDomain) ||
+        normDomain.includes(i.name.toLowerCase())
+      );
+
+      const matchedId = indObj ? indObj.id : null;
+      let matchingTerms = staticDb.terms.filter(t => {
+        if (matchedId) return t.industry === matchedId;
+        return t.industry.toLowerCase().includes(normDomain) ||
+               (t.full_name && t.full_name.toLowerCase().includes(normDomain)) ||
+               t.meaning.toLowerCase().includes(normDomain);
+      });
+
+      if (!matchingTerms || matchingTerms.length === 0) {
+        matchingTerms = staticDb.terms;
+      }
+
+      const shuffled = [...matchingTerms].sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, Math.min(depth, matchingTerms.length));
+
+      return selected.map((term, idx) => {
+        const peerTerms = staticDb.terms.filter(t => t.id !== term.id);
+        const peerShuffled = [...peerTerms].sort(() => 0.5 - Math.random());
+        const distractors = peerShuffled.slice(0, 3).map(t => t.meaning);
+        const options = [term.meaning, ...distractors].sort(() => 0.5 - Math.random());
+        const correctIdx = options.indexOf(term.meaning);
+
+        return {
+          id: `client_${term.id}_${idx}`,
+          term: term.term,
+          industry: indObj ? indObj.name : domain,
+          context_question: term.context_question || `In a workplace scenario, what does "${term.term}" mean?`,
+          options: options,
+          correct_option: correctIdx,
+          explanation: `${term.term} ${term.full_name ? `(${term.full_name})` : ''} means: ${term.meaning}`,
+          real_world_example: term.sample_interview_response 
+            ? `Example: "${term.sample_interview_response}"`
+            : `Example: "In our team, we applied ${term.term} to optimize operational performance."`,
+          interview_tip: term.interview_tip || `Mention your understanding of ${term.term} when asked about industry best practices.`
+        };
+      });
+    } catch (e) {
+      console.warn('Client-side fallback error:', e);
+      return null;
+    }
+  }
+
   async generateCustomQuizFromChat(forceRefresh = false) {
     const messagesEl = document.getElementById('ai-chat-messages');
     const controlsEl = document.getElementById('ai-chat-controls');
@@ -274,26 +330,41 @@ class BuzSlangApp {
     controlsEl.innerHTML = `<div style="text-align:center; font-size:0.85rem; color:var(--text-muted);">Please wait...</div>`;
 
     try {
-      const response = await fetch('/api/generate-custom-quiz', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          domain: this.chatState.domain,
-          level: this.chatState.level,
-          depth: this.chatState.depth,
-          forceRefresh
-        })
-      });
+      let quizData = null;
+      let fromCacheLabel = '⚡ Instant Local DB';
 
-      if (!response.ok) {
-        throw new Error(response.status === 404
-          ? 'Server endpoint not reloaded. Please restart node server (npm run dev)'
-          : `Server error HTTP ${response.status}`);
+      try {
+        const response = await fetch('/api/generate-custom-quiz', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            domain: this.chatState.domain,
+            level: this.chatState.level,
+            depth: this.chatState.depth,
+            forceRefresh
+          })
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.success && Array.isArray(data.quiz) && data.quiz.length > 0) {
+            quizData = data.quiz;
+            fromCacheLabel = data.fromCache ? '⚡ Instant DB Cache' : '✨ AI Generated';
+          }
+        }
+      } catch (apiErr) {
+        console.warn('API endpoint unavailable, attempting client fallback:', apiErr.message);
       }
 
-      const data = await response.json();
-      if (data.success && Array.isArray(data.quiz) && data.quiz.length > 0) {
-        this.chatState.quizQuestions = data.quiz;
+      // Fallback to client-side static database if API failed or on static production host
+      if (!quizData || quizData.length === 0) {
+        console.log('Using client-side fallback static DB...');
+        quizData = await this.generateQuizFromClientFallback(this.chatState.domain, this.chatState.level, this.chatState.depth);
+        fromCacheLabel = '⚡ Static Database';
+      }
+
+      if (quizData && Array.isArray(quizData) && quizData.length > 0) {
+        this.chatState.quizQuestions = quizData;
         this.chatState.currentIndex = 0;
         this.chatState.score = 0;
         this.chatState.step = 5;
@@ -303,13 +374,12 @@ class BuzSlangApp {
 
         const bubble = document.getElementById('chat-generating-bubble');
         if (bubble) {
-          const cacheLabel = data.fromCache ? '⚡ Instant DB Cache' : '✨ AI Generated';
-          bubble.innerHTML = `🎉 <strong>Quiz Ready!</strong> (${data.quiz.length} Questions • ${cacheLabel})`;
+          bubble.innerHTML = `🎉 <strong>Quiz Ready!</strong> (${quizData.length} Questions • ${fromCacheLabel})`;
         }
 
         this.renderInlineQuizCard();
       } else {
-        throw new Error(data.error || 'Failed to generate quiz');
+        throw new Error('Failed to load quiz data');
       }
     } catch (err) {
       console.error('[AI Chat Error]', err.message);
