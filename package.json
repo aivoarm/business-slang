@@ -21,5 +21,8 @@
   "license": "MIT",
   "devDependencies": {
     "serve": "^14.2.4"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.0.2"
   }
 }
