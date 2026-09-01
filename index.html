@@ -48,17 +48,39 @@
   </div>
 
   <div id="app">
-    <!-- Top PWA Install Helper Banner (Dismissible) -->
-    <div class="pwa-install-banner" id="pwa-install-banner">
-      <div class="pwa-banner-content">
-        <span class="pwa-icon">📲</span>
-        <span>
-          <strong>Install buz-slang on your phone:</strong>
-          <span class="pwa-ios-instructions">Tap Share <span class="share-icon-inline">📤</span> & select <strong>"Add to Home Screen ➕"</strong></span>
-          <span class="pwa-android-instructions">Tap Menu <span class="share-icon-inline">⋮</span> & select <strong>"Install app 📲"</strong></span>
-        </span>
+    <!-- PWA Install Popup Modal (Dismissible) -->
+    <div class="pwa-modal-overlay" id="pwa-install-modal" style="display:none;">
+      <div class="pwa-modal-card">
+        <button class="pwa-modal-close" id="close-pwa-modal" title="Dismiss modal">✕</button>
+        
+        <div class="pwa-modal-header">
+          <div class="brand-icon" style="width: 48px; height: 48px; font-size: 1.5rem; flex-shrink: 0;">💼</div>
+          <div>
+            <h3 style="margin:0; font-size: 1.15rem; font-family: var(--font-heading); font-weight: 700; color: var(--text-primary);">
+              Install buz-slang App
+            </h3>
+            <span style="font-size: 0.8rem; color: var(--text-accent);">Add to Home Screen for Native Experience</span>
+          </div>
+        </div>
+
+        <div class="pwa-modal-body">
+          <div class="pwa-ios-instructions">
+            Tap Share <span class="share-icon-inline">📤</span> in Safari, then select <strong>"Add to Home Screen ➕"</strong> for instant full-screen practice.
+          </div>
+          <div class="pwa-android-instructions" style="display:none;">
+            Tap Menu <span class="share-icon-inline">⋮</span> in Chrome, then select <strong>"Install app 📲"</strong> for instant full-screen practice.
+          </div>
+        </div>
+
+        <div class="pwa-modal-actions">
+          <button class="btn-primary" id="pwa-install-trigger-btn" style="width:100%; justify-content:center; padding:0.8rem; font-size:0.92rem;">
+            📲 Add to Home Screen
+          </button>
+          <button class="btn-secondary" id="pwa-modal-dismiss-btn" style="width:100%; justify-content:center; padding:0.6rem; font-size:0.85rem; margin-top:0.5rem; background:transparent; border-color:transparent; color:var(--text-muted);">
+            Not Now
+          </button>
+        </div>
       </div>
-      <button class="pwa-banner-close" id="close-pwa-banner" title="Dismiss banner">✕</button>
     </div>
 
     <!-- Navbar Header -->

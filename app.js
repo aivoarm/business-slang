@@ -73,7 +73,7 @@ class BuzSlangApp {
     this.applyTheme(this.theme);
     this.setupEventListeners();
     this.updateUserStatsDisplay();
-    this.initPwaBanner();
+    this.initPwaModal();
 
     // Check if active session exists to resume where dropped off
     const activeSession = this.loadActiveQuizSession();
@@ -174,28 +174,56 @@ class BuzSlangApp {
     if (streakEl) streakEl.textContent = this.userStreak;
   }
 
-  initPwaBanner() {
-    const bannerEl = document.getElementById('pwa-install-banner');
-    const closeBtn = document.getElementById('close-pwa-banner');
-    if (!bannerEl) return;
+  initPwaModal() {
+    const modalEl = document.getElementById('pwa-install-modal');
+    const closeBtn = document.getElementById('close-pwa-modal');
+    const dismissBtn = document.getElementById('pwa-modal-dismiss-btn');
+    const installBtn = document.getElementById('pwa-install-trigger-btn');
+    if (!modalEl) return;
 
-    if (localStorage.getItem('buzslang_pwa_banner_hidden') === 'true') {
-      bannerEl.style.display = 'none';
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      this.deferredPwaPrompt = e;
+    });
+
+    if (localStorage.getItem('buzslang_pwa_popup_dismissed') === 'true') {
+      modalEl.style.display = 'none';
       return;
     }
 
     const isAndroid = /android/i.test(navigator.userAgent || '');
-    const iosEl = bannerEl.querySelector('.pwa-ios-instructions');
-    const androidEl = bannerEl.querySelector('.pwa-android-instructions');
+    const iosEl = modalEl.querySelector('.pwa-ios-instructions');
+    const androidEl = modalEl.querySelector('.pwa-android-instructions');
     if (isAndroid && androidEl && iosEl) {
       iosEl.style.display = 'none';
-      androidEl.style.display = 'inline';
+      androidEl.style.display = 'block';
     }
 
-    if (closeBtn) {
-      closeBtn.onclick = () => {
-        bannerEl.style.display = 'none';
-        localStorage.setItem('buzslang_pwa_banner_hidden', 'true');
+    setTimeout(() => {
+      if (localStorage.getItem('buzslang_pwa_popup_dismissed') !== 'true') {
+        modalEl.style.display = 'flex';
+      }
+    }, 1800);
+
+    const dismissModal = () => {
+      modalEl.style.display = 'none';
+      localStorage.setItem('buzslang_pwa_popup_dismissed', 'true');
+    };
+
+    if (closeBtn) closeBtn.onclick = dismissModal;
+    if (dismissBtn) dismissBtn.onclick = dismissModal;
+
+    if (installBtn) {
+      installBtn.onclick = async () => {
+        if (this.deferredPwaPrompt) {
+          this.deferredPwaPrompt.prompt();
+          const { outcome } = await this.deferredPwaPrompt.userChoice;
+          console.log('PWA install outcome:', outcome);
+          this.deferredPwaPrompt = null;
+          dismissModal();
+        } else {
+          this.showShareToast('📲 Follow step 1 above to add to Home Screen!');
+        }
       };
     }
   }
